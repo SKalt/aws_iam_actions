@@ -20,7 +20,16 @@ import (
 const cacheDir = "./.cache/colly"
 const base = "https://docs.aws.amazon.com/service-authorization/latest/reference"
 const tocUrl = base + "/toc-contents.json"
-const pattern = "(service prefix:"
+const servicePrefixPattern = "(service prefix:"
+
+const (
+	actionsColIndex = iota
+	descriptionsColIndex
+	accessLevelColIndex
+	resourceTypesColIndex
+	conditionKeysColIndex
+	dependentActionsColIndex
+)
 
 type TocEntry struct {
 	Title    string     `json:"title"`
@@ -29,10 +38,24 @@ type TocEntry struct {
 }
 
 type TableEntry struct {
-	Service, Prefix, Action, ActionDocUrl, Description, AccessLevel string
-	ResourceTypes, ConditionKeys, DependentActions                  []string
+	// the human-readable name of the service, e.g. "AWS Account Management"
+	Service string
+	// the service prefix, e.g. "account" is the service prefix for "AWS Account Management"
+	Prefix string
+	// The action identifier. Always PascalCase/UpperCamelCase.
+	Action string
+	// A link to action-specific documentation
+	ActionDocUrl string
+	// a URL with a fragment identifier pointing to the scraped row.
+	TableCellUrl string
+	// A brief description of the action
+	Description,
+	// The access level required for the action (e.g. "Read", "Write", "List")
+	AccessLevel string
+	ResourceTypes, ConditionKeys, DependentActions []string
 }
 
+// fetch all the documentation urls to scrape
 func getUrlsToScrape() ([]string, error) {
 	r, err := http.Get(tocUrl)
 	if err != nil {
@@ -66,14 +89,29 @@ func getUrlsToScrape() ([]string, error) {
 	return result, nil
 }
 
+func getServiceIdentifiers(dom *goquery.Selection) (serviceName string, servicePrefix string) {
+	p := dom.Find("p").
+		Has("code").
+		FilterFunction(func(i int, s *goquery.Selection) bool {
+			return strings.Contains(s.Text(), servicePrefixPattern)
+		}).First()
+	serviceName = strings.SplitN(p.Text(), servicePrefixPattern, 2)[0]
+	servicePrefix = p.Contents().Filter("code").Text()
+	return
+}
+
+func strip(s string) string {
+	return strings.Trim(s, "\t\n\r ")
+}
+
 func main() {
-	dbg := false
+	debugMode := false
 	collector := colly.NewCollector(
 		colly.CacheDir(cacheDir),
 		colly.Async(true),
 		colly.AllowedDomains("docs.aws.amazon.com"),
 	)
-	if dbg {
+	if debugMode {
 		collector.SetDebugger(&debug.LogDebugger{})
 	}
 	urls, err := getUrlsToScrape()
@@ -84,13 +122,7 @@ func main() {
 	wg := sync.WaitGroup{}
 	wg.Add(1)
 	collector.OnHTML("#main-content", func(div *colly.HTMLElement) {
-		p := div.DOM.Find("p").
-			Has("code").
-			FilterFunction(func(i int, s *goquery.Selection) bool {
-				return strings.Contains(s.Text(), pattern)
-			}).First()
-		service := strings.SplitN(p.Text(), pattern, 2)[0]
-		prefix := p.Contents().Filter("code").Text()
+		service, prefix := getServiceIdentifiers(div.DOM)
 		table := div.DOM.Find("table").First()
 		if table.Length() == 0 {
 			log.Panicf("no table found in %s", div.Request.URL)
@@ -99,6 +131,7 @@ func main() {
 		if ths.Length() != 6 {
 			log.Panicf("%d cols in table @ %s", ths.Length(), div.Request.URL)
 		}
+		tableBaseUrl := div.Request.URL.String()
 		rows := table.Find("tbody>tr")
 		if rows.Length() == 0 {
 			panic("no rows")
@@ -125,7 +158,7 @@ func main() {
 			result := &results[len(results)-1]
 			cells := tr.Children().Filter("td")
 			i := 0
-			cells.Each(func(_ int, s *goquery.Selection) {
+			cells.Each(func(_ int, td *goquery.Selection) {
 				for {
 					if i >= len(rowSpans) { // increment the row
 						i = 0
@@ -139,45 +172,48 @@ func main() {
 						break
 					}
 				}
-				span, err := strconv.ParseInt(s.AttrOr("rowspan", "1"), 10, 0)
+				span, err := strconv.ParseInt(td.AttrOr("rowspan", "1"), 10, 0)
 				if err != nil {
 					panic(err)
 				}
 				rowSpans[i] += int(span)
 				var text string
-				var xs *goquery.Selection
+				var links *goquery.Selection
 				if i < 3 {
-					text = strings.ReplaceAll(strings.Trim(s.Text(), "\t\n\r "), "\n", " ")
+					text = strings.ReplaceAll(strip(td.Text()), "\n", " ")
 				} else {
-					xs = s.Children().Filter("p").Has("a[href]")
+					links = td.Children().Filter("p").Has("a[href]")
 				}
 				switch i {
-				case 0:
+				case actionsColIndex:
 					result.Action = text
-					result.ActionDocUrl = s.Children().Filter("a[href]").First().AttrOr("href", "")
-					// fmt.Println(rowSpans, result.Action)
-				case 1:
-					result.Description = text
-					// fmt.Println(rowSpans, result.Action, result.Description)
-				case 2:
+					result.ActionDocUrl = td.Children().Filter("a[href]").First().AttrOr("href", "")
+					{
+						id := td.Children().Filter("a[id]").First().AttrOr("id", "")
+						if id != "" {
+							result.TableCellUrl = tableBaseUrl + "#" + id
+						}
+					}
+				// case descriptionsColIndex: // omitted to make absolutely sure this scraping falls under fair use
+				// 	result.Description = text
+				case accessLevelColIndex:
 					result.AccessLevel = text
-					// fmt.Println(rowSpans, result.Action, result.AccessLevel)
-				case 3:
-					if xs.Length() > 0 {
-						result.ResourceTypes = append(result.ResourceTypes, xs.Map(func(i int, s *goquery.Selection) string {
-							return strings.Trim(s.Text(), "\t\n\r ")
+				case resourceTypesColIndex:
+					if links.Length() > 0 {
+						result.ResourceTypes = append(result.ResourceTypes, links.Map(func(i int, s *goquery.Selection) string {
+							return strip(s.Text())
 						})...)
 					}
-				case 4:
-					if xs.Length() > 0 {
-						result.ConditionKeys = append(result.ConditionKeys, xs.Map(func(i int, s *goquery.Selection) string {
-							return strings.Trim(s.Text(), "\t\n\r ")
+				case conditionKeysColIndex:
+					if links.Length() > 0 {
+						result.ConditionKeys = append(result.ConditionKeys, links.Map(func(i int, s *goquery.Selection) string {
+							return strip(s.Text())
 						})...)
 					}
-				case 5:
-					if xs.Length() > 0 {
-						result.DependentActions = append(result.DependentActions, xs.Map(func(i int, s *goquery.Selection) string {
-							return strings.Trim(s.Text(), "\t\n\r ")
+				case dependentActionsColIndex:
+					if links.Length() > 0 {
+						result.DependentActions = append(result.DependentActions, links.Map(func(i int, s *goquery.Selection) string {
+							return strip(s.Text())
 						})...)
 					}
 				}
@@ -187,18 +223,19 @@ func main() {
 	})
 	output := csv.NewWriter(os.Stderr)
 	output.Comma = '\t'
-	// TODO: sort by service, action for determinism
-	go func() {
+
+	go func() { // collect, sort, serialize the scraped data
 		defer wg.Done()
 		err := output.Write([]string{
 			"service",
 			"prefix",
 			"action",
-			"action docs",
 			"access level",
+			"table link",
+			"action docs link",
 			"condition keys",
 			"dependent actions",
-			"description",
+			// "description", // omitted to make absolutelu sure this scraping falls under fair use
 		})
 		if err != nil {
 			log.Panic(err)
@@ -224,11 +261,12 @@ func main() {
 				r.Service,
 				r.Prefix,
 				r.Action,
-				r.ActionDocUrl,
 				r.AccessLevel,
+				r.TableCellUrl,
+				r.ActionDocUrl,
 				strings.Join(r.ConditionKeys, ", "),
 				strings.Join(r.DependentActions, ", "),
-				r.Description,
+				// r.Description, // omitted to make absolutely sure this scraping falls under fair use
 			}
 		}
 		err = output.WriteAll(tsv)
