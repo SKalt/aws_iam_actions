@@ -1,0 +1,50 @@
+name: Scraper
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 4 18 * *" # once a month, at a jittered time
+  push:
+    branches:
+      - main
+    paths:
+      - Makefile
+      - go.mod
+      - go.sum
+      - scripts/scrape/main.go
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: cache scraper binary
+        id: cache_scraper_binary
+        uses: actions/cache@v3
+        with:
+          path: |
+            ./bin/scrape
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum', 'scripts/scrape/*.go') }}
+          restore-keys: |
+            ${{ runner.os }}-go-1.19
+      - name: Set up Go
+        if: steps.cache_scraper_binary.outputs.cache-hit != 'true'
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.19'
+      - name: golangci-lint
+        if: steps.cache_scraper_binary.outputs.cache-hit != 'true'
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: latest
+      - name: build scraper binary
+        if: steps.cache_scraper_binary.outputs.cache-hit != 'true'
+        run: make bin/scrape
+      - name: scrape docs
+        run: make results.tsv
+      - name: commit changes, if any
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: update $(date '+%Y-%m')" || exit 0
+          git push

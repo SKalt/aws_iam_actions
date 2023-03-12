@@ -276,7 +276,9 @@ func main() {
 		output.Flush()
 	}()
 	for _, url := range urls {
-		collector.Visit(url)
+		if err = collector.Visit(url); err != nil {
+			log.Panic(err)
+		}
 	}
 	collector.Wait()
 	close(data)
