@@ -19,6 +19,8 @@ import (
 
 const cacheDir = "./.cache/colly"
 const base = "https://docs.aws.amazon.com/service-authorization/latest/reference"
+
+// the url of a JSON document containing the Table of Contents (ToC) for the AWS Service Authorization Reference
 const tocUrl = base + "/toc-contents.json"
 const servicePrefixPattern = "(service prefix:"
 
@@ -55,7 +57,7 @@ type TableEntry struct {
 	ResourceTypes, ConditionKeys, DependentActions []string
 }
 
-// fetch all the documentation urls to scrape
+// fetch the Table of Contents (ToC) and extract all the documentation urls to scrape
 func getUrlsToScrape() ([]string, error) {
 	r, err := http.Get(tocUrl)
 	if err != nil {
@@ -76,12 +78,12 @@ func getUrlsToScrape() ([]string, error) {
 	result := make([]string, len(contents))
 	for i, entry := range contents {
 		if strings.HasPrefix(entry.Href, "#") {
-			continue // skip the rest of the loop
+			continue // this is a fragment identifier; skip the rest of the loop
 		}
 		if strings.HasPrefix(entry.Href, "http") {
 			result[i] = entry.Href
 		} else if strings.HasPrefix(entry.Href, "/") {
-			panic(entry.Href)
+			panic(entry.Href) // this seems not to happen, but if it does, we'll know
 		} else {
 			result[i] = base + "/" + entry.Href
 		}
@@ -89,19 +91,18 @@ func getUrlsToScrape() ([]string, error) {
 	return result, nil
 }
 
+// find the service name (e.g. "AWS Account Management") and prefix (e.g. "account") in the current selection
 func getServiceIdentifiers(dom *goquery.Selection) (serviceName string, servicePrefix string) {
 	p := dom.Find("p").
 		Has("code").
 		FilterFunction(func(i int, s *goquery.Selection) bool {
 			return strings.Contains(s.Text(), servicePrefixPattern)
 		}).First()
-	serviceName = strings.SplitN(p.Text(), servicePrefixPattern, 2)[0]
+	serviceName = strings.TrimSpace(strings.SplitN(p.Text(), servicePrefixPattern, 2)[0])
+	// strip the leading "AWS " or "Amazon" from the service name for nicer alphabetical sorting
+	serviceName = strings.TrimSpace(strings.TrimPrefix(strings.TrimPrefix(serviceName, "AWS "), "Amazon "))
 	servicePrefix = p.Contents().Filter("code").Text()
 	return
-}
-
-func strip(s string) string {
-	return strings.Trim(s, "\t\n\r ")
 }
 
 func main() {
@@ -129,6 +130,13 @@ func main() {
 		}
 		ths := table.Find("thead>tr>th")
 		if ths.Length() != 6 {
+			// We're expecting exactly the indexes in the consts at the top of this file
+			// 0 = actionsColIndex
+			// 1 = descriptionsColIndex
+			// 2 = accessLevelColIndex
+			// 3 = resourceTypesColIndex
+			// 4 = conditionKeysColIndex
+			// 5 = dependentActionsColIndex
 			log.Panicf("%d cols in table @ %s", ths.Length(), div.Request.URL)
 		}
 		tableBaseUrl := div.Request.URL.String()
@@ -157,6 +165,7 @@ func main() {
 			}
 			result := &results[len(results)-1]
 			cells := tr.Children().Filter("td")
+			// figure out if which row a cell belongs to
 			i := 0
 			cells.Each(func(_ int, td *goquery.Selection) {
 				for {
@@ -194,20 +203,23 @@ func main() {
 							result.TableCellUrl = tableBaseUrl + "#" + id
 						}
 					}
-				// case descriptionsColIndex: // omitted to make absolutely sure this scraping falls under fair use
+				// ======
+				// omitted to make absolutely sure this scraping falls under fair use:
+				// ======
+				// case descriptionsColIndex:
 				// 	result.Description = text
 				case accessLevelColIndex:
 					result.AccessLevel = text
 				case resourceTypesColIndex:
 					if links.Length() > 0 {
 						result.ResourceTypes = append(result.ResourceTypes, links.Map(func(i int, s *goquery.Selection) string {
-							return strip(s.Text())
+							return strings.TrimSpace(s.Text())
 						})...)
 					}
 				case conditionKeysColIndex:
 					if links.Length() > 0 {
 						result.ConditionKeys = append(result.ConditionKeys, links.Map(func(i int, s *goquery.Selection) string {
-							return strip(s.Text())
+							return strings.TrimSpace(s.Text())
 						})...)
 					}
 				case dependentActionsColIndex:
@@ -235,7 +247,7 @@ func main() {
 			"action docs link",
 			"condition keys",
 			"dependent actions",
-			// "description", // omitted to make absolutelu sure this scraping falls under fair use
+			// "description", // omitted to make absolutely sure this scraping falls under fair use
 		})
 		if err != nil {
 			log.Panic(err)
@@ -250,6 +262,7 @@ func main() {
 				break
 			}
 		}
+		// sort the results by (human-readable) Service, then Action
 		sort.SliceStable(allResults, func(i, j int) bool {
 			x := &allResults[i]
 			y := &allResults[j]
