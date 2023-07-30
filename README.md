@@ -1,6 +1,6 @@
 # aws_iam_actions
 
-A scraper collecting the basic information of (very nearly[^1]) all the AWS IAM actions.
+A dataset of (very nearly[^1]) all the AWS IAM actions scraped from [the AWS reference docs](https://docs.aws.amazon.com/service-authorization/latest/reference/reference.html).
 
 ## Notes on copyright
 
