@@ -213,24 +213,18 @@ func main() {
 				case accessLevelColIndex:
 					result.AccessLevel = text
 				case resourceTypesColIndex:
-					if links.Length() > 0 {
-						result.ResourceTypes = append(result.ResourceTypes, links.Map(func(i int, s *goquery.Selection) string {
-							return strings.TrimSpace(s.Text())
-						})...)
-					}
+					result.ResourceTypes = append(result.ResourceTypes, links.Map(func(i int, s *goquery.Selection) string {
+						return strings.TrimSpace(s.Text())
+					})...)
 				case conditionKeysColIndex:
-					if links.Length() > 0 {
-						result.ConditionKeys = append(result.ConditionKeys, links.Map(func(i int, s *goquery.Selection) string {
-							return strings.TrimSpace(s.Text())
-						})...)
-					}
+					result.ConditionKeys = append(result.ConditionKeys, links.Map(func(i int, s *goquery.Selection) string {
+						return strings.TrimSpace(s.Text())
+					})...)
 				case dependentActionsColIndex:
 					// these are in `prefix:Action` format **without** links
-					if ps.Length() > 0 {
-						result.DependentActions = append(result.DependentActions, ps.Map(func(_ int, s *goquery.Selection) string {
-							return strings.TrimSpace(s.Text())
-						})...)
-					}
+					result.DependentActions = append(result.DependentActions, ps.Map(func(_ int, s *goquery.Selection) string {
+						return strings.TrimSpace(s.Text())
+					})...)
 				}
 			})
 		})
