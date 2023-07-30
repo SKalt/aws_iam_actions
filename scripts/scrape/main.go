@@ -165,7 +165,7 @@ func main() {
 			}
 			result := &results[len(results)-1]
 			cells := tr.Children().Filter("td")
-			// figure out if which row a cell belongs to
+			// figure out if which column a cell belongs to
 			i := 0
 			cells.Each(func(_ int, td *goquery.Selection) {
 				for {
@@ -187,11 +187,13 @@ func main() {
 				}
 				rowSpans[i] += int(span)
 				var text string
+				var ps *goquery.Selection
 				var links *goquery.Selection
-				if i < 3 {
-					text = strings.ReplaceAll(strip(td.Text()), "\n", " ")
+				if i < resourceTypesColIndex {
+					text = strings.ReplaceAll(strings.TrimSpace(td.Text()), "\n", " ")
 				} else {
-					links = td.Children().Filter("p").Has("a[href]")
+					ps = td.Children().Filter("p")
+					links = ps.Has("a[href]")
 				}
 				switch i {
 				case actionsColIndex:
@@ -223,9 +225,10 @@ func main() {
 						})...)
 					}
 				case dependentActionsColIndex:
-					if links.Length() > 0 {
-						result.DependentActions = append(result.DependentActions, links.Map(func(i int, s *goquery.Selection) string {
-							return strip(s.Text())
+					// these are in `prefix:Action` format **without** links
+					if ps.Length() > 0 {
+						result.DependentActions = append(result.DependentActions, ps.Map(func(_ int, s *goquery.Selection) string {
+							return strings.TrimSpace(s.Text())
 						})...)
 					}
 				}
