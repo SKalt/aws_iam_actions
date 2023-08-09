@@ -1,7 +1,25 @@
-results.tsv: bin/scrape
-	bin/scrape 2>./results.tsv
-bin/scrape: go.mod go.sum cmd/scrape/main.go
-	go build -o bin/scrape cmd/scrape/main.go
-.PHONY: lint
+.PHONY: all lint
+
+all: data/iam_actions.sql
+
 lint:
 	docker run --rm -v $(pwd):/app -w /app golangci/golangci-lint:v1.51.2 golangci-lint run -v
+
+data/iam_actions.sql:       \
+	data/iam_actions.sqlite3  \
+	scripts/update_db_dump.sh \
+
+	scripts/update_db_dump.sh
+
+data/iam_actions.sqlite3:  \
+	data/iam_actions.tsv     \
+	scripts/load_data.sh     \
+	data/schema.sql          \
+
+	scripts/load_data.sh
+
+data/iam_actions.tsv: bin/scrape
+	bin/scrape 2>$@
+
+bin/scrape: go.mod go.sum cmd/scrape/main.go
+	go build -o bin/scrape cmd/scrape/main.go
