@@ -9,7 +9,9 @@ export default function About() {
           <li>
             What are all the write-level IAM actions that AWS EC2 exposes?
           </li>
-          <li>What are all the IAM actions with "VPC" in their name?</li>
+          <li>
+            What are all the IAM actions with &quot;VPC&quot; in their name?
+          </li>
           <li>
             AWS SSO disappeared; what happened to the <code>sso</code> IAM
             actions?

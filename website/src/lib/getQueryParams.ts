@@ -52,6 +52,7 @@ export const multiParse =
     );
     return [result, errors] as [Mapped<Parsers>, string[]];
   };
+export const parseParams = multiParse({ q: getGeneralQuery, limit: getLimit });
 
 export const getQuery = (params: UrlParams) => {
   const [result, errors] = multiParse({

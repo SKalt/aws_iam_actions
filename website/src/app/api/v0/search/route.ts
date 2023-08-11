@@ -1,38 +1,8 @@
 import { db } from "@/lib/binding";
-import { getGeneralQuery, getLimit, multiParse } from "@/lib/getQueryParams";
-import type { Action } from "@/lib/types";
-import { D1Result } from "@cloudflare/workers-types";
+import { parseParams } from "@/lib/getQueryParams";
 import { NextResponse } from "next/server";
 
 export const runtime = "edge";
-
-// FIXME: add filter for access_level
-const query = `
-SELECT name, kind, link
-FROM (
-  SELECT
-
-
-  FROM actions
-  WHERE (
-    false
-    OR lower(service) like ?1 || '%'
-    OR lower(prefix)  like ?2 || '%'
-    OR lower(action)  like ?3 || '%'
-  )
-) AS results
-ORDER BY score DESC
-LIMIT ?4
-`;
-const getActions = async (
-  service: string,
-  prefix: string,
-  action: string,
-  limit: number,
-): Promise<D1Result<Action>> => {
-  return db.prepare(query).bind(service, prefix, action, limit).all();
-};
-export const parseParams = multiParse({ q: getGeneralQuery, limit: getLimit });
 
 /*
 /api/v0/search[?q=prefix:action]][&limit=number]

@@ -52,7 +52,7 @@ export default function ActionFilter({
         action.action.toLowerCase().includes(filter.toLowerCase()),
       ),
     );
-  }, [filter]);
+  }, [filter, actions]);
   return (
     <div className="flex flex-col container">
       <input

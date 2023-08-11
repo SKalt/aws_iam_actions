@@ -1,5 +1,5 @@
 import SearchForm from "@/components/SearchForm";
-import { parseParams } from "./api/v0/search/route";
+import { parseParams } from "@/lib/getQueryParams";
 // https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props
 import { baseUrl } from "@/lib/baseUrl";
 const getServerSideProps = async (searchParams: URLSearchParams) => {
