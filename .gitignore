@@ -17,3 +17,4 @@ bin/*
 .cache
 data/iam_actions.sql
 data/*.sqlite3
+.wrangler

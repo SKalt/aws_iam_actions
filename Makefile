@@ -1,4 +1,4 @@
-.PHONY: all lint
+.PHONY: all lint local-db
 
 all: data/iam_actions.sql
 
@@ -23,3 +23,8 @@ data/iam_actions.tsv: bin/scrape
 
 bin/scrape: go.mod go.sum cmd/scrape/main.go
 	go build -o bin/scrape cmd/scrape/main.go
+
+local-db:
+	wrangler --config ${PWD}/website/wrangler.toml \
+		d1 execute --file=${PWD}/data/iam_actions.sql --local \
+		iam_actions
