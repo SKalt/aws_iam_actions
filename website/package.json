@@ -6,7 +6,7 @@
     "dev": "concurrently npm:dev:next npm:dev:proxy",
     "dev:next": "next dev --port 3000 --turbo",
     "dev:proxy": "cf-bindings-proxy",
-    "build": "BASEURL=https://aws-iam-actions.pages.dev next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
