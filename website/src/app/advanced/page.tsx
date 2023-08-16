@@ -2,6 +2,8 @@ import SearchAdvanced from "@/components/SearchAdvanced";
 import { baseUrl } from "@/lib/baseUrl";
 import { getAccessLevels } from "@/lib/types";
 
+export const runtime = "edge";
+
 export default async function Page({
   searchParams,
 }: {

@@ -1,5 +1,5 @@
 "use client";
-import { AccessLevelName, Action } from "@/lib/types";
+import { Action } from "@/lib/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -29,7 +29,7 @@ function ActionFilterItem({
               .map((m) => m.trim())
               .filter(Boolean)
               .map((id) => (
-                <li>
+                <li key={`action-` + id}>
                   <Link key={`link-${id}`} href={`/action/${id}`}>
                     {id}
                   </Link>
@@ -47,23 +47,23 @@ function ActionFilterItem({
   );
 }
 
-const levels = [
-  AccessLevelName.Unknown,
-  AccessLevelName.Read,
-  AccessLevelName.List,
-  AccessLevelName.Write,
-  AccessLevelName.Tagging,
-  AccessLevelName.Permissions,
-]; // not by avicii in this one instance
-function AccessLevelSelector() {
-  return (
-    <select>
-      {levels.map((level) => (
-        <option>{level}</option>
-      ))}
-    </select>
-  );
-}
+// const levels = [
+//   AccessLevelName.Unknown,
+//   AccessLevelName.Read,
+//   AccessLevelName.List,
+//   AccessLevelName.Write,
+//   AccessLevelName.Tagging,
+//   AccessLevelName.Permissions,
+// ]; // not by avicii in this one instance
+// function AccessLevelSelector() {
+//   return (
+//     <select>
+//       {levels.map((level) => (
+//         <option>{level}</option>
+//       ))}
+//     </select>
+//   );
+// }
 
 export default function ActionFilter({
   actions,

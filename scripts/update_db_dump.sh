@@ -9,6 +9,7 @@ dump_relation() {
   local table_name="$1"
   echo ".dump $table_name" |
     sqlite3 "$db_path" |
+    grep -v 'PRAGMA' |
     grep -v 'BEGIN TRANSACTION;' |
     grep -v 'COMMIT;'
 }
@@ -16,8 +17,7 @@ dump_relation() {
 main() {
   set -euo pipefail
   {
-    echo "PRAGMA foreign_keys=OFF;"
-    echo "BEGIN TRANSACTION;"
+    # echo "BEGIN TRANSACTION;"
     # ensure no pre-existing data gets retained
     echo "DROP INDEX IF EXISTS actions_service_idx;"
     echo "DROP INDEX IF EXISTS actions_prefix_idx;"
@@ -43,7 +43,7 @@ main() {
     dump_relation _actions
     dump_relation actions
     grep '^CREATE INDEX' "$schema_path" # dump indexes
-    echo "COMMIT;"
+    # echo "COMMIT;"
   } >"$db_dump_path"
   echo ".schema" | sqlite3 "$db_path" | sed '
     s/, "/\n  , "/g;

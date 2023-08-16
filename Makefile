@@ -28,3 +28,13 @@ local-db:
 	wrangler --config ${PWD}/website/wrangler.toml \
 		d1 execute --local DB                        \
 		--file=${PWD}/data/iam_actions.sql
+
+db-deploy: data/iam_actions.sql
+	wrangler --config ./website/wrangler.toml \
+		d1 execute DB                           \
+		--file=./data/iam_actions.sql           \
+		--batch-size 1000000000
+
+
+site-deploy:
+	@echo "TODO"

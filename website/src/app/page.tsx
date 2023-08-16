@@ -2,6 +2,9 @@ import SearchForm from "@/components/SearchForm";
 import { parseParams } from "@/lib/getQueryParams";
 // https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props
 import { baseUrl } from "@/lib/baseUrl";
+
+export const runtime = "edge";
+
 const getServerSideProps = async (searchParams: URLSearchParams) => {
   let [{ q, limit }, errs] = parseParams(searchParams);
   // FIXME: handle query-string errors
