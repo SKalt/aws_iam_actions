@@ -23,8 +23,8 @@ function HighlightedName({ name, q }: { name: string; q: string }) {
 }
 
 function SearchResult({ result, q }: { result: Result; q: string }) {
-  // TODO: bold the matching segments
-  const link = `/${result.kind}/${result.name}`;
+  const link =
+    result.link || `/${result.kind}/${encodeURIComponent(result.name)}`;
   const target = result.kind === "action" ? "_blank" : "_self";
   return (
     <li className="result container grid grid-cols-2">

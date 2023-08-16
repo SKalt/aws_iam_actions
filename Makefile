@@ -5,16 +5,16 @@ all: data/iam_actions.sql
 lint:
 	docker run --rm -v $(pwd):/app -w /app golangci/golangci-lint:v1.51.2 golangci-lint run -v
 
-data/iam_actions.sql:       \
-	data/iam_actions.sqlite3  \
-	scripts/update_db_dump.sh \
+data/schema.sql data/iam_actions.sql: \
+	data/iam_actions.sqlite3            \
+	scripts/update_db_dump.sh           \
 
 	scripts/update_db_dump.sh
 
 data/iam_actions.sqlite3:  \
 	data/iam_actions.tsv     \
+	scripts/normalize.sql    \
 	scripts/load_data.sh     \
-	data/schema.sql          \
 
 	scripts/load_data.sh
 
@@ -26,5 +26,5 @@ bin/scrape: go.mod go.sum cmd/scrape/main.go
 
 local-db:
 	wrangler --config ${PWD}/website/wrangler.toml \
-		d1 execute --file=${PWD}/data/iam_actions.sql --local \
-		iam_actions
+		d1 execute --local DB                        \
+		--file=${PWD}/data/iam_actions.sql

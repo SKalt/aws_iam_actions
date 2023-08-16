@@ -239,11 +239,11 @@ func main() {
 			"service",
 			"prefix",
 			"action",
-			"access level",
-			"table link",
-			"action docs link",
-			"condition keys",
-			"dependent actions",
+			"access_level",
+			"table_link",
+			"action_docs_link",
+			"condition_keys",
+			"dependent_actions",
 			// "description", // omitted to make absolutely sure this scraping falls under fair use
 		})
 		if err != nil {

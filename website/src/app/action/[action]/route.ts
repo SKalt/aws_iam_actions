@@ -1,7 +1,9 @@
 import { db } from "@/lib/binding";
 import { NextResponse } from "next/server";
 export const runtime = "edge";
-const pattern = /^(?<prefix>[a-z0-9-]{2,}):(?<name>[a-zA-Z0-9]{1,})$/;
+const pattern = /^(?<prefix>[a-z0-9-]{2,}):(?<name>[a-zA-Z0-9]{1,})( .*)$/;
+
+// TODO: deprecate or move to a docs_redirect path
 export const GET = async (
   _: Request,
   { params: { action } }: { params: { action: string } },
@@ -9,11 +11,10 @@ export const GET = async (
   if (!action) {
     return new Response("missing action", { status: 400 });
   }
-  let match = pattern.exec(action)?.groups;
-  if (!match) {
+  const { prefix, name } = pattern.exec(action)?.groups ?? {};
+  if (!prefix || !name) {
     return new Response(`invalid action: '${action}'`, { status: 400 });
   }
-  let { prefix, name } = match;
   let result = await db
     .prepare(
       "SELECT action_docs_link FROM actions WHERE prefix = ? and action = ? LIMIT 1",

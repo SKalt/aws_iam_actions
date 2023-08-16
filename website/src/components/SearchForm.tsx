@@ -49,7 +49,10 @@ export default function SearchForm(
   useEffect(
     () => {
       let init = new URL(window.location.href).searchParams.get("q") || "";
-      if (q !== init) setQ(init);
+      if (q !== init) {
+        console.error("Unexpectedly updating local search from URL params");
+        setQ(init);
+      }
     },
     [] /* <- try to fire the effect only once, on page load */,
   );
@@ -60,14 +63,11 @@ export default function SearchForm(
     <div className="container">
       <form
         className="flex container mx-auto"
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log("form/submitting:" + q);
-        }}
+        onSubmit={(e) => e.preventDefault()}
       >
         <input
           type="search"
-          pattern="[a-zA-Z0-9.() -]+"
+          pattern="[a-zA-Z0-9. _\[\]\-\(\)]+"
           className="flex-grow"
           placeholder="Filter by service name, IAM prefix, or action"
           value={q}

@@ -1,4 +1,4 @@
 [[d1_databases]]
-binding = "DB" # i.e. available in your Worker on env.DB
+binding = "DB"
 database_name = "iam_actions"
-database_id = "ccda9b12-8a7f-4f02-b8b0-53a4bfa8418f"
+database_id = "8cfe5da9-9820-463a-94a7-9896a648a094"

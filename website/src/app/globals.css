@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --accent-color: #aaa;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -47,4 +48,12 @@ a[href] {
 }
 a:visited {
   color: #c5b4c8; /* FIXME: revert to default colors somehow */
+}
+
+tr.action td:not(:first-child) {
+  text-align: center;
+}
+input::placeholder,
+input {
+  text-align: center;
 }

@@ -7,15 +7,12 @@ export const runtime = "edge";
 /*
 /api/v0/search[?q=prefix:action]][&limit=number]
 /api/v0/search[?q=general]][&limit=number]
--limit means no limit
+a negative limit means no limit
 
 */
-const actionPattern = /(?<prefix>[a-z0-9]*):(?<action>[a-zA-Z0-9])/;
+const actionPattern = /^(?<prefix>[a-z0-9]*):(?<action>[a-zA-Z0-9-]+)/;
 export async function GET(request: Request) {
-  // const contentType = request.headers.get("Content-type");
-  // if (contentType !== null && contentType !== "application/json") {
-  //   return new Response(`unsupported content-type: ${contentType}`, {status: 404})
-  // }
+  // TODO: be able to respond as text/csv or text/tsv
   let [{ q, limit }, errs] = parseParams(new URL(request.url).searchParams);
 
   if (errs.length > 0) return NextResponse.json(errs, { status: 400 });
@@ -26,12 +23,16 @@ export async function GET(request: Request) {
     let actionInfo = await db
       .prepare(
         `
-          SELECT prefix || ':' || action as name, 'action' as kind
+          SELECT
+            prefix || ':' || action as name
+            , 'action' as kind
+            , null AS link
           FROM actions
           WHERE prefix = ?1 AND lower(action) LIKE ?2 || '%'
+          LIMIT ?3
         `,
       )
-      .bind(prefix, action.toLowerCase())
+      .bind(prefix, action.toLowerCase(), limit)
       .all();
     return NextResponse.json(
       actionInfo.results as Array<{
@@ -47,42 +48,42 @@ export async function GET(request: Request) {
     const result = await db
       .prepare(
         `
-        SELECT name, kind
+        SELECT name, kind, link
         FROM (
           SELECT
-            distinct service as name
-            , prefix
+            name
             , 'service' as kind
+            , null as link
             , (
                 CASE
-                  WHEN lower(service) = ?1 THEN 100
-                  WHEN lower(service) LIKE ?1 || '%' THEN 50
+                  WHEN lower(name) = ?1 THEN 100
+                  WHEN lower(name) LIKE ?1 || '%' THEN 50
                   ELSE 1
                 END
               ) as score
-          FROM actions
-          WHERE lower(service) LIKE '%' || ?1 || '%'
+          FROM services
+          WHERE lower(name) LIKE '%' || ?1 || '%'
 
           UNION ALL
           SELECT
-            distinct prefix as name
-            , prefix
+            name
             , 'prefix' as kind
+            , null as link
             , (
                 CASE
-                  WHEN lower(prefix) = ?1 THEN 100
-                  WHEN lower(prefix) LIKE ?1 || '%' THEN 50
+                  WHEN lower(name) = ?1 THEN 100
+                  WHEN lower(name) LIKE ?1 || '%' THEN 50
                   ELSE 1
                 END
               ) as score
-          FROM actions
-          WHERE lower(prefix) LIKE '%' || ?1 || '%'
+          FROM prefixes
+          WHERE lower(name) LIKE '%' || ?1 || '%'
 
           UNION ALL
           SELECT
-            prefix || ':' || action as name
-            , prefix
+             prefix || ':' || action AS name --(select name from prefixes AS prefix where prefix.id = prefix_id ) || ':' || action as name
             , 'action' as kind
+            , action_docs_link as link
             , (
               CASE
                 WHEN lower(action) = ?1 THEN 100

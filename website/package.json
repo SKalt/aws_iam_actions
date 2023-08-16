@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "concurrently npm:dev:next npm:dev:proxy",
-    "dev:next": "next dev --turbo --port 3000",
+    "dev:next": "next dev --port 3000 --turbo",
     "dev:proxy": "cf-bindings-proxy",
-    "build": "next build",
+    "build": "next build --profile",
     "start": "next start",
     "lint": "next lint"
   },
