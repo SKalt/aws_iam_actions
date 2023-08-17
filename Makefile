@@ -37,4 +37,6 @@ db-deploy: data/iam_actions.sql
 
 
 site-deploy:
-	@echo "TODO"
+	cd website && \
+		./node_modules/.bin/next-on-pages && \
+		./node_modules/.bin/wrangler pages deploy ./.vercel/output/static
