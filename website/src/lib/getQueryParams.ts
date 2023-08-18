@@ -109,4 +109,4 @@ export const getQueryParams = (url: string) => {
   return getQuery(searchParams);
 };
 
-// TODO: offsets for pagination
+// TODO: parse offset query parameters for pagination

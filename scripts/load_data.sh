@@ -13,9 +13,6 @@ main() {
     # cat "$schema_path"
     echo ".mode tabs"
     echo ".import $tsv_path _actions"
-    ## the right way to ignore the tsv header is to pass `--skip 1` to `.import`
-    ## but that isn't working on my machien for some reason
-    # echo "DELETE FROM actions WHERE service = 'service';" # HACK: delete the header row
     cat "$this_dir/normalize.sql"
   } | sqlite3 "$db_path"
 }
