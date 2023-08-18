@@ -9,7 +9,12 @@ const getServerSideProps = async (searchParams: URLSearchParams) => {
   let [{ q, limit }, errs] = parseParams(searchParams);
   // FIXME: handle query-string errors
   const url = `${baseUrl()}/api/v0/search?q=${q}`;
-  const results = await fetch(url).then((r) => r.json());
+  const results = await fetch(url).then((r) =>
+    r.json().catch((e) => {
+      console.error(e);
+      return [];
+    }),
+  );
   return {
     q,
     limit,

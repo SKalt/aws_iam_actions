@@ -50,7 +50,7 @@ a:visited {
   color: #c5b4c8; /* FIXME: revert to default colors somehow */
 }
 
-tr.action td:not(:first-child) {
+tr.action td:nth-child(even) {
   text-align: center;
 }
 input::placeholder,

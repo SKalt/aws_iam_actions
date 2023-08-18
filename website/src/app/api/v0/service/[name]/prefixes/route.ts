@@ -2,7 +2,6 @@ import { db } from "@/lib/binding";
 import { NextResponse } from "next/server";
 
 export const runtime = "edge";
-// FIXME: use normalize query; ensure this endpoint is actually used
 
 const getService = async (name: string) => {
   return db
@@ -18,6 +17,7 @@ const getService = async (name: string) => {
     .then((r) => (r.results as { prefix: string }[]).map((r) => r.prefix));
 };
 
+// this endpoint is used by app/service/[service]/route.ts
 export async function GET(
   _: Request,
   { params: { name } }: { params: { name: string } },

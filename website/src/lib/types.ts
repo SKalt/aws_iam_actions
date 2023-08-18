@@ -49,7 +49,7 @@ export const accessTier = (accessLevel: AccessLevelName): number => {
       return AccessLevel.Unknown;
   }
 };
-const defaultAccessLevels = () => ({
+export const defaultAccessLevels = () => ({
   [AccessLevelName.Unknown]: true,
   [AccessLevelName.Read]: true,
   [AccessLevelName.List]: true,

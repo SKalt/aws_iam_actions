@@ -36,7 +36,6 @@ export const getAccessLvls = (params: UrlParams) => {
   const result = Object.entries(getAccessLevels(str))
     .filter(([_, v]) => v)
     .map(([k]) => accessTier(k as AccessLevelName));
-  console.log({ result });
   return [result, err] as [typeof result, string];
 };
 export const getLimit = (searchParams: UrlParams): [number, string] => {

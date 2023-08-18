@@ -123,22 +123,30 @@ function MultiSelect({
  */
 export default function SearchAdvanced({
   services,
+  initialActionQuery,
+  initialServices,
+  initialPrefixes,
   initialAccessLevels,
+  initialResults,
 }: {
   services: Record<string, string>;
+  initialActionQuery: string;
+  initialPrefixes: string[];
+  initialServices: string[];
   initialAccessLevels: Record<AccessLevelName, boolean>;
+  initialResults: Action[];
 }) {
   const router = useRouter();
-  const [actionQuery, setActionQuery] = useState("");
-  const [serviceQuery, setServiceQuery] = useState([] as string[]);
-  const [prefixQuery, setPrefixQuery] = useState([] as string[]);
+  const [actionQuery, setActionQuery] = useState(initialActionQuery ?? "");
+  const [serviceQuery, setServiceQuery] = useState(initialServices ?? []);
+  const [prefixQuery, setPrefixQuery] = useState(initialPrefixes ?? []);
   const [accessLevels, setAccess] = useState(
     initialAccessLevels ?? defaultLevels(),
   );
+  const [results, setResults] = useState(initialResults ?? []);
+  const [limit, setLimit] = useState(100);
   const _services = [...new Set(Object.keys(services))].sort(); // TODO: useMemo()
   const _prefixes = [...new Set(Object.values(services))].sort();
-  const [results, setResults] = useState([] as Action[]);
-  const [limit, setLimit] = useState(100);
   const submit = () => {
     // TODO: useCallback?
     let _access = "";
@@ -148,15 +156,18 @@ export default function SearchAdvanced({
     if (accessLevels[AccessLevelName.Write]) _access += "w";
     if (accessLevels[AccessLevelName.Tagging]) _access += "t";
     if (accessLevels[AccessLevelName.Permissions]) _access += "p";
-    let query = "";
-    query += "?prefixes=" + encodeURIComponent(prefixQuery.join(","));
-    query += "&services=" + encodeURIComponent(serviceQuery.join(","));
-    query += "&action=" + encodeURIComponent(actionQuery);
-    query += "&accessLevel=" + encodeURIComponent(_access);
-    let _url = "/advanced" + query;
-    console.log("setting route => " + _url);
-    router.replace(_url);
-    fetch("/api/v0/actions/advanced_search" + query)
+    let query = new URLSearchParams();
+    if (serviceQuery.length)
+      query.set("services", encodeURIComponent(serviceQuery.join(",")));
+    if (prefixQuery.length)
+      query.set("prefixes", encodeURIComponent(prefixQuery.join(",")));
+    if (actionQuery) query.set("action", encodeURIComponent(actionQuery));
+    if (_access) query.set("accessLevel", encodeURIComponent(_access));
+    let _query = query.toString();
+    _query = _query ? "?" + _query : "";
+    let _url = "/advanced" + _query;
+    router.push(_url);
+    fetch("/api/v0/actions/advanced_search" + _query)
       .then((r) => {
         if (r.ok) return r.json();
         else throw new Error("failed to fetch actions");
@@ -193,6 +204,7 @@ export default function SearchAdvanced({
           <label>
             Action name
             <input
+              className="container"
               value={actionQuery}
               onChange={(e) => setActionQuery(e.target.value)}
               type="text"
@@ -212,7 +224,7 @@ export default function SearchAdvanced({
                   onChange={(e) => {
                     setAccess({ ...accessLevels, [level]: e.target.checked });
                   }}
-                ></input>
+                />{" "}
                 {level || "Unknown"}
               </label>
             </li>

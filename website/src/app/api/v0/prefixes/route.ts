@@ -9,7 +9,6 @@ type PrefixResult = {
   service: string;
   prefix: string;
 };
-// FIXME: add filter for access_level
 const query = `
 SELECT distinct service, prefix
 FROM actions

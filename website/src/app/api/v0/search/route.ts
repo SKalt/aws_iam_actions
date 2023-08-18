@@ -1,4 +1,4 @@
-import { db, kv } from "@/lib/binding";
+import { db } from "@/lib/binding";
 import { parseParams } from "@/lib/getQueryParams";
 import { NextResponse } from "next/server";
 
@@ -12,15 +12,6 @@ a negative limit means no limit
 */
 const actionPattern = /^(?<prefix>[a-z0-9]*):(?<action>[a-zA-Z0-9-]+)/;
 export async function GET(request: Request) {
-  console.log({
-    runtime: process.env.NEXT_RUNTIME ?? "absent",
-    node_env: process.env.NODE_ENV ?? "absent",
-    CF_PAGES_URL: process.env["CF_PAGES_URL"] ?? "absent",
-    normal_env_vars: process.env.normal_env_var ?? "absent",
-    kv: kv ? await kv.get("test") : "kv missing",
-    db: db ? db.prepare("select 1").first() : "db absent",
-    DB: process.env["DB"] ?? "process.env.DB absent",
-  });
   // TODO: be able to respond as text/csv or text/tsv
   let [{ q, limit }, errs] = parseParams(new URL(request.url).searchParams);
 

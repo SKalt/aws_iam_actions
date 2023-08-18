@@ -25,6 +25,9 @@ export default function RootLayout({
           <Link className="m-1" href="/about">
             About
           </Link>
+          <Link className="m-1" href="/advanced">
+            Advanced search
+          </Link>
         </nav>
         {children}
       </body>

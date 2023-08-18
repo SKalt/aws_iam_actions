@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-between p-24">
@@ -5,16 +7,21 @@ export default function About() {
       <div className="flex-grow">
         <p>This website helps answer questions like</p>
         <ul className="list-disc ml-4">
-          {/* TODO: link to each of these */}
           <li>
-            What are all the write-level IAM actions that AWS EC2 exposes?
+            <Link href="/advanced?services=ec2&accessLevel=w">
+              What are all the write-level IAM actions that AWS EC2 exposes?
+            </Link>
           </li>
           <li>
-            What are all the IAM actions with &quot;VPC&quot; in their name?
+            <Link href="/advanced?action=vpc&limit=-1">
+              What are all the IAM actions with &quot;VPC&quot; in their name?
+            </Link>
           </li>
           <li>
-            AWS SSO disappeared; what happened to the <code>sso</code> IAM
-            actions?
+            <Link href="/?q=sso">
+              AWS SSO disappeared; what happened to the <code>sso</code> IAM
+              actions?
+            </Link>
           </li>
         </ul>
         <p>

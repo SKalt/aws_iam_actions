@@ -12,6 +12,10 @@ import { D1Result } from "@cloudflare/workers-types";
 import { NextResponse } from "next/server";
 export const runtime = "edge";
 
+// D1 doesn't support binding `string[]` query-parameters for `IN ?`.
+// However, D1 but does provide modern sqlite3 JSON functions.
+// This means we can use `IN (select value from json_each(?))` to mimic
+// `IN ? -- string[]`
 const query = `
 SELECT
   service.name AS service
@@ -46,7 +50,6 @@ const getActions = async (
   actionName: string,
   limit: number,
 ): Promise<D1Result<Action>> => {
-  console.log({ services, prefixes, accessLevels, actionName, limit });
   return db
     .prepare(query)
     .bind(
@@ -59,7 +62,7 @@ const getActions = async (
     .all();
 };
 
-const parseParams = (() => {
+export const parseParams = (() => {
   const getStrings = (key: string, pattern: RegExp) => {
     const getRaw = getQueryString(key, pattern);
     return (url: UrlParams): [string[], string] => {
