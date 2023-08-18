@@ -19,7 +19,7 @@ export const enum AccessLevel { // directly references level ids in db
   Permissions = 6,
   Write = 5,
   Tagging = 4,
-  List = 4,
+  List = 3,
   Read = 2,
   Unknown = 1,
 }

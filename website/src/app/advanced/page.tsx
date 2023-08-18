@@ -1,7 +1,7 @@
 import SearchAdvanced from "@/components/SearchAdvanced";
 import { baseUrl } from "@/lib/baseUrl";
+import { parseAdvancedSearchParams } from "@/lib/getQueryParams";
 import { AccessLevel, AccessLevelName, Action } from "@/lib/types";
-import { parseParams } from "../api/v0/actions/advanced_search/route";
 export const runtime = "edge";
 
 export default async function Page({
@@ -16,7 +16,7 @@ export default async function Page({
 }) {
   let _params = new URLSearchParams(searchParams);
   if (!_params.has("accessLevel")) _params.set("accessLevel", "urlwtp");
-  const [params, _errors] = parseParams(_params);
+  const [params, _errors] = parseAdvancedSearchParams(_params);
   const usingNonDefaultParams =
     params.actionName ||
     params.prefixes.length ||
