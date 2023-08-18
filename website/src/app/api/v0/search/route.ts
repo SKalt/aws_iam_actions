@@ -1,5 +1,5 @@
 import { db } from "@/lib/binding";
-import { parseParams } from "@/lib/getQueryParams";
+import { parseBasicSearchParams } from "@/lib/getQueryParams";
 import { NextResponse } from "next/server";
 
 export const runtime = "edge";
@@ -13,7 +13,9 @@ a negative limit means no limit
 const actionPattern = /^(?<prefix>[a-z0-9]*):(?<action>[a-zA-Z0-9-]+)/;
 export async function GET(request: Request) {
   // TODO: be able to respond as text/csv or text/tsv
-  let [{ q, limit }, errs] = parseParams(new URL(request.url).searchParams);
+  let [{ q, limit }, errs] = parseBasicSearchParams(
+    new URL(request.url).searchParams,
+  );
 
   if (errs.length > 0) return NextResponse.json(errs, { status: 400 });
   if (!q) return NextResponse.json([], { status: 200 });

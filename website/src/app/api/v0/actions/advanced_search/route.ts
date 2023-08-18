@@ -1,12 +1,5 @@
 import { db } from "@/lib/binding";
-import {
-  UrlParams,
-  getAccessLvls,
-  getActionQuery,
-  getLimit,
-  getQueryString,
-  multiParse,
-} from "@/lib/getQueryParams";
+import { parseAdvancedSearchParams } from "@/lib/getQueryParams";
 import { AccessLevel, Action } from "@/lib/types";
 import { D1Result } from "@cloudflare/workers-types";
 import { NextResponse } from "next/server";
@@ -62,44 +55,13 @@ const getActions = async (
     .all();
 };
 
-export const parseParams = (() => {
-  const getStrings = (key: string, pattern: RegExp) => {
-    const getRaw = getQueryString(key, pattern);
-    return (url: UrlParams): [string[], string] => {
-      let [str, err] = getRaw(url);
-      if (err) return [[], err] as [string[], string];
-      try {
-        str = decodeURIComponent(str);
-      } catch (e) {
-        err = `Error decoding ${key}: ${e}`;
-      }
-      return [
-        str
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean),
-        err,
-      ] as [string[], string];
-    };
-  };
-  const getServices = getStrings("services", /^[a-z0-9-.() ,]+$/);
-  const getPrefixes = getStrings("prefixes", /^[a-z0-9-,]+$/);
-  return multiParse({
-    services: getServices,
-    prefixes: getPrefixes,
-    actionName: getActionQuery,
-    accessLevels: getAccessLvls,
-    limit: getLimit,
-  });
-})();
-
 export async function GET(request: Request) {
   // const contentType = request.headers.get("Content-type");
   // if (contentType !== null && contentType !== "application/json") {
   //   return new Response(`unsupported content-type: ${contentType}`, {status: 404})
   // }
   let [{ services, prefixes, actionName, accessLevels, limit }, errs] =
-    parseParams(new URL(request.url).searchParams);
+    parseAdvancedSearchParams(new URL(request.url).searchParams);
   if (errs.length > 0) {
     return NextResponse.json(errs, { status: 400 });
   }

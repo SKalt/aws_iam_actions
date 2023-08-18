@@ -78,14 +78,13 @@ export const multiParse =
       },
       {} as Record<string, any>,
     );
-    // const keys = new Set([...params.keys()]);
-    // Object.keys(input).forEach((key) => keys.delete(key));
-    // if (keys.size > 0) {
-    //   errors.push(`Unknown parameters: ${Array.from(keys).join(", ")}`);
-    // }
+    // TODO: warn about unused search parameters
     return [result, errors] as [Mapped<Parsers>, string[]];
   };
-export const parseParams = multiParse({ q: getGeneralQuery, limit: getLimit });
+export const parseBasicSearchParams = multiParse({
+  q: getGeneralQuery,
+  limit: getLimit,
+});
 
 export const getQuery = (params: UrlParams) => {
   const [result, errors] = multiParse({
@@ -110,3 +109,33 @@ export const getQueryParams = (url: string) => {
 };
 
 // TODO: parse offset query parameters for pagination
+export const parseAdvancedSearchParams = (() => {
+  const getStrings = (key: string, pattern: RegExp) => {
+    const getRaw = getQueryString(key, pattern);
+    return (url: UrlParams): [string[], string] => {
+      let [str, err] = getRaw(url);
+      if (err) return [[], err] as [string[], string];
+      try {
+        str = decodeURIComponent(str);
+      } catch (e) {
+        err = `Error decoding ${key}: ${e}`;
+      }
+      return [
+        str
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+        err,
+      ] as [string[], string];
+    };
+  };
+  const getServices = getStrings("services", /^[a-z0-9-.() ,]+$/);
+  const getPrefixes = getStrings("prefixes", /^[a-z0-9-,]+$/);
+  return multiParse({
+    services: getServices,
+    prefixes: getPrefixes,
+    actionName: getActionQuery,
+    accessLevels: getAccessLvls,
+    limit: getLimit,
+  });
+})();
