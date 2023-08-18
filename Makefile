@@ -39,4 +39,4 @@ db-deploy: data/iam_actions.sql
 site-deploy:
 	cd website && \
 		./node_modules/.bin/next-on-pages && \
-		./node_modules/.bin/wrangler pages deploy ./.vercel/output/static
+		pnpx wrangler@3.4.0 pages deploy ./.vercel/output/static
