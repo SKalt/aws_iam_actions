@@ -1247,6 +1247,7 @@ Billing Conductor	billingconductor	DeletePricingPlan	Write		https://docs.aws.ama
 Billing Conductor	billingconductor	DeletePricingRule	Write		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DeletePricingRule.html		
 Billing Conductor	billingconductor	DisassociateAccounts	Write		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DisassociateAccounts.html		
 Billing Conductor	billingconductor	DisassociatePricingRules	Write		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DisassociatePricingRules.html		
+Billing Conductor	billingconductor	GetBillingGroupCostReport	Read		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_GetBillingGroupCostReport.html		
 Billing Conductor	billingconductor	ListAccountAssociations	List		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListAccountAssociations.html		
 Billing Conductor	billingconductor	ListBillingGroupCostReports	Read		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListBillingGroupCostReports.html		
 Billing Conductor	billingconductor	ListBillingGroups	Read		https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListBillingGroups.html		
@@ -2236,15 +2237,15 @@ CloudTrail	cloudtrail	UpdateEventDataStore	Write		https://docs.aws.amazon.com/aw
 CloudTrail	cloudtrail	UpdateServiceLinkedChannel [permission only]	Write		API_UpdateServiceLinkedChannel.html		
 CloudTrail	cloudtrail	UpdateTrail	Write		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html		iam:CreateServiceLinkedRole, iam:GetRole, organizations:ListAWSServiceAccessForOrganization
 CloudTrail Data	cloudtrail-data	PutAuditEvents	Write		https://docs.aws.amazon.com/awscloudtraildata/latest/APIReference/API_PutAuditEvents.html		
-CloudWatch	cloudwatch	BatchGetServiceLevelIndicatorReport	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_BatchGetServiceLevelIndicatorReport.html		
-CloudWatch	cloudwatch	BatchGetServiceLevelObjectiveBudgetReport	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_BatchGetServiceLevelObjectiveBudgetReport.html		
-CloudWatch	cloudwatch	CreateServiceLevelObjective	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateServiceLevelObjective.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+CloudWatch	cloudwatch	BatchGetServiceLevelIndicatorReport	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
+CloudWatch	cloudwatch	BatchGetServiceLevelObjectiveBudgetReport	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
+CloudWatch	cloudwatch	CreateServiceLevelObjective	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK	aws:RequestTag/${TagKey}, aws:TagKeys	
 CloudWatch	cloudwatch	DeleteAlarms	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html		
 CloudWatch	cloudwatch	DeleteAnomalyDetector	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAnomalyDetector.html		
 CloudWatch	cloudwatch	DeleteDashboards	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html		
 CloudWatch	cloudwatch	DeleteInsightRules	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteInsightRules.html		
 CloudWatch	cloudwatch	DeleteMetricStream	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteMetricStream.html		
-CloudWatch	cloudwatch	DeleteServiceLevelObjective	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteServiceLevelObjective.html		
+CloudWatch	cloudwatch	DeleteServiceLevelObjective	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch	cloudwatch	DescribeAlarmHistory	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html		
 CloudWatch	cloudwatch	DescribeAlarms	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html		
 CloudWatch	cloudwatch	DescribeAlarmsForMetric	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html		
@@ -2254,7 +2255,7 @@ CloudWatch	cloudwatch	DisableAlarmActions	Write		https://docs.aws.amazon.com/Ama
 CloudWatch	cloudwatch	DisableInsightRules	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableInsightRules.html		
 CloudWatch	cloudwatch	EnableAlarmActions	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html		
 CloudWatch	cloudwatch	EnableInsightRules	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableInsightRules.html		
-CloudWatch	cloudwatch	EnableTopologyDiscovery	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableTopologyDiscovery.html		
+CloudWatch	cloudwatch	EnableTopologyDiscovery	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch	cloudwatch	GenerateQuery	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-query-assist.html		
 CloudWatch	cloudwatch	GetDashboard	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html		
 CloudWatch	cloudwatch	GetInsightRuleReport	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html		
@@ -2262,18 +2263,18 @@ CloudWatch	cloudwatch	GetMetricData	Read		https://docs.aws.amazon.com/AmazonClou
 CloudWatch	cloudwatch	GetMetricStatistics	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html		
 CloudWatch	cloudwatch	GetMetricStream	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStream.html		
 CloudWatch	cloudwatch	GetMetricWidgetImage	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html		
-CloudWatch	cloudwatch	GetService	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetService.html		
+CloudWatch	cloudwatch	GetService	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch	cloudwatch	GetServiceData [permission only]	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html		
-CloudWatch	cloudwatch	GetServiceLevelObjective	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetServiceLevelObjective.html		
+CloudWatch	cloudwatch	GetServiceLevelObjective	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch	cloudwatch	GetTopologyDiscoveryStatus [permission only]	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html		
-CloudWatch	cloudwatch	GetTopologyMap	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetTopologyMap.html		
+CloudWatch	cloudwatch	GetTopologyMap	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch	cloudwatch	Link [permission only]	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions		
 CloudWatch	cloudwatch	ListDashboards	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html		
 CloudWatch	cloudwatch	ListManagedInsightRules	Read		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListManagedInsightRules.html	aws:RequestTag/${TagKey}, aws:TagKeys, cloudwatch:requestManagedResourceARNs	
 CloudWatch	cloudwatch	ListMetricStreams	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetricStreams.html		
 CloudWatch	cloudwatch	ListMetrics	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html		
-CloudWatch	cloudwatch	ListServiceLevelObjectives	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html		
-CloudWatch	cloudwatch	ListServices	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServices.html		
+CloudWatch	cloudwatch	ListServiceLevelObjectives	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
+CloudWatch	cloudwatch	ListServices	List		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch	cloudwatch	ListTagsForResource			https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListTagsForResource.html		
 CloudWatch	cloudwatch	PutAnomalyDetector	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAnomalyDetector.html		
 CloudWatch	cloudwatch	PutCompositeAlarm	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html	aws:RequestTag/${TagKey}, aws:TagKeys, cloudwatch:AlarmActions	
@@ -2288,7 +2289,7 @@ CloudWatch	cloudwatch	StartMetricStreams	Write		https://docs.aws.amazon.com/Amaz
 CloudWatch	cloudwatch	StopMetricStreams	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StopMetricStreams.html		
 CloudWatch	cloudwatch	TagResource			https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 CloudWatch	cloudwatch	UntagResource			https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html	aws:TagKeys	
-CloudWatch	cloudwatch	UpdateServiceLevelObjective	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateServiceLevelObjective.html		
+CloudWatch	cloudwatch	UpdateServiceLevelObjective	Write		https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK		
 CloudWatch Application Insights	applicationinsights	AddWorkload	Write		https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_AddWorkload.html		
 CloudWatch Application Insights	applicationinsights	CreateApplication	Write		https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateApplication.html		
 CloudWatch Application Insights	applicationinsights	CreateComponent	Write		https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateComponent.html		
@@ -3843,7 +3844,7 @@ Data Exchange	dataexchange	PublishDataSet [permission only]	Write		https://docs.
 Data Exchange	dataexchange	RevokeRevision	Write		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_RevokeRevision.html		
 Data Exchange	dataexchange	SendApiAsset	Write		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_SendApiAsset.html		
 Data Exchange	dataexchange	SendDataSetNotification	Write		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_SendDataSetNotification.html		
-Data Exchange	dataexchange	StartJob	Write		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_StartJob.html		dataexchange:CreateAsset
+Data Exchange	dataexchange	StartJob	Write		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_StartJob.html		dataexchange:CreateAsset, dataexchange:DeleteDataSet, dataexchange:GetAsset, dataexchange:GetDataSet, dataexchange:GetRevision, dataexchange:PublishDataSet, redshift:AuthorizeDataShare
 Data Exchange	dataexchange	TagResource	Tagging		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Data Exchange	dataexchange	UntagResource	Tagging		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UntagResource.html	aws:TagKeys	
 Data Exchange	dataexchange	UpdateAsset	Write		https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateAsset.html		
@@ -5403,11 +5404,12 @@ EC2 Image Builder	imagebuilder	CancelLifecycleExecution	Write		https://docs.aws.
 EC2 Image Builder	imagebuilder	CreateComponent	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, imagebuilder:TagResource, kms:Encrypt, kms:GenerateDataKey, kms:GenerateDataKeyWithoutPlaintext
 EC2 Image Builder	imagebuilder	CreateContainerRecipe	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateContainerRecipe.html	aws:RequestTag/${TagKey}, aws:TagKeys	ecr:DescribeImages, ecr:DescribeRepositories, iam:CreateServiceLinkedRole, imagebuilder:GetComponent, imagebuilder:GetImage, imagebuilder:TagResource, kms:Encrypt, kms:GenerateDataKey, kms:GenerateDataKeyWithoutPlaintext
 EC2 Image Builder	imagebuilder	CreateDistributionConfiguration	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, imagebuilder:TagResource
-EC2 Image Builder	imagebuilder	CreateImage	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, imagebuilder:GetContainerRecipe, imagebuilder:GetDistributionConfiguration, imagebuilder:GetImageRecipe, imagebuilder:GetInfrastructureConfiguration, imagebuilder:TagResource
-EC2 Image Builder	imagebuilder	CreateImagePipeline	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, imagebuilder:GetContainerRecipe, imagebuilder:GetImageRecipe, imagebuilder:TagResource
+EC2 Image Builder	imagebuilder	CreateImage	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, iam:PassRole, imagebuilder:GetContainerRecipe, imagebuilder:GetDistributionConfiguration, imagebuilder:GetImageRecipe, imagebuilder:GetInfrastructureConfiguration, imagebuilder:GetWorkflow, imagebuilder:TagResource
+EC2 Image Builder	imagebuilder	CreateImagePipeline	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, iam:PassRole, imagebuilder:GetContainerRecipe, imagebuilder:GetDistributionConfiguration, imagebuilder:GetImageRecipe, imagebuilder:GetInfrastructureConfiguration, imagebuilder:GetWorkflow, imagebuilder:TagResource
 EC2 Image Builder	imagebuilder	CreateImageRecipe	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html	aws:RequestTag/${TagKey}, aws:TagKeys	ec2:DescribeImages, iam:CreateServiceLinkedRole, imagebuilder:GetComponent, imagebuilder:GetImage, imagebuilder:TagResource
 EC2 Image Builder	imagebuilder	CreateInfrastructureConfiguration	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html	aws:RequestTag/${TagKey}, aws:TagKeys, imagebuilder:CreatedResourceTagKeys, imagebuilder:CreatedResourceTag/<key>, imagebuilder:Ec2MetadataHttpTokens, imagebuilder:StatusTopicArn	iam:CreateServiceLinkedRole, iam:PassRole, imagebuilder:TagResource, sns:Publish
 EC2 Image Builder	imagebuilder	CreateLifecyclePolicy	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateLifecyclePolicy.html	aws:RequestTag/${TagKey}, aws:TagKeys, imagebuilder:LifecyclePolicyResourceType	iam:PassRole, imagebuilder:TagResource
+EC2 Image Builder	imagebuilder	CreateWorkflow	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateWorkflow.html	aws:RequestTag/${TagKey}, aws:TagKeys	imagebuilder:TagResource, kms:Encrypt, kms:GenerateDataKey, kms:GenerateDataKeyWithoutPlaintext, s3:GetObject, s3:ListBucket
 EC2 Image Builder	imagebuilder	DeleteComponent	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteComponent.html		
 EC2 Image Builder	imagebuilder	DeleteContainerRecipe	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteContainerRecipe.html		
 EC2 Image Builder	imagebuilder	DeleteDistributionConfiguration	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteDistributionConfiguration.html		
@@ -5416,6 +5418,7 @@ EC2 Image Builder	imagebuilder	DeleteImagePipeline	Write		https://docs.aws.amazo
 EC2 Image Builder	imagebuilder	DeleteImageRecipe	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImageRecipe.html		
 EC2 Image Builder	imagebuilder	DeleteInfrastructureConfiguration	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteInfrastructureConfiguration.html		
 EC2 Image Builder	imagebuilder	DeleteLifecyclePolicy	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteLifecyclePolicy.html		
+EC2 Image Builder	imagebuilder	DeleteWorkflow	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteWorkflow.html		
 EC2 Image Builder	imagebuilder	GetComponent	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponent.html		kms:Decrypt
 EC2 Image Builder	imagebuilder	GetComponentPolicy	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponentPolicy.html		
 EC2 Image Builder	imagebuilder	GetContainerRecipe	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetContainerRecipe.html		
@@ -5429,6 +5432,7 @@ EC2 Image Builder	imagebuilder	GetImageRecipePolicy	Read		https://docs.aws.amazo
 EC2 Image Builder	imagebuilder	GetInfrastructureConfiguration	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetInfrastructureConfiguration.html		
 EC2 Image Builder	imagebuilder	GetLifecycleExecution	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetLifecycleExecution.html		
 EC2 Image Builder	imagebuilder	GetLifecyclePolicy	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetLifecyclePolicy.html		
+EC2 Image Builder	imagebuilder	GetWorkflow	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflow.html		kms:Decrypt
 EC2 Image Builder	imagebuilder	GetWorkflowExecution	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflowExecution.html		
 EC2 Image Builder	imagebuilder	GetWorkflowStepExecution	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflowStepExecution.html		
 EC2 Image Builder	imagebuilder	ImportComponent	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportComponent.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, imagebuilder:TagResource, kms:Encrypt, kms:GenerateDataKey, kms:GenerateDataKeyWithoutPlaintext
@@ -5450,18 +5454,22 @@ EC2 Image Builder	imagebuilder	ListLifecycleExecutionResources	List		https://doc
 EC2 Image Builder	imagebuilder	ListLifecycleExecutions	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecycleExecutions.html		
 EC2 Image Builder	imagebuilder	ListLifecyclePolicies	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecyclePolicies.html		
 EC2 Image Builder	imagebuilder	ListTagsForResource	Read		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListTagsForResource.html	aws:ResourceTag/${TagKey}	
+EC2 Image Builder	imagebuilder	ListWaitingWorkflowSteps	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWaitingWorkflowSteps.html		
+EC2 Image Builder	imagebuilder	ListWorkflowBuildVersions	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowBuildVersions.html		
 EC2 Image Builder	imagebuilder	ListWorkflowExecutions	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowExecutions.html		
 EC2 Image Builder	imagebuilder	ListWorkflowStepExecutions	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowStepExecutions.html		
+EC2 Image Builder	imagebuilder	ListWorkflows	List		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflows.html		
 EC2 Image Builder	imagebuilder	PutComponentPolicy	Permissions management		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutComponentPolicy.html		
 EC2 Image Builder	imagebuilder	PutContainerRecipePolicy	Permissions management		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutContainerRecipePolicy.html		
 EC2 Image Builder	imagebuilder	PutImagePolicy	Permissions management		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImagePolicy.html		
 EC2 Image Builder	imagebuilder	PutImageRecipePolicy	Permissions management		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImageRecipePolicy.html		
+EC2 Image Builder	imagebuilder	SendWorkflowStepAction	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_SendWorkflowStepAction.html		
 EC2 Image Builder	imagebuilder	StartImagePipelineExecution	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html		iam:CreateServiceLinkedRole, imagebuilder:GetImagePipeline
 EC2 Image Builder	imagebuilder	StartResourceStateUpdate	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartResourceStateUpdate.html		
 EC2 Image Builder	imagebuilder	TagResource	Tagging		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}	
 EC2 Image Builder	imagebuilder	UntagResource	Tagging		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UntagResource.html	aws:ResourceTag/${TagKey}, aws:TagKeys	
 EC2 Image Builder	imagebuilder	UpdateDistributionConfiguration	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateDistributionConfiguration.html		
-EC2 Image Builder	imagebuilder	UpdateImagePipeline	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateImagePipeline.html		
+EC2 Image Builder	imagebuilder	UpdateImagePipeline	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateImagePipeline.html		iam:CreateServiceLinkedRole, iam:PassRole, imagebuilder:GetContainerRecipe, imagebuilder:GetDistributionConfiguration, imagebuilder:GetImageRecipe, imagebuilder:GetInfrastructureConfiguration, imagebuilder:GetWorkflow
 EC2 Image Builder	imagebuilder	UpdateInfrastructureConfiguration	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html	aws:ResourceTag/${TagKey}, imagebuilder:CreatedResourceTagKeys, imagebuilder:CreatedResourceTag/<key>, imagebuilder:Ec2MetadataHttpTokens, imagebuilder:StatusTopicArn	iam:PassRole, sns:Publish
 EC2 Image Builder	imagebuilder	UpdateLifecyclePolicy	Write		https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateLifecyclePolicy.html	imagebuilder:LifecyclePolicyResourceType	iam:PassRole
 EC2 Instance Connect	ec2-instance-connect	OpenTunnel	Write		https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2-instance-connect:remotePort, ec2-instance-connect:privateIpAddress, ec2-instance-connect:MaxTunnelDuration	
@@ -7715,7 +7723,7 @@ IAM Identity Center (successor to AWS Single Sign-On)	sso	DetachManagedPolicyFro
 IAM Identity Center (successor to AWS Single Sign-On)	sso	DisassociateDirectory	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		ds:UnauthorizeApplication
 IAM Identity Center (successor to AWS Single Sign-On)	sso	DisassociateProfile	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On)	sso	GetApplicationAccessScope	Read		https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAccessScope.html	sso:ApplicationAccount	
-IAM Identity Center (successor to AWS Single Sign-On)	sso	GetApplicationAssignmentConfiguration [permission only]	Read		https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAssignmentConfiguration.html	sso:ApplicationAccount	
+IAM Identity Center (successor to AWS Single Sign-On)	sso	GetApplicationAssignmentConfiguration	Read		https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAssignmentConfiguration.html	sso:ApplicationAccount	
 IAM Identity Center (successor to AWS Single Sign-On)	sso	GetApplicationAuthenticationMethod	Read		https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAuthenticationMethod.html	sso:ApplicationAccount	
 IAM Identity Center (successor to AWS Single Sign-On)	sso	GetApplicationGrant	Read		https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationGrant.html	sso:ApplicationAccount	
 IAM Identity Center (successor to AWS Single Sign-On)	sso	GetApplicationInstance	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
@@ -9651,6 +9659,7 @@ Lex V2	lex	DescribeBotAlias	Read		https://docs.aws.amazon.com/lexv2/latest/APIRe
 Lex V2	lex	DescribeBotChannel [permission only]	Read		https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html		
 Lex V2	lex	DescribeBotLocale	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotLocale.html		
 Lex V2	lex	DescribeBotRecommendation	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotRecommendation.html		
+Lex V2	lex	DescribeBotResourceGeneration	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotResourceGeneration.html		
 Lex V2	lex	DescribeBotVersion	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotVersion.html		
 Lex V2	lex	DescribeCustomVocabulary [permission only]	Read		https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html		
 Lex V2	lex	DescribeCustomVocabularyMetadata	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeCustomVocabularyMetadata.html		
@@ -9664,6 +9673,7 @@ Lex V2	lex	DescribeTestExecution	Read		https://docs.aws.amazon.com/lexv2/latest/
 Lex V2	lex	DescribeTestSet	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSet.html		
 Lex V2	lex	DescribeTestSetDiscrepancyReport	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSetDiscrepancyReport.html		
 Lex V2	lex	DescribeTestSetGeneration	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSetGeneration.html		
+Lex V2	lex	GenerateBotElement	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GenerateBotElement.html		
 Lex V2	lex	GetSession	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_GetSession.html		
 Lex V2	lex	GetTestExecutionArtifactsUrl	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GetTestExecutionArtifactsUrl.html		
 Lex V2	lex	ListAggregatedUtterances	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html		
@@ -9671,6 +9681,7 @@ Lex V2	lex	ListBotAliases	List		https://docs.aws.amazon.com/lexv2/latest/APIRefe
 Lex V2	lex	ListBotChannels [permission only]	List		https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html		
 Lex V2	lex	ListBotLocales	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotLocales.html		
 Lex V2	lex	ListBotRecommendations	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotRecommendations.html		
+Lex V2	lex	ListBotResourceGenerations	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotResourceGenerations.html		
 Lex V2	lex	ListBotVersions	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersions.html		
 Lex V2	lex	ListBots	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html		
 Lex V2	lex	ListBuiltInIntents	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInIntents.html		
@@ -9697,13 +9708,14 @@ Lex V2	lex	RecognizeText	Write		https://docs.aws.amazon.com/lexv2/latest/APIRefe
 Lex V2	lex	RecognizeUtterance	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html		
 Lex V2	lex	SearchAssociatedTranscripts	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_SearchAssociatedTranscripts.html		
 Lex V2	lex	StartBotRecommendation	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotRecommendation.html		
+Lex V2	lex	StartBotResourceGeneration	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotResourceGeneration.html		
 Lex V2	lex	StartConversation	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_StartConversation.html		
 Lex V2	lex	StartImport	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html	aws:TagKeys, aws:RequestTag/${TagKey}	lex:CreateBot, lex:CreateBotLocale, lex:CreateCustomVocabulary, lex:CreateIntent, lex:CreateSlot, lex:CreateSlotType, lex:CreateTestSet, lex:DeleteBotLocale, lex:DeleteCustomVocabulary, lex:DeleteIntent, lex:DeleteSlot, lex:DeleteSlotType, lex:UpdateBot, lex:UpdateBotLocale, lex:UpdateCustomVocabulary, lex:UpdateIntent, lex:UpdateSlot, lex:UpdateSlotType, lex:UpdateTestSet
 Lex V2	lex	StartTestExecution	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartTestExecution.html		
 Lex V2	lex	StartTestSetGeneration	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartTestSetGeneration.html		
 Lex V2	lex	StopBotRecommendation	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StopBotRecommendation.html		
 Lex V2	lex	TagResource	Tagging		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
-Lex V2	lex	UntagResource	Tagging		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UntagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Lex V2	lex	UntagResource	Tagging		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UntagResource.html	aws:TagKeys	
 Lex V2	lex	UpdateBot	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBot.html		
 Lex V2	lex	UpdateBotAlias	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html		
 Lex V2	lex	UpdateBotLocale	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotLocale.html		
@@ -10735,18 +10747,24 @@ Migration Hub Strategy Recommendations	migrationhub-strategy	UpdateServerConfig	
 Mobile Analytics	mobileanalytics	GetFinancialReports	Read				
 Mobile Analytics	mobileanalytics	GetReports	Read				
 Mobile Analytics	mobileanalytics	PutEvents	Write		https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html		
-Monitron	monitron	AssociateProjectAdminUser [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html		sso-directory:DescribeUsers, sso:AssociateProfile, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfileAssociations, sso:ListProfiles
-Monitron	monitron	CreateProject [permission only]	Write		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-creating-project.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, kms:CreateGrant, sso:CreateManagedApplicationInstance, sso:DeleteManagedApplicationInstance
-Monitron	monitron	DeleteProject [permission only]	Write		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-delete-project.html		sso:DeleteManagedApplicationInstance
-Monitron	monitron	DisassociateProjectAdminUser [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mu-remove-project-admin.html		sso-directory:DescribeUsers, sso:DisassociateProfile, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfiles
-Monitron	monitron	GetProject [permission only]	Read		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html		
-Monitron	monitron	GetProjectAdminUser [permission only]	Read		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html		sso-directory:DescribeUsers, sso:GetManagedApplicationInstance, sso:ListProfileAssociations
-Monitron	monitron	ListProjectAdminUsers [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html		sso-directory:DescribeUsers, sso:GetManagedApplicationInstance
-Monitron	monitron	ListProjects [permission only]	List		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html		
-Monitron	monitron	ListTagsForResource [permission only]	Read		https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html	aws:TagKeys, aws:RequestTag/${TagKey}	
-Monitron	monitron	TagResource [permission only]	Tagging		https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html	aws:TagKeys, aws:RequestTag/${TagKey}	
-Monitron	monitron	UntagResource [permission only]	Tagging		https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html#modify-tag-1	aws:TagKeys	
-Monitron	monitron	UpdateProject [permission only]	Write		https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-updating-project.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Monitron	monitron	AssociateProjectAdminUser [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html		sso-directory:DescribeUsers, sso:AssociateProfile, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfileAssociations, sso:ListProfiles
+Monitron	monitron	CreateProject [permission only]	Write		https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-creating-project.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateServiceLinkedRole, kms:CreateGrant, sso:CreateManagedApplicationInstance, sso:DeleteManagedApplicationInstance, sso:DescribeRegisteredRegions
+Monitron	monitron	CreateProjectUserAssociation [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html		sso-directory:DescribeUsers, sso:AssociateProfile, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfileAssociations, sso:ListProfiles
+Monitron	monitron	CreateUserAccessRoleAssociation [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html		sso-directory:DescribeUsers, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfileAssociations, sso:ListProfiles
+Monitron	monitron	DeleteProject [permission only]	Write		https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-delete-project.html		sso:DeleteManagedApplicationInstance
+Monitron	monitron	DeleteProjectUserAssociation [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html		sso-directory:DescribeUsers, sso:DisassociateProfile, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfiles
+Monitron	monitron	DeleteUserAccessRoleAssociation [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html		
+Monitron	monitron	DisassociateProjectAdminUser [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/mu-remove-project-admin.html		sso-directory:DescribeUsers, sso:DisassociateProfile, sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfiles
+Monitron	monitron	GetProject [permission only]	Read		https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html		
+Monitron	monitron	GetProjectAdminUser [permission only]	Read		https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html		sso-directory:DescribeUsers, sso:GetManagedApplicationInstance, sso:ListProfileAssociations
+Monitron	monitron	ListProjectAdminUsers [permission only]	Permissions management		https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html		sso-directory:DescribeUsers, sso:GetManagedApplicationInstance
+Monitron	monitron	ListProjectUserAssociations [permission only]	List		https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html		sso:GetManagedApplicationInstance, sso:GetProfile, sso:ListDirectoryAssociations, sso:ListProfileAssociations, sso:ListProfiles
+Monitron	monitron	ListProjects [permission only]	List		https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html		
+Monitron	monitron	ListTagsForResource [permission only]	Read		https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html		
+Monitron	monitron	ListUserAccessRoleAssociations [permission only]	List		https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html		
+Monitron	monitron	TagResource [permission only]	Tagging		https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Monitron	monitron	UntagResource [permission only]	Tagging		https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html#modify-tag-1	aws:TagKeys	
+Monitron	monitron	UpdateProject [permission only]	Write		https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-updating-project.html		
 Neptune	neptune-db	CancelLoaderJob	Write		https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelloaderjob		
 Neptune	neptune-db	CancelMLDataProcessingJob	Write		https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelmldataprocessingjob		
 Neptune	neptune-db	CancelMLModelTrainingJob	Write		https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelmlmodeltrainingjob		
