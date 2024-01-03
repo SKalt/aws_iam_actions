@@ -30,6 +30,6 @@
     "@cloudflare/workers-types": "^4.20230814.0",
     "concurrently": "^8.2.0",
     "prettier": "^3.0.2",
-    "wrangler": "^3.5.1"
+    "wrangler": "^3.19.0"
   }
 }
