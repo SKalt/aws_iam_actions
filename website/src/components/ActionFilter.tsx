@@ -78,6 +78,7 @@ export default function ActionFilter({
       ),
     );
   }, [filter, actions]);
+  // FIXME: table overflows on small or medium screens
   return (
     <div className="flex flex-col container">
       <input

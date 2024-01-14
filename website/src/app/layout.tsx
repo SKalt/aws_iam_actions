@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* FIXME: prevent header from conflicting with other sticky headers */}
         <nav className="justify-between p-1 sticky top-0">
           <Link className="m-1" href="/">
             Home

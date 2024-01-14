@@ -57,9 +57,10 @@ input[type="search"] {
 }
 a[href] {
   text-decoration: underline;
+  color: theme(colors.blue.500);
 }
 a:visited {
-  /* color: #c5b4c8; FIXME: revert to default colors somehow */
+  color: theme(colors.purple.500)
 }
 
 tr.action td:nth-child(even) {
