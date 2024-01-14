@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 :root {
+  --aws-orange: 255, 153, 0;
   --accent-color: #aaa;
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* --background-start-rgb: var(--aws-orange);
+  --background-end-rgb: 255, 255, 255; */
+}
+.highlight {
+  background-color: rgb(var(--aws-orange));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,12 +46,20 @@ input[type="search"] {
 .info {
   color: #aaa;
 }
+@media (max-width: 768px) {
+  .bg-info {
+    text-align: right;
+  }
+}
+.result .bg-info,
+.info {
+  color: #aaa;
+}
 a[href] {
-  /* color: #000; */
   text-decoration: underline;
 }
 a:visited {
-  color: #c5b4c8; /* FIXME: revert to default colors somehow */
+  /* color: #c5b4c8; FIXME: revert to default colors somehow */
 }
 
 tr.action td:nth-child(even) {
