@@ -20,17 +20,17 @@ export const getQueryString =
   (key: string, pattern: RegExp) =>
   (urlParams: UrlParams): [string, string] => {
     const search = (urlParams.get(key) || "").toLowerCase();
-    let err = "";
-    if (search && !pattern.test(search)) {
-      err = `Invalid search: "${search}". Must match ${pattern.toString()}`;
-    }
+    let err =
+      search && !pattern.test(search)
+        ? `Invalid search: "${search}". Must match ${pattern.toString()}`
+        : "";
     return [search, err];
   };
 
 export const getGeneralQuery = getQueryString("q", /^[a-zA-Z0-9-. ():\[\]]+$/);
 export const getServiceQuery = getQueryString("service", /^[a-z0-9-.() ]+$/);
 export const getPrefixQuery = getQueryString("prefix", /^[a-z0-9-]+$/);
-export const getActionQuery = getQueryString("action", /^[a-z0-9]+$/);
+export const getActionQuery = getQueryString("action", /^[a-z0-9*]+$/);
 export const getAccessLvls = (params: UrlParams) => {
   const [str, err] = getQueryString("accessLevel", /^u?r?l?w?t?p?$/)(params);
   const result = Object.entries(getAccessLevels(str))
@@ -88,7 +88,6 @@ export const parseBasicSearchParams = multiParse({
 
 export const getQuery = (params: UrlParams) => {
   const [result, errors] = multiParse({
-    // TODO: hoist this out of getQueryParams
     q: getGeneralQuery,
     service: getServiceQuery,
     prefix: getPrefixQuery,

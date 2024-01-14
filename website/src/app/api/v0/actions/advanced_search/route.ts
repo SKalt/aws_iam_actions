@@ -24,7 +24,6 @@ INNER JOIN services AS service ON service.id = _actions.service_id
 INNER JOIN prefixes AS prefix ON prefix.id = _actions.prefix_id
 FULL OUTER JOIN access_levels AS access_level ON access_level.id = _actions.access_level_id
 WHERE
-
   (
     CASE WHEN (json_type(?1) = 'array' OR json_type(?2) = 'array') THEN
       lower(service.name) IN (select value from json_each(?1))
@@ -33,7 +32,7 @@ WHERE
     END
   )
   AND (access_level.id IN (select value from json_each(?3)))
-  AND (_actions.action LIKE '%' || ?4 || '%')
+  AND (_actions.action LIKE ?4)
 LIMIT ?5
 `;
 const getActions = async (
@@ -49,17 +48,17 @@ const getActions = async (
       JSON.stringify(services.length ? services : null),
       JSON.stringify(prefixes.length ? services : null),
       JSON.stringify(accessLevels),
-      actionName,
+      actionName.replaceAll(/\*+/g, "%"), // safe since param is string-escaped
       limit,
     )
     .all();
 };
 
 export async function GET(request: Request) {
-  // const contentType = request.headers.get("Content-type");
-  // if (contentType !== null && contentType !== "application/json") {
-  //   return new Response(`unsupported content-type: ${contentType}`, {status: 404})
-  // }
+  const contentType = request.headers.get("content-type");
+  if (contentType !== null && contentType !== "application/json") {
+    return new Response(`unsupported content-type: ${contentType}`, {status: 404})
+  }
   let [{ services, prefixes, actionName, accessLevels, limit }, errs] =
     parseAdvancedSearchParams(new URL(request.url).searchParams);
   if (errs.length > 0) {

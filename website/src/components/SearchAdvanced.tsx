@@ -208,8 +208,8 @@ export default function SearchAdvanced({
               value={actionQuery}
               onChange={(e) => setActionQuery(e.target.value)}
               type="text"
-              pattern="[a-zA-Z0-9]+"
-              placeholder="Filter by action name"
+              pattern="[a-zA-Z0-9*]+"
+              placeholder="Filter by a action name with wildcards (*)"
             />
           </label>
         </fieldset>
