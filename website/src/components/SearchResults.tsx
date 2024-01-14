@@ -1,7 +1,7 @@
 import type { SearchResult as Result } from "@/lib/types";
 import Link from "next/link";
 
-function HighlightedName({ name, q }: { name: string; q: string }) {
+function HighlightedName({ name, q, kind }: { name: string; q: string, kind: string }) {
   let query = q.trim();
   let x = name.toLowerCase().split(query.toLowerCase());
   let segments = [];
@@ -14,7 +14,7 @@ function HighlightedName({ name, q }: { name: string; q: string }) {
   }
   segments.push(name.substring(len));
   return (
-    <span>
+    <span className={kind === "service" ? "" : "font-mono"}>
       {segments.map((segment, i) =>
         i % 2 === 0 ? <span key={i}>{segment}</span> : <b key={i}>{segment}</b>,
       )}
@@ -29,7 +29,7 @@ function SearchResult({ result, q }: { result: Result; q: string }) {
   return (
     <li className="result container grid grid-cols-2">
       <Link href={link} target={target}>
-        <HighlightedName name={result.name} q={q} />
+        <HighlightedName name={result.name} q={q} kind={result.kind} />
       </Link>
       <span className="bg-info">{result.kind}</span>
     </li>
