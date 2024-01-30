@@ -54,9 +54,6 @@ a[href] {
 a:visited {
   color: theme(colors.purple.500)
 }
-
-/* actionFilter? */
-tr.action td:nth-child(even) {
-  text-align: center;
+.accent {
+  color: var(--accent-color)
 }
-

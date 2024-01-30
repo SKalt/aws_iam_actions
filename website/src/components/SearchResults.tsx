@@ -4,12 +4,12 @@ import styles from "./SearchResults.module.css"
 
 function HighlightedName({ name, q }: { name: string; q: string }) {
   let query = q.trim();
-  let x = name.toLowerCase().split(query.toLowerCase()); // TODO: rename var
+  let nonQuerySegments = name.toLowerCase().split(query.toLowerCase());
   let segments = [];
   let len = 0;
-  for (let i = 0; i < x.length - 1; i++) {
-    segments.push(name.substring(len, len + x[i].length));
-    len += x[i].length;
+  for (let i = 0; i < nonQuerySegments.length - 1; i++) {
+    segments.push(name.substring(len, len + nonQuerySegments[i].length));
+    len += nonQuerySegments[i].length;
     segments.push(name.substring(len, len + query.length));
     len += query.length;
   }

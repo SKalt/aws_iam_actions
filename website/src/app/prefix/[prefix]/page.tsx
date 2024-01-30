@@ -36,8 +36,8 @@ export default async function Page({
   const anyDependentActions = actions.some((a) => a.dependent_actions);
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
-      <h1>{prefix}</h1>
-      <h2 className="info">
+      <h1 className="font-mono">{prefix}</h1>
+      <h2 className="accent">
         (Service{services.length > 1 ? "s" : ""}: {services.join(", ")})
       </h2>
       <ActionFilter

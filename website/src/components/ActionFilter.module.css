@@ -1,0 +1,3 @@
+tr.action td:nth-child(2) /* access level */ {
+  text-align: center;
+}

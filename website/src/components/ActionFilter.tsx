@@ -1,6 +1,7 @@
 "use client";
 import { Action } from "@/lib/types";
 import { useEffect, useState } from "react";
+import styles from "./ActionFilter.module.css";
 
 function RelatedList({ parent, items = "" }: { parent: string; items: string }) {
   const _items = [
@@ -28,7 +29,7 @@ function ActionFilterItem({
   showDependent?: boolean;
 }) {
   return (
-    <tr className="action">
+    <tr className={styles["action"]}>
       <td>
         {/* TODO: make this column a sticky header */}
         <a href={action.action_docs_link} target="_blank">
@@ -39,11 +40,11 @@ function ActionFilterItem({
       </td>
       {/* TODO: also make access_level sticky */}
       <td title="access level">{action.access_level}</td>
-      <td title="condition keys">
+      <td title="condition keys" className="font-mono">
         <RelatedList parent={action.action} items={action.condition_keys} />
       </td>
       {showDependent ? (
-        <td title="dependent actions">
+        <td title="dependent actions" className="font-mono">
           <RelatedList
             parent={action.action}
             items={action.dependent_actions}
