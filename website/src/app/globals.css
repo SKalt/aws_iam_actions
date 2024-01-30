@@ -35,10 +35,11 @@ h1 {
   font-size: 2.5em;
 }
 input[type="text"],
-input[type="search"] {
+input[type="search"],
+input[type="number"] {
   padding: 0.25em;
-  background-color: #fff;
-  border: 1px solid black;
+  background-color: rgb(var(--background-start-rgb));
+  border: 1px solid rgb(var(--foreground-rgb));
   border-radius: 0.25em;
 }
 input::placeholder,

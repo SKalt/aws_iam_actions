@@ -77,7 +77,9 @@ function MultiSelect({
               {opt}
             </li>
           ))}
-          {Array(5 - _options.length).fill(null).map((_, i) => (<li
+          {
+          /* keep 5 rows no matter the number of results */
+          Array(5 - _options.length).fill(null).map((_, i) => (<li
               key={id + `-null`}>&nbsp;</li>))}
         </ul>
         <output>
@@ -174,7 +176,7 @@ export default function SearchAdvanced({
   return (
     <>
       <form
-        className="container w-full justify-content-center flex flex-wrap "
+        className="container w-full flex flex-wrap "
         onSubmit={(e) => {
           e.preventDefault();
           submit();
@@ -213,7 +215,7 @@ export default function SearchAdvanced({
         </fieldset>
         <fieldset className={styles.fieldset}>
           <legend>Access Levels</legend>
-          <ul>
+          <ul className={styles.input}>
             {levels.map((level) => (
               <li key={level}>
                 <label>
@@ -241,6 +243,7 @@ export default function SearchAdvanced({
               max={1_000_000}
               value={limit}
               onChange={(e) => setLimit(parseInt(e.target.value, 10))}
+              className={styles["input"]}
             />
           </label>
         </fieldset>
