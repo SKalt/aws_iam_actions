@@ -1,0 +1,23 @@
+.result .bg-info, .info {
+  color: #aaa;
+}
+
+.bg-info {
+  text-align: right;
+}
+
+
+.main {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  /* min-width: max(50%, 160ch); */
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
