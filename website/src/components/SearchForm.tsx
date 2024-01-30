@@ -3,11 +3,12 @@
 import { debounceFetch } from "@/lib/debounce";
 import type { SearchResult } from "@/lib/types";
 import { useRouter } from "next/navigation";
-import SearchResults from "./SearchResults";
 // ^ make sure to import `useRouter` from `next/navigation` instead of `next/router`
 // see https://nextjs.org/docs/messages/next-router-not-mounted
 // for an explanation
+import SearchResults from "./SearchResults";
 import { useCallback, useEffect, useState } from "react";
+
 
 // TODO: debounce general search requests
 // TODO: abort fetch of all search requests when any search changes

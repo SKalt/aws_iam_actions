@@ -1,5 +1,5 @@
 .result .bg-info, .info {
-  color: #aaa;
+  color: var(--accent-color);
 }
 
 .bg-info {

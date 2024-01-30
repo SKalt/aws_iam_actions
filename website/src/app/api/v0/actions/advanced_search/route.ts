@@ -25,9 +25,14 @@ INNER JOIN prefixes AS prefix ON prefix.id = _actions.prefix_id
 FULL OUTER JOIN access_levels AS access_level ON access_level.id = _actions.access_level_id
 WHERE
   (
-    CASE WHEN (json_type(?1) = 'array' OR json_type(?2) = 'array') THEN
+    CASE WHEN (json_type(?1) = 'array') THEN
       lower(service.name) IN (select value from json_each(?1))
-      OR lower(prefix.name) IN (select value from json_each(?2))
+    ELSE true
+    END
+  )
+  AND (
+    CASE WHEN (json_type(?2) = 'array') THEN
+      lower(prefix.name) IN (select value from json_each(?2))
     ELSE true
     END
   )
@@ -42,22 +47,26 @@ const getActions = async (
   actionName: string,
   limit: number,
 ): Promise<D1Result<Action>> => {
+  const stringify = (arr: string[]) => JSON.stringify(arr.length ? arr : null);
+  const params = [
+    stringify(services),
+    stringify(prefixes),
+    JSON.stringify(accessLevels),
+    (actionName || '%').replaceAll(/[*]+/g, "%") , // safe since param is string-escaped
+    limit,
+  ];
   return db
     .prepare(query)
-    .bind(
-      JSON.stringify(services.length ? services : null),
-      JSON.stringify(prefixes.length ? services : null),
-      JSON.stringify(accessLevels),
-      actionName.replaceAll(/\*+/g, "%"), // safe since param is string-escaped
-      limit,
-    )
+    .bind(...params)
     .all();
 };
 
 export async function GET(request: Request) {
   const contentType = request.headers.get("content-type");
   if (contentType !== null && contentType !== "application/json") {
-    return new Response(`unsupported content-type: ${contentType}`, {status: 404})
+    return new Response(`unsupported content-type: ${contentType}`, {
+      status: 404,
+    });
   }
   let [{ services, prefixes, actionName, accessLevels, limit }, errs] =
     parseAdvancedSearchParams(new URL(request.url).searchParams);

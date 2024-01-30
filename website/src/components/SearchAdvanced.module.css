@@ -1,0 +1,43 @@
+.accent {
+  color: var(--accent-color);
+}
+
+.chip {
+  /* @apply cursor-pointer */
+  border: 1px solid var(--accent-color);
+  border-radius: 0.25rem;
+  background-color: #fff;
+  padding: 0.25rem;
+  margin-right: 0.125rem;
+}
+
+.chip::after {
+  content: "×";
+  color: var(--accent-color);
+}
+
+.btn {
+  border: 1px solid var(--accent-color);
+  width: 100%;
+}
+.select-list {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.input{
+  width: 100%;
+  min-width: 42ch; /* 42 is the length of the longest placeholder */
+}
+.fieldset{
+  max-width: 42ch;
+  margin: 1em;
+}
+.fieldset.mono input, .fieldset.mono .select-list {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* TODO: monospacing for prefix, action */
+
+/* breakpoint values from https: //tailwindcss.com/docs/responsive-design */
+

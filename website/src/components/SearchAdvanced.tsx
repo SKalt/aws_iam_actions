@@ -4,6 +4,7 @@ import { AccessLevelName, Action } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import ActionFilter from "./ActionFilter";
+import styles from "./SearchAdvanced.module.css";
 
 const levels = [
   // see also:
@@ -29,6 +30,7 @@ function MultiSelect({
   placeholder,
   id,
   values,
+  mono,
   setValues,
 }: {
   legend: string;
@@ -36,6 +38,7 @@ function MultiSelect({
   placeholder: string;
   options: string[];
   values: string[];
+  mono: boolean,
   setValues: (values: string[]) => void;
 }) {
   const ref = useRef(null);
@@ -52,7 +55,7 @@ function MultiSelect({
 
   return (
     <>
-      <fieldset>
+      <fieldset className={[styles.fieldset, mono ? styles.mono : null].filter(Boolean).join(" ")}>
         <label className="container">
           {legend}
           <input
@@ -61,29 +64,36 @@ function MultiSelect({
             onChange={(e) => setSearch(e.target.value)}
             type="search"
             placeholder={placeholder}
+            className={[styles["input"]].join(" ")}
           ></input>
         </label>
-        <ul className="mx-auto">
+        <ul className={["mx-auto", styles["select-list"]].join(" ")}>
           {_options.map((opt) => (
             <li
               key={id + `-` + opt}
-              className="cursor-pointer"
+              className={["cursor-pointer", styles["accent"]].join(" ")}
               onClick={() => select(opt)}
             >
               {opt}
             </li>
           ))}
+          {Array(5 - _options.length).fill(null).map((_, i) => (<li
+              key={id + `-null`}>&nbsp;</li>))}
         </ul>
         <output>
           {values.map((value) => (
             <span
-              className="cursor-pointer chip reset-chip"
+              className={[
+                "cursor-pointer",
+                styles["chip"],
+              ].join(" ")}
               onClick={() => setValues(values.filter((v) => v !== value))}
               key={id + `-reset-` + value}
             >
               {value}
             </span>
           ))}
+          <span>&nbsp;</span>
         </output>
         <datalist id={id}>
           {options
@@ -93,26 +103,6 @@ function MultiSelect({
             ))}
         </datalist>
       </fieldset>
-      <style jsx>{`
-        input {
-          width: 100%;
-        }
-        li {
-          color: var(--accent-color);
-        }
-        .chip {
-          /* @apply cursor-pointer */
-          border: 1px solid #aaa;
-          border-radius: 0.25rem;
-          background-color: #fff;
-          padding: 0.25rem;
-          margin-right: 0.125rem;
-        }
-        .reset-chip::after {
-          content: "×";
-          color: #aaa;
-        }
-      `}</style>
     </>
   );
 }
@@ -175,10 +165,16 @@ export default function SearchAdvanced({
       .then((results) => setResults(results));
   };
 
+  const enum Placeholder {
+    Services = "Filter actions by one or more services",
+    Prefixes = "Filter actions by one or more prefixes",
+    ActionName = "Filter by a action name with wildcards (*)",
+  }
+  // console.log(`max placeholder length: ${Math.max(...[Placeholder.ActionName, Placeholder.Prefixes, Placeholder.Services].map((v) => v.length))}`)
   return (
     <>
       <form
-        className="container"
+        className="container w-full justify-content-center flex flex-wrap "
         onSubmit={(e) => {
           e.preventDefault();
           submit();
@@ -187,10 +183,11 @@ export default function SearchAdvanced({
         <MultiSelect
           options={_services}
           id="services"
-          placeholder="Filter actions by one or more services"
+          placeholder={Placeholder.Services}
           values={serviceQuery}
           setValues={setServiceQuery}
           legend="Services"
+          mono={false}
         />
         <MultiSelect
           id="prefixes"
@@ -199,12 +196,13 @@ export default function SearchAdvanced({
           values={prefixQuery}
           setValues={setPrefixQuery}
           legend="Prefixes"
+          mono={true}
         />
-        <fieldset>
+        <fieldset className={[styles.fieldset, styles.mono].join(" ")}>
           <label>
             Action name
             <input
-              className="container"
+              className={["container", styles["input"]].join(" ")}
               value={actionQuery}
               onChange={(e) => setActionQuery(e.target.value)}
               type="text"
@@ -213,24 +211,28 @@ export default function SearchAdvanced({
             />
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset className={styles.fieldset}>
           <legend>Access Levels</legend>
-          {levels.map((level) => (
-            <li key={level}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={!!accessLevels[level]}
-                  onChange={(e) => {
-                    setAccess({ ...accessLevels, [level]: e.target.checked });
-                  }}
-                />{" "}
-                {level || "Unknown"}
-              </label>
-            </li>
-          ))}
+          <ul>
+            {levels.map((level) => (
+              <li key={level}>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={!!accessLevels[level]}
+                    onChange={(e) => {
+                      setAccess({ ...accessLevels, [level]: e.target.checked });
+                    }}
+                  />{" "}
+                  {level || "Unknown"}
+                </label>
+              </li>
+            ))}
+          </ul>
         </fieldset>
-        <fieldset>
+        {/* <fieldset className={styles.fieldset}>
+        </fieldset> */}
+        <fieldset className={styles.fieldset}>
           <label>
             Limit
             <input
@@ -242,7 +244,7 @@ export default function SearchAdvanced({
             />
           </label>
         </fieldset>
-        <button>Submit</button>
+        <button className={styles.btn}>Submit</button>
       </form>
       <output
         className="container"

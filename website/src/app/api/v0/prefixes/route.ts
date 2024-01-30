@@ -5,10 +5,6 @@ import { D1Result } from "@cloudflare/workers-types";
 import { NextResponse } from "next/server";
 export const runtime = "edge";
 
-type PrefixResult = {
-  service: string;
-  prefix: string;
-};
 const query = `
 SELECT distinct service, prefix
 FROM actions

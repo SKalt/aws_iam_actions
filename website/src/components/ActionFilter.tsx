@@ -2,7 +2,7 @@
 import { Action } from "@/lib/types";
 import { useEffect, useState } from "react";
 
-function RelatedList({ parent, items }: { parent: string; items: string }) {
+function RelatedList({ parent, items = "" }: { parent: string; items: string }) {
   const _items = [
     ...new Set(
       items
@@ -33,7 +33,7 @@ function ActionFilterItem({
         {/* TODO: make this column a sticky header */}
         <a href={action.action_docs_link} target="_blank">
           <code>
-            {action.prefix}:{action.action}
+            {action.prefix}:{action?.action}
           </code>
         </a>
       </td>
@@ -74,7 +74,7 @@ export default function ActionFilter({
     // this entire `useEffect` to set the filtered results seems like a hack
     setFilteredData(
       actions.filter((action) =>
-        action.action.toLowerCase().includes(filter.toLowerCase()),
+        action.action?.toLowerCase().includes(filter.toLowerCase()),
       ),
     );
   }, [filter, actions]);

@@ -41,20 +41,11 @@ input[type="search"] {
   border: 1px solid black;
   border-radius: 0.25em;
 }
+input::placeholder,
+input {
+  text-align: center;
+}
 
-.result .bg-info,
-.info {
-  color: #aaa;
-}
-@media (max-width: 768px) {
-  .bg-info {
-    text-align: right;
-  }
-}
-.result .bg-info,
-.info {
-  color: #aaa;
-}
 a[href] {
   text-decoration: underline;
   color: theme(colors.blue.500);
@@ -63,10 +54,8 @@ a:visited {
   color: theme(colors.purple.500)
 }
 
+/* actionFilter? */
 tr.action td:nth-child(even) {
   text-align: center;
 }
-input::placeholder,
-input {
-  text-align: center;
-}
+

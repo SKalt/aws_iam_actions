@@ -8,7 +8,7 @@ export default function About() {
         <p>This website helps answer questions like</p>
         <ul className="list-disc ml-4">
           <li>
-            <Link href="?services=ec2&action=*&accessLevel=w">
+            <Link href="/advanced?services=EC2&action=*&accessLevel=w">
               What are all the write-level IAM actions that AWS EC2 exposes?
             </Link>
           </li>
