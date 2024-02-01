@@ -25,7 +25,7 @@ export default function About() {
           </li>
           <li>
             <Link href="/advanced?action=get*&accessLevel=wtp">
-              Are there any write-level IAM actions that are matched by "Get*"?
+              Are there any write-level IAM actions that are matched by &quot;Get*&quot;?
             </Link>
           </li>
         </ul>
