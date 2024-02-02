@@ -14,13 +14,13 @@ CREATE TABLE access_levels (
   id INTEGER PRIMARY KEY
   , name TEXT NOT NULL
 );
-INSERT INTO access_levels (name) VALUES
-  ("") -- unknown
-  , ("Read")
-  , ("List")
-  , ("Write")
-  , ("Tagging")
-  , ("Permissions management");
+INSERT INTO access_levels (id, name) VALUES
+    (1, "") -- unknown
+  , (2, "Read")
+  , (3, "List")
+  , (4, "Tagging")
+  , (5, "Write")
+  , (6, "Permissions management");
 
 ALTER TABLE _actions ADD COLUMN prefix_id INTEGER REFERENCES prefixes(id);
 UPDATE _actions SET prefix_id = (SELECT id FROM prefixes AS prefix WHERE prefix.name = _actions.prefix);

@@ -14,7 +14,7 @@ export type SearchResult = {
   kind: Kind;
   link: string | null;
 };
-
+// TODO: refactor to use a bit-flag enum
 export const enum AccessLevel { // directly references level ids in db
   Permissions = 6,
   Write = 5,
@@ -59,16 +59,17 @@ export const defaultAccessLevels = () => ({
 });
 
 export const getAccessLevels = (
-  accessLevel?: string,
+  accessLevels?: string,
 ): ReturnType<typeof defaultAccessLevels> => {
   const result = defaultAccessLevels();
-  const accessLevels = accessLevel || "urlwtp";
-  if (!accessLevels.includes("u")) result[AccessLevelName.Unknown] = false;
-  if (!accessLevels.includes("r")) result[AccessLevelName.Read] = false;
-  if (!accessLevels.includes("l")) result[AccessLevelName.List] = false;
-  if (!accessLevels.includes("w")) result[AccessLevelName.Write] = false;
-  if (!accessLevels.includes("t")) result[AccessLevelName.Tagging] = false;
-  if (!accessLevels.includes("p")) result[AccessLevelName.Permissions] = false;
+  if (accessLevels) {
+    if (!accessLevels.includes("u")) result[AccessLevelName.Unknown] = false;
+    if (!accessLevels.includes("r")) result[AccessLevelName.Read] = false;
+    if (!accessLevels.includes("l")) result[AccessLevelName.List] = false;
+    if (!accessLevels.includes("w")) result[AccessLevelName.Write] = false;
+    if (!accessLevels.includes("t")) result[AccessLevelName.Tagging] = false;
+    if (!accessLevels.includes("p")) result[AccessLevelName.Permissions] = false;
+  }
   return result;
 };
 
