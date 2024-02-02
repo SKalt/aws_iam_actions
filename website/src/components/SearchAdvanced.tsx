@@ -87,7 +87,7 @@ function MultiSelect({
             </li>
           ))}
           {
-          /* keep 5 rows no matter the number of results */
+            /* keep 5 rows no matter the number of results */
             Array(5 - matchingOptions.length)
               .fill(null)
               .map((_, i) => (
@@ -173,6 +173,7 @@ export default function SearchAdvanced({
       query.set("prefixes", encodeURIComponent(prefixQuery.join(",")));
     if (actionQuery) query.set("action", encodeURIComponent(actionQuery));
     if (_access) query.set("accessLevel", encodeURIComponent(_access));
+    query.set("limit", limit.toString());
     let _query = query.toString();
     _query = _query ? "?" + _query : "";
     let _url = "/advanced" + _query;
@@ -267,8 +268,6 @@ export default function SearchAdvanced({
             ))}
           </ul>
         </fieldset>
-        {/* <fieldset className={styles.fieldset}>
-        </fieldset> */}
         <fieldset className={styles.fieldset}>
           <label>
             Limit
