@@ -168,11 +168,10 @@ export default function SearchAdvanced({
   };
 
   const enum Placeholder {
-    Services = "Filter actions by one or more services",
-    Prefixes = "Filter actions by one or more prefixes",
-    ActionName = "Filter by a action name with wildcards (*)",
+    Services = "Filter actions by selecting services",
+    Prefixes = "Filter actions by selecting prefixes",
+    ActionName = "Filter by an action name with wildcards (*)",
   }
-  // console.log(`max placeholder length: ${Math.max(...[Placeholder.ActionName, Placeholder.Prefixes, Placeholder.Services].map((v) => v.length))}`)
   return (
     <>
       <form
@@ -194,7 +193,7 @@ export default function SearchAdvanced({
         <MultiSelect
           id="prefixes"
           options={_prefixes}
-          placeholder="Filter actions by one or more prefixes"
+          placeholder={Placeholder.Prefixes}
           values={prefixQuery}
           setValues={setPrefixQuery}
           legend="Prefixes"
@@ -209,7 +208,7 @@ export default function SearchAdvanced({
               onChange={(e) => setActionQuery(e.target.value)}
               type="text"
               pattern="[a-zA-Z0-9*]+"
-              placeholder="Filter by a action name with wildcards (*)"
+              placeholder={Placeholder.ActionName}
             />
           </label>
         </fieldset>

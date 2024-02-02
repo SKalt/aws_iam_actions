@@ -5,9 +5,8 @@
 :root {
   --aws-orange: 255, 153, 0;
   --accent-color: #aaa;
-  --foreground-rgb: 0, 0, 0;
-  /* --background-start-rgb: var(--aws-orange);
-  --background-end-rgb: 255, 255, 255; */
+  --foreground: #000;
+  --background: #fff;
 }
 .highlight {
   background-color: rgb(var(--aws-orange));
@@ -15,20 +14,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground: #fff;
+    --background: #000;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background: var(--background);
 }
 
 h1 {
@@ -38,8 +31,8 @@ input[type="text"],
 input[type="search"],
 input[type="number"] {
   padding: 0.25em;
-  background-color: rgb(var(--background-start-rgb));
-  border: 1px solid rgb(var(--foreground-rgb));
+  background: var(--background);
+  border: 1px solid var(--foreground);
   border-radius: 0.25em;
 }
 input::placeholder,

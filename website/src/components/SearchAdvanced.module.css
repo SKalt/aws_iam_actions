@@ -34,8 +34,8 @@
 }
 ul.input {
   padding-left: 1rem;
-  background-color: rgb(var(--background-start-rgb));
-  border: 1px solid rgb(var(--foreground-rgb));
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
   border-radius: 0.25em;
 
 }
