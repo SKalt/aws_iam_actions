@@ -18,3 +18,4 @@ bin/*
 data/iam_actions.sql
 data/*.sqlite3
 .wrangler
+node_modules
