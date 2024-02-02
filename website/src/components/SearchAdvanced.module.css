@@ -40,7 +40,7 @@ ul.input {
 
 }
 .fieldset{
-  max-width: 42ch;
+  max-width: 45ch; /* 45 ~= the max number of characters in a placeholder*/
   margin: 1em;
 }
 .fieldset.mono input, .fieldset.mono .select-list {

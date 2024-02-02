@@ -26,7 +26,7 @@ const defaultLevels = () =>
 
 function MultiSelect({
   legend,
-  options,
+  options = [],
   placeholder,
   id,
   values,
@@ -36,16 +36,21 @@ function MultiSelect({
   legend: string;
   id: string;
   placeholder: string;
-  options: string[];
+  options: Array<{ lower: string; display: string }>;
   values: string[];
-  mono: boolean,
+  mono: boolean;
   setValues: (values: string[]) => void;
 }) {
   const ref = useRef(null);
   const [search, setSearch] = useState("");
-  const _options = options
-    .filter((v) => !values.includes(v))
-    .filter((v) => v.toLowerCase().startsWith(search.toLowerCase()))
+  const unusedOptions = options.filter((v) => !values.includes(v.lower));
+  const matchingOptions = unusedOptions
+    .filter((v) => v.lower.startsWith(search))
+    .concat(
+      unusedOptions.filter(
+        (v) => !v.lower.startsWith(search) && v.lower.includes(search),
+      ),
+    )
     .slice(0, 5);
   const select = (opt: string) => {
     setValues([...values, opt]);
@@ -55,40 +60,45 @@ function MultiSelect({
 
   return (
     <>
-      <fieldset className={[styles.fieldset, mono ? styles.mono : null].filter(Boolean).join(" ")}>
+      <fieldset
+        className={[styles.fieldset, mono ? styles.mono : null]
+          .filter(Boolean)
+          .join(" ")}
+      >
         <label className="container">
           {legend}
           <input
             ref={ref}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value.toLowerCase())}
             type="search"
             placeholder={placeholder}
             className={[styles["input"]].join(" ")}
           ></input>
         </label>
         <ul className={["mx-auto", styles["select-list"]].join(" ")}>
-          {_options.map((opt) => (
+          {matchingOptions.map((opt) => (
             <li
               key={id + `-` + opt}
               className={["cursor-pointer", styles["accent"]].join(" ")}
-              onClick={() => select(opt)}
+              onClick={() => select(opt.lower)}
             >
-              {opt}
+              {opt.display}
             </li>
           ))}
           {
           /* keep 5 rows no matter the number of results */
-          Array(5 - _options.length).fill(null).map((_, i) => (<li
-              key={id + `-null`}>&nbsp;</li>))}
+            Array(5 - matchingOptions.length)
+              .fill(null)
+              .map((_, i) => (
+                <li key={id + `-null`}>&nbsp;</li>
+              ))
+          }
         </ul>
         <output>
           {values.map((value) => (
             <span
-              className={[
-                "cursor-pointer",
-                styles["chip"],
-              ].join(" ")}
+              className={["cursor-pointer", styles["chip"]].join(" ")}
               onClick={() => setValues(values.filter((v) => v !== value))}
               key={id + `-reset-` + value}
             >
@@ -97,18 +107,26 @@ function MultiSelect({
           ))}
           <span>&nbsp;</span>
         </output>
-        <datalist id={id}>
-          {options
-            .filter((option) => !values.includes(option))
-            .map((option) => (
-              <option key={id + "-opt-" + option} value={option} />
-            ))}
-        </datalist>
       </fieldset>
     </>
   );
 }
+const alphabetic = (a: { lower: string }, b: { lower: string }) =>
+  a.lower > b.lower ? 1 : a.lower == b.lower ? 0 : -1;
 
+const makeServices = (
+  serviceEntries: Array<[string, { display: string; prefix: string }]>,
+) =>
+  serviceEntries
+    .map(([lower, { display }]) => ({ lower, display }))
+    .sort(alphabetic);
+
+const makePrefixes = (
+  serviceEntries: Array<[string, { display: string; prefix: string }]>,
+) =>
+  serviceEntries
+    .map(([_, { prefix }]) => ({ lower: prefix, display: prefix }))
+    .sort(alphabetic);
 /**
  * @param props
  * @param props.services maps service name => IAM prefix
@@ -121,7 +139,7 @@ export default function SearchAdvanced({
   initialAccessLevels,
   initialResults,
 }: {
-  services: Record<string, string>;
+  services: Record<string, { display: string; prefix: string }>;
   initialActionQuery: string;
   initialPrefixes: string[];
   initialServices: string[];
@@ -137,8 +155,8 @@ export default function SearchAdvanced({
   );
   const [results, setResults] = useState(initialResults ?? []);
   const [limit, setLimit] = useState(100);
-  const _services = [...new Set(Object.keys(services))].sort(); // TODO: useMemo()
-  const _prefixes = [...new Set(Object.values(services))].sort();
+  const _services = makeServices(Object.entries(services));
+  const _prefixes = makePrefixes(Object.entries(services));
   const submit = () => {
     // TODO: useCallback?
     let _access = "";
@@ -182,7 +200,15 @@ export default function SearchAdvanced({
         }}
       >
         <MultiSelect
-          options={_services}
+          options={
+            prefixQuery.length
+              ? makeServices(
+                  Object.entries(services).filter(([lower, _]) =>
+                    prefixQuery.includes(lower),
+                  ),
+                )
+              : _services
+          }
           id="services"
           placeholder={Placeholder.Services}
           values={serviceQuery}
@@ -192,7 +218,17 @@ export default function SearchAdvanced({
         />
         <MultiSelect
           id="prefixes"
-          options={_prefixes}
+          options={
+            serviceQuery.length
+              ? makePrefixes(serviceQuery
+                  .map((service) => {
+                    let result = services[service];
+                    if (!result)
+                      throw new Error(`service ${service} not found`);
+                    return ["", result];
+                  }))
+              : _prefixes
+          }
           placeholder={Placeholder.Prefixes}
           values={prefixQuery}
           setValues={setPrefixQuery}

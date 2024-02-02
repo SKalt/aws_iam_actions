@@ -60,10 +60,10 @@ export default async function Page({
     .then((services: Array<{ service: string; prefix: string }>) =>
       services.reduce(
         (a, { service, prefix }) => {
-          a[service] = prefix;
+          a[service.toLowerCase()] = {display: service, prefix};
           return a;
         },
-        {} as Record<string, string>,
+        {} as Record<string, {display: string, prefix: string}>,
       ),
     );
   return (
