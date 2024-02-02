@@ -3,7 +3,7 @@
 import { AccessLevelName, Action } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
-import ActionFilter from "./ActionFilter";
+import ActionFilter, { fuzzyFilter } from "./ActionFilter";
 import styles from "./SearchAdvanced.module.css";
 
 const levels = [
@@ -44,14 +44,11 @@ function MultiSelect({
   const ref = useRef(null);
   const [search, setSearch] = useState("");
   const unusedOptions = options.filter((v) => !values.includes(v.lower));
-  const matchingOptions = unusedOptions
-    .filter((v) => v.lower.startsWith(search))
-    .concat(
-      unusedOptions.filter(
-        (v) => !v.lower.startsWith(search) && v.lower.includes(search),
-      ),
-    )
-    .slice(0, 5);
+  const matchingOptions = fuzzyFilter(
+    unusedOptions.map((v) => v.lower),
+    search,
+    5,
+  ).map((i) => unusedOptions[i]);
   const select = (opt: string) => {
     setValues([...values, opt]);
     setSearch("");
@@ -79,7 +76,7 @@ function MultiSelect({
         <ul className={["mx-auto", styles["select-list"]].join(" ")}>
           {matchingOptions.map((opt) => (
             <li
-              key={id + `-` + opt}
+              key={id + `-` + opt.lower}
               className={["cursor-pointer", styles["accent"]].join(" ")}
               onClick={() => select(opt.lower)}
             >
@@ -91,7 +88,7 @@ function MultiSelect({
             Array(5 - matchingOptions.length)
               .fill(null)
               .map((_, i) => (
-                <li key={id + `-null`}>&nbsp;</li>
+                <li key={id + "-" + i + "-" + `-null`}>&nbsp;</li>
               ))
           }
         </ul>
@@ -221,13 +218,14 @@ export default function SearchAdvanced({
           id="prefixes"
           options={
             serviceQuery.length
-              ? makePrefixes(serviceQuery
-                  .map((service) => {
+              ? makePrefixes(
+                  serviceQuery.map((service) => {
                     let result = services[service];
                     if (!result)
                       throw new Error(`service ${service} not found`);
                     return ["", result];
-                  }))
+                  }),
+                )
               : _prefixes
           }
           placeholder={Placeholder.Prefixes}
@@ -290,6 +288,7 @@ export default function SearchAdvanced({
         <ActionFilter
           actions={results}
           anyDependentActions={results.some((a) => a.dependent_actions)}
+          limit={limit}
         />
       </output>
     </>

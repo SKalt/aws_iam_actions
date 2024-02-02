@@ -10,7 +10,6 @@ import SearchResults from "./SearchResults";
 import { useCallback, useEffect, useState } from "react";
 
 
-// TODO: debounce general search requests
 // TODO: abort fetch of all search requests when any search changes
 export default function SearchForm(
   {
@@ -33,7 +32,7 @@ export default function SearchForm(
         document.title = "Search IAM actions";
         return;
       }
-      fetch(`/api/v0/search?q=${q}`, { signal: controller.signal })
+      fetch(`/api/v0/search?q=${q}&limit=${limit}`, { signal: controller.signal })
         .then((r) => {
           if (r.ok) return r.json() as Promise<SearchResult[]>;
           else throw new Error(r.statusText);

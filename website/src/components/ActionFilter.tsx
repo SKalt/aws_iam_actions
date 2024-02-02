@@ -1,9 +1,16 @@
 "use client";
 import { Action } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { debounce } from "@/lib/debounce";
+import { useCallback, useState } from "react";
 import styles from "./ActionFilter.module.css";
 
-function RelatedList({ parent, items = "" }: { parent: string; items: string }) {
+function RelatedList({
+  parent,
+  items = "",
+}: {
+  parent: string;
+  items: string;
+}) {
   const _items = [
     ...new Set(
       items
@@ -34,7 +41,8 @@ function ActionFilterItem({
         {/* TODO: make this column a sticky header */}
         <a href={action.action_docs_link} target="_blank">
           <code>
-            {action.prefix}:{action?.action}
+            {action.prefix}:<wbr />
+            {action.action}
           </code>
         </a>
       </td>
@@ -60,25 +68,56 @@ function ActionFilterItem({
   );
 }
 
+export const fuzzyFilter = (
+  original: string[],
+  filter: string,
+  limit: number,
+) => {
+  let result: Set<number> = new Set();
+
+  for (let i = 0; i < original.length; i++) {
+    if (original[i].startsWith(filter)) {
+      result.add(i);
+      if (result.size === limit) {
+        break;
+      }
+    }
+  }
+  if (result.size < limit) {
+    for (let i = 0; i < original.length; i++) {
+      if (result.has(i)) continue;
+      if (original[i].includes(filter)) {
+        result.add(i);
+        if (result.size === limit) {
+          break;
+        }
+      }
+    }
+  }
+  return Array.from(result);
+};
 export default function ActionFilter({
   actions,
   anyDependentActions,
+  limit,
 }: {
   actions: Action[];
   anyDependentActions: boolean;
+  limit: number;
 }) {
-  const [filter, setFilter] = useState(""); // applies to action only
+  const _limit = limit || actions.length;
+  const lowerActions = actions.map((a) => a.action.toLowerCase());
   const [filteredData, setFilteredData] = useState(actions); // applies to action only
-  useEffect(() => {
-    // TODO: cache filtering with useMemo
-    // TODO: debounce filtering by 50ms
-    // this entire `useEffect` to set the filtered results seems like a hack
-    setFilteredData(
-      actions.filter((action) =>
-        action.action?.toLowerCase().includes(filter.toLowerCase()),
-      ),
-    );
-  }, [filter, actions]);
+
+  const filterData = useCallback(
+    // TODO: cache filtering with useMemo?
+    debounce((filter: string) => {
+      setFilteredData(
+        fuzzyFilter(lowerActions, filter, _limit).map((i) => actions[i]),
+      );
+    }, 50),
+    [actions],
+  );
   // FIXME: table overflows on small or medium screens
   return (
     <div className="flex flex-col container">
@@ -86,7 +125,7 @@ export default function ActionFilter({
         type="text"
         placeholder="Filter actions by name"
         className="container sticky top-0 z-10"
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={(e) => filterData(e.target.value.toLowerCase())}
       ></input>
       <table>
         {/* top-8 is 2rem, which seems to be the hight+padding of the input */}

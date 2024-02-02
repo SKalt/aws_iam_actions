@@ -1,8 +1,8 @@
 import type { SearchResult as Result } from "@/lib/types";
 import Link from "next/link";
-import styles from "./SearchResults.module.css"
+import styles from "./SearchResults.module.css";
 
-function HighlightedName({ name, q }: { name: string; q: string }) {
+export function HighlightedName({ name, q }: { name: string; q: string }) {
   let query = q.trim();
   let nonQuerySegments = name.toLowerCase().split(query.toLowerCase());
   let segments = [];
@@ -14,23 +14,31 @@ function HighlightedName({ name, q }: { name: string; q: string }) {
     len += query.length;
   }
   segments.push(name.substring(len));
-
+  const id = Math.random().toString(36).substring(4);
   return (
     <span>
-      {segments.map((segment, i) =>
-        i % 2 === 0 ? <span key={i}>{serviceNameBreak(segment)}</span> : <b key={i}>{serviceNameBreak(segment)}</b>,
-      )}
+      {segments.map((segment, i) => {
+        const key = `${id}-${i}`;
+        return i % 2 === 0 ? (
+          <span key={key}>{serviceNameBreak(segment)}</span>
+        ) : (
+          <b key={key}>{serviceNameBreak(segment)}</b>
+        );
+      })}
     </span>
   );
 }
 /** insert a <wbr/> after each : in a service name */
 function serviceNameBreak(text: string) {
   let arr = text.split(':');
-  return arr.slice(1).reduce((acc, r) => {
-    acc.push(<wbr />);
-    acc.push(<>:{r}</>);
-    return acc;
-  }, [<>{arr[0]}</>]);
+  let result = [<>{arr[0]}</>]
+  const id = Math.random().toString(36).substring(4);
+  for (let i = 0; i < arr.length - 1; i++) {
+    const key = `${id}-${i}`;
+    result.push(<wbr key={key + "wbr"}/>);
+    result.push(<>{arr[i + 1]}</>);
+  }
+  return result;
 }
 
 
