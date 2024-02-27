@@ -6,9 +6,7 @@ CREATE TABLE IF NOT EXISTS "_actions"(
   , "dependent_actions" TEXT
   , prefix_id INTEGER REFERENCES prefixes(id)
   , service_id INTEGER REFERENCES services(id)
-  , access_level_id INTEGER REFERENCES access_levels(id)
-);
-
+  , access_level_id INTEGER REFERENCES access_levels(id));
 CREATE TABLE prefixes(
   id INTEGER PRIMARY KEY
   , name TEXT NOT NULL
