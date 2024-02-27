@@ -35,7 +35,7 @@ export default async function Page({
   const services = [...new Set(actions.map((a) => a.service))].sort();
   const anyDependentActions = actions.some((a) => a.dependent_actions);
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex min-h-screen flex-col items-center m-auto p-8">
       <h1 className="font-mono">{prefix}</h1>
       <h2 className="accent">
         (Service{services.length > 1 ? "s" : ""}: {services.join(", ")})
@@ -43,6 +43,7 @@ export default async function Page({
       <ActionFilter
         actions={actions}
         anyDependentActions={anyDependentActions}
+        limit={-1}
       />
     </main>
   );

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between p-24">
+    <main className="flex flex-col min-h-screen items-center justify-between m-auto p-8">
       <h1>About</h1>
       <div className="flex-grow">
         <p>This website helps answer questions like</p>

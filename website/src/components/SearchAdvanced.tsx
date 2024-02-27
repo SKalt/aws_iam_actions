@@ -191,7 +191,7 @@ export default function SearchAdvanced({
   return (
     <>
       <form
-        className="container w-full flex flex-wrap "
+        className="container w-full flex flex-wrap justify-center"
         onSubmit={(e) => {
           e.preventDefault();
           submit();

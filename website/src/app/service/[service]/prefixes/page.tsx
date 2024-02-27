@@ -19,7 +19,7 @@ export default async function Page({
     `${baseUrl()}/api/v0/${encodeURIComponent(service)}`,
   ).then((r) => r.json());
   return (
-    <main>
+    <main className="m-auto p-8">
       <h1>{service} IAM prefixes</h1>
       <ul>
         {prefixes.map((prefix) => (

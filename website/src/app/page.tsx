@@ -32,9 +32,10 @@ export default async function Main({
     new URLSearchParams(searchParams),
   );
   return (
-    <main className="flex min-h-screen flex-col items-center mx-2">
+    <main className="flex min-h-screen flex-col items-center m-auto p-8">
       <h1 className="my-4 text-center">
-        Search AWS IAM <span className="highlight">services</span>, <span className="highlight">prefixes</span>, and{" "}
+        Search AWS IAM <span className="highlight">services</span>,{" "}
+        <span className="highlight">prefixes</span>, and{" "}
         <span className="highlight">actions</span>
       </h1>
       <SearchForm initialQ={q} limit={limit} initialResults={results} />
