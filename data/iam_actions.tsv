@@ -202,12 +202,12 @@ Amplify Admin	amplifybackend	UpdateBackendAuth	Write		https://docs.aws.amazon.co
 Amplify Admin	amplifybackend	UpdateBackendConfig	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-config-update.html#UpdateBackendConfig		
 Amplify Admin	amplifybackend	UpdateBackendJob	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-job-backendenvironmentname-jobid.html#UpdateBackendJob		
 Amplify Admin	amplifybackend	UpdateBackendStorage	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#UpdateBackendStorage		
-Amplify UI Builder	amplifyuibuilder	CreateComponent	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateComponent.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	CreateForm	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateForm.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	CreateTheme	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateTheme.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	DeleteComponent	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteComponent.html		amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	DeleteForm	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteForm.html		amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	DeleteTheme	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteTheme.html		amplify:GetApp
+Amplify UI Builder	amplifyuibuilder	CreateComponent	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateComponent.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp, amplifyuibuilder:GetComponent, amplifyuibuilder:TagResource
+Amplify UI Builder	amplifyuibuilder	CreateForm	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateForm.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp, amplifyuibuilder:GetForm, amplifyuibuilder:TagResource, amplifyuibuilder:UntagResource
+Amplify UI Builder	amplifyuibuilder	CreateTheme	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateTheme.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp, amplifyuibuilder:GetTheme, amplifyuibuilder:TagResource
+Amplify UI Builder	amplifyuibuilder	DeleteComponent	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteComponent.html		amplify:GetApp, amplifyuibuilder:UntagResource
+Amplify UI Builder	amplifyuibuilder	DeleteForm	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteForm.html		amplify:GetApp, amplifyuibuilder:TagResource, amplifyuibuilder:UntagResource
+Amplify UI Builder	amplifyuibuilder	DeleteTheme	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteTheme.html		amplify:GetApp, amplifyuibuilder:UntagResource
 Amplify UI Builder	amplifyuibuilder	ExchangeCodeForToken	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExchangeCodeForToken.html		
 Amplify UI Builder	amplifyuibuilder	ExportComponents	Read		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExportComponents.html		
 Amplify UI Builder	amplifyuibuilder	ExportForms	Read		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExportForms.html		
@@ -220,14 +220,17 @@ Amplify UI Builder	amplifyuibuilder	GetTheme	Read		https://docs.aws.amazon.com/a
 Amplify UI Builder	amplifyuibuilder	ListCodegenJobs	List		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListCodegenJobs.html		amplify:GetApp
 Amplify UI Builder	amplifyuibuilder	ListComponents	List		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListComponents.html		amplify:GetApp
 Amplify UI Builder	amplifyuibuilder	ListForms	List		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListForms.html		amplify:GetApp
+Amplify UI Builder	amplifyuibuilder	ListTagsForResource	List		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListTagsForResource.html		
 Amplify UI Builder	amplifyuibuilder	ListThemes	List		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListThemes.html		amplify:GetApp
 Amplify UI Builder	amplifyuibuilder	PutMetadataFlag	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_PutMetadataFlag.html		
 Amplify UI Builder	amplifyuibuilder	RefreshToken	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_RefreshToken.html		
 Amplify UI Builder	amplifyuibuilder	ResetMetadataFlag	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ResetMetadataFlag.html		
 Amplify UI Builder	amplifyuibuilder	StartCodegenJob	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_StartCodegenJob.html	aws:RequestTag/${TagKey}, aws:TagKeys	amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	UpdateComponent	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateComponent.html		amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	UpdateForm	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateForm.html		amplify:GetApp
-Amplify UI Builder	amplifyuibuilder	UpdateTheme	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateTheme.html		amplify:GetApp
+Amplify UI Builder	amplifyuibuilder	TagResource	Tagging		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Amplify UI Builder	amplifyuibuilder	UntagResource	Tagging		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UntagResource.html	aws:TagKeys	
+Amplify UI Builder	amplifyuibuilder	UpdateComponent	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateComponent.html		amplify:GetApp, amplifyuibuilder:TagResource, amplifyuibuilder:UntagResource
+Amplify UI Builder	amplifyuibuilder	UpdateForm	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateForm.html		amplify:GetApp, amplifyuibuilder:GetForm, amplifyuibuilder:TagResource, amplifyuibuilder:UntagResource
+Amplify UI Builder	amplifyuibuilder	UpdateTheme	Write		https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateTheme.html		amplify:GetApp, amplifyuibuilder:GetTheme, amplifyuibuilder:TagResource, amplifyuibuilder:UntagResource
 Apache Kafka APIs for Amazon MSK clusters	kafka-cluster	AlterCluster	Write		https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#actions		kafka-cluster:Connect, kafka-cluster:DescribeCluster
 Apache Kafka APIs for Amazon MSK clusters	kafka-cluster	AlterClusterDynamicConfiguration	Write		https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#actions		kafka-cluster:Connect, kafka-cluster:DescribeClusterDynamicConfiguration
 Apache Kafka APIs for Amazon MSK clusters	kafka-cluster	AlterGroup	Write		https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#actions		kafka-cluster:Connect, kafka-cluster:DescribeGroup
@@ -2214,11 +2217,11 @@ CloudTrail	cloudtrail	DeleteTrail	Write		https://docs.aws.amazon.com/awscloudtra
 CloudTrail	cloudtrail	DeregisterOrganizationDelegatedAdmin	Write		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeregisterOrganizationDelegatedAdmin.html		organizations:DeregisterDelegatedAdministrator, organizations:ListAWSServiceAccessForOrganization
 CloudTrail	cloudtrail	DescribeQuery	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeQuery.html		
 CloudTrail	cloudtrail	DescribeTrails	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html		
-CloudTrail	cloudtrail	DisableFederation	Write		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DisableFederation.html		
-CloudTrail	cloudtrail	EnableFederation	Write		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_EnableFederation.html		
+CloudTrail	cloudtrail	DisableFederation	Write		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DisableFederation.html		glue:DeleteDatabase, glue:DeleteTable, glue:PassConnection, lakeformation:DeregisterResource, lakeformation:RegisterResource
+CloudTrail	cloudtrail	EnableFederation	Write		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_EnableFederation.html		glue:CreateDatabase, glue:CreateTable, iam:GetRole, iam:PassRole, lakeformation:DeregisterResource, lakeformation:RegisterResource
 CloudTrail	cloudtrail	GetChannel	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetChannel.html		
 CloudTrail	cloudtrail	GetEventDataStore	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventDataStore.html		
-CloudTrail	cloudtrail	GetEventDataStoreData	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/query-federation.html#query-federation-permissions		
+CloudTrail	cloudtrail	GetEventDataStoreData	Read		https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions		kms:Decrypt, kms:GenerateDataKey
 CloudTrail	cloudtrail	GetEventSelectors	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventSelectors.html		
 CloudTrail	cloudtrail	GetImport	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetImport.html		
 CloudTrail	cloudtrail	GetInsightSelectors	Read		https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetInsightSelectors.html		
@@ -3818,7 +3821,7 @@ Cost Explorer Service	ce	DescribeReport [permission only]	Read		https://docs.aws
 Cost Explorer Service	ce	GetAnomalies	Read		https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html	aws:ResourceTag/${TagKey}	
 Cost Explorer Service	ce	GetAnomalyMonitors	Read		https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalyMonitors.html	aws:ResourceTag/${TagKey}	
 Cost Explorer Service	ce	GetAnomalySubscriptions	Read		https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalySubscriptions.html	aws:ResourceTag/${TagKey}	
-Cost Explorer Service	ce	GetApproximateUsageRecords [permission only]	Read		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html		
+Cost Explorer Service	ce	GetApproximateUsageRecords	Read		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html		
 Cost Explorer Service	ce	GetConsoleActionSetEnforced [permission only]	Read		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html		
 Cost Explorer Service	ce	GetCostAndUsage	Read		https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html		
 Cost Explorer Service	ce	GetCostAndUsageWithResources	Read		https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html		
@@ -3999,6 +4002,7 @@ DataSync	datasync	UpdateTask	Write		https://docs.aws.amazon.com/datasync/latest/
 DataSync	datasync	UpdateTaskExecution	Write		https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTaskExecution.html	aws:ResourceTag/${TagKey}	
 DataZone	datazone	AcceptPredictions	Write		${APIReferenceDocPage}API_AcceptPredictions.html		
 DataZone	datazone	AcceptSubscriptionRequest	Write		${APIReferenceDocPage}API_AcceptSubscriptionRequest.html		
+DataZone	datazone	CancelMetadataGenerationRun	Write		${APIReferenceDocPage}API_CancelMetadataGenerationRun.html		
 DataZone	datazone	CancelSubscription	Write		${APIReferenceDocPage}API_CancelSubscription.html		
 DataZone	datazone	CreateAsset	Write		${APIReferenceDocPage}API_CreateAsset.html		
 DataZone	datazone	CreateAssetRevision	Write		${APIReferenceDocPage}API_CreateAssetRevision.html		
@@ -4139,10 +4143,6 @@ Database Migration Service	dms	CreateReplicationConfig	Write		https://docs.aws.a
 Database Migration Service	dms	CreateReplicationInstance	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html	aws:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys, dms:req-tag/${TagKey}	iam:PassRole
 Database Migration Service	dms	CreateReplicationSubnetGroup	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html	aws:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys, dms:req-tag/${TagKey}	
 Database Migration Service	dms	CreateReplicationTask	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html	aws:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys, dms:req-tag/${TagKey}	
-Database Migration Service	dms	CreateTest	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTest.html		
-Database Migration Service	dms	CreateTestEnvironments	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestEnvironments.html		
-Database Migration Service	dms	CreateTestPlan	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestPlan.html		
-Database Migration Service	dms	CreateTestRun	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestRun.html		
 Database Migration Service	dms	DeleteCertificate	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteCertificate.html		
 Database Migration Service	dms	DeleteConnection	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteConnection.html		
 Database Migration Service	dms	DeleteDataMigration	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
@@ -4158,8 +4158,6 @@ Database Migration Service	dms	DeleteReplicationInstance	Write		https://docs.aws
 Database Migration Service	dms	DeleteReplicationSubnetGroup	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html		
 Database Migration Service	dms	DeleteReplicationTask	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html		
 Database Migration Service	dms	DeleteReplicationTaskAssessmentRun	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTaskAssessmentRun.html		
-Database Migration Service	dms	DeleteTest	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteTest.html		
-Database Migration Service	dms	DeleteTestPlan	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteTestPlan.html		
 Database Migration Service	dms	DescribeAccountAttributes	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html		
 Database Migration Service	dms	DescribeApplicableIndividualAssessments	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeApplicableIndividualAssessments.html		
 Database Migration Service	dms	DescribeCertificates	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html		
@@ -4204,12 +4202,6 @@ Database Migration Service	dms	DescribeReplicationTasks	Read		https://docs.aws.a
 Database Migration Service	dms	DescribeReplications	Read		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
 Database Migration Service	dms	DescribeSchemas	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html		
 Database Migration Service	dms	DescribeTableStatistics	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html		
-Database Migration Service	dms	DescribeTestEnvironments	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestEnvironments.html		
-Database Migration Service	dms	DescribeTestGenerationStatus	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestGenerationStatus.html		
-Database Migration Service	dms	DescribeTestPlans	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestPlans.html		
-Database Migration Service	dms	DescribeTestRunResultsSummaries	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestRunResultsSummaries.html		
-Database Migration Service	dms	DescribeTestRuns	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestRuns.html		
-Database Migration Service	dms	DescribeTests	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTests.html		
 Database Migration Service	dms	DisassociateExtensionPack	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
 Database Migration Service	dms	ExportMetadataModelAssessment	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html		
 Database Migration Service	dms	GetMetadataModel	Read		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		dms:StartMetadataModelImport
@@ -4236,8 +4228,6 @@ Database Migration Service	dms	ModifyReplicationConfig	Write		https://docs.aws.a
 Database Migration Service	dms	ModifyReplicationInstance	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html		
 Database Migration Service	dms	ModifyReplicationSubnetGroup	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html		
 Database Migration Service	dms	ModifyReplicationTask	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html		
-Database Migration Service	dms	ModifyTest	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyTest.html		
-Database Migration Service	dms	ModifyTestPlan	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyTestPlan.html		
 Database Migration Service	dms	MoveReplicationTask	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html		
 Database Migration Service	dms	RebootReplicationInstance	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_RebootReplicationInstance.html		
 Database Migration Service	dms	RefreshSchemas	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html		
@@ -4247,7 +4237,6 @@ Database Migration Service	dms	RemoveTagsFromResource	Tagging		https://docs.aws.
 Database Migration Service	dms	RunFleetAdvisorLsaAnalysis	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_RunFleetAdvisorLsaAnalysis.html		
 Database Migration Service	dms	StartDataMigration	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
 Database Migration Service	dms	StartExtensionPackAssociation [permission only]	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html		dms:AssociateExtensionPack
-Database Migration Service	dms	StartGenerateTests	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartGenerateTests.html		
 Database Migration Service	dms	StartMetadataModelAssessment	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelAssessment.html		
 Database Migration Service	dms	StartMetadataModelConversion	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelConversion.html		
 Database Migration Service	dms	StartMetadataModelExportAsScript [permission only]	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html		dms:StartMetadataModelExportAsScripts
@@ -4260,10 +4249,8 @@ Database Migration Service	dms	StartReplicationTask	Write		https://docs.aws.amaz
 Database Migration Service	dms	StartReplicationTaskAssessment	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html		
 Database Migration Service	dms	StartReplicationTaskAssessmentRun	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html		iam:PassRole
 Database Migration Service	dms	StopDataMigration	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
-Database Migration Service	dms	StopGenerateTests	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StopGenerateTests.html		
 Database Migration Service	dms	StopReplication	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
 Database Migration Service	dms	StopReplicationTask	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html		
-Database Migration Service	dms	StopTestRun	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_StopTestRun.html		
 Database Migration Service	dms	TestConnection	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html		
 Database Migration Service	dms	UpdateConversionConfiguration	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		dms:ModifyConversionConfiguration
 Database Migration Service	dms	UpdateDataProvider	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		dms:ModifyDataProvider
@@ -4271,7 +4258,6 @@ Database Migration Service	dms	UpdateInstanceProfile	Write		https://docs.aws.ama
 Database Migration Service	dms	UpdateMigrationProject	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		dms:ModifyMigrationProject
 Database Migration Service	dms	UpdateSubscriptionsToEventBridge	Write		https://docs.aws.amazon.com/dms/latest/APIReference/API_UpdateSubscriptionsToEventBridge.html		
 Database Migration Service	dms	UploadFileMetadataList [permission only]	Write		https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html		
-Database Migration Service	dms	ViewTestRunResults	Read		https://docs.aws.amazon.com/dms/latest/APIReference/API_ViewTestRunResults.html		
 Database Query Metadata Service	dbqms	CreateFavoriteQuery	Write		https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateFavoriteQuery		
 Database Query Metadata Service	dbqms	CreateQueryHistory	Write				
 Database Query Metadata Service	dbqms	CreateTab	Write		https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateTab		
@@ -4824,7 +4810,7 @@ EC2	ec2	AuthorizeSecurityGroupIngress	Write		https://docs.aws.amazon.com/AWSEC2/
 EC2	ec2	BundleInstance	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html	ec2:Region	
 EC2	ec2	CancelBundleTask	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelBundleTask.html	ec2:Region	
 EC2	ec2	CancelCapacityReservation	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservation.html	aws:ResourceTag/${TagKey}, ec2:CapacityReservationFleet, ec2:ResourceTag/${TagKey}, ec2:Region	
-EC2	ec2	CancelCapacityReservationFleets	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservationFleets.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
+EC2	ec2	CancelCapacityReservationFleets	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservationFleets.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	ec2:CancelCapacityReservation
 EC2	ec2	CancelConversionTask	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelConversionTask.html	ec2:Region	
 EC2	ec2	CancelExportTask	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelExportTask.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	CancelImageLaunchPermission	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelImageLaunchPermission.html	aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, ec2:Region	
@@ -4837,7 +4823,7 @@ EC2	ec2	CopyFpgaImage	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIRefere
 EC2	ec2	CopyImage	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html	ec2:ImageID, ec2:Owner, ec2:Region	
 EC2	ec2	CopySnapshot	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:OutpostArn, ec2:SnapshotID, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateCapacityReservation	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservation.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:CapacityReservationFleet, ec2:Region	ec2:CreateTags
-EC2	ec2	CreateCapacityReservationFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservationFleet.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateTags
+EC2	ec2	CreateCapacityReservationFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservationFleet.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateCapacityReservation, ec2:CreateTags, ec2:DescribeCapacityReservations, ec2:DescribeInstances
 EC2	ec2	CreateCarrierGateway	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCarrierGateway.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Tenancy, ec2:VpcID, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateClientVpnEndpoint	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnEndpoint.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:ClientRootCertificateChainArn, ec2:CloudwatchLogGroupArn, ec2:CloudwatchLogStreamArn, ec2:DirectoryArn, ec2:SamlProviderArn, ec2:ServerCertificateArn, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:VpcID, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateClientVpnRoute	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnRoute.html	aws:ResourceTag/${TagKey}, ec2:ClientRootCertificateChainArn, ec2:CloudwatchLogGroupArn, ec2:CloudwatchLogStreamArn, ec2:DirectoryArn, ec2:ResourceTag/${TagKey}, ec2:SamlProviderArn, ec2:ServerCertificateArn, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Region	
@@ -4849,7 +4835,7 @@ EC2	ec2	CreateDefaultSubnet	Write		https://docs.aws.amazon.com/AWSEC2/latest/API
 EC2	ec2	CreateDefaultVpc	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultVpc.html	ec2:Region	
 EC2	ec2	CreateDhcpOptions	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDhcpOptions.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:DhcpOptionsID, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateEgressOnlyInternetGateway	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateEgressOnlyInternetGateway.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Tenancy, ec2:VpcID, ec2:Region	ec2:CreateTags
-EC2	ec2	CreateFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:EbsOptimized, ec2:InstanceID, ec2:InstanceProfile, ec2:InstanceType, ec2:PlacementGroup, ec2:RootDeviceType, ec2:Tenancy, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:KeyPairName, ec2:KeyPairType, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:NetworkInterfaceID, ec2:ResourceTag/${TagKey}, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:VolumeSize, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:Encrypted, ec2:KmsKeyId, ec2:ParentSnapshot, ec2:VolumeID, ec2:VolumeIops, ec2:VolumeSize, ec2:VolumeThroughput, ec2:VolumeType, ec2:Region	ec2:CreateTags
+EC2	ec2	CreateFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:EbsOptimized, ec2:InstanceID, ec2:InstanceProfile, ec2:InstanceType, ec2:PlacementGroup, ec2:RootDeviceType, ec2:Tenancy, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:Encrypted, ec2:KmsKeyId, ec2:ParentSnapshot, ec2:VolumeID, ec2:VolumeIops, ec2:VolumeSize, ec2:VolumeThroughput, ec2:VolumeType, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateFlowLogs	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:NetworkInterfaceID, ec2:ResourceTag/${TagKey}, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Tenancy, ec2:VpcID, ec2:Region	ec2:CreateTags, iam:PassRole
 EC2	ec2	CreateFpgaImage	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Owner, ec2:Public, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateImage	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:ImageID, ec2:Owner, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:EbsOptimized, ec2:InstanceAutoRecovery, ec2:InstanceID, ec2:InstanceMarketType, ec2:InstanceMetadataTags, ec2:InstanceProfile, ec2:InstanceType, ec2:MetadataHttpEndpoint, ec2:MetadataHttpPutResponseHopLimit, ec2:MetadataHttpTokens, ec2:PlacementGroup, ec2:ProductCode, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, ec2:Tenancy, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:OutpostArn, ec2:Owner, ec2:ParentVolume, ec2:SnapshotID, ec2:SnapshotTime, ec2:SourceOutpostArn, ec2:VolumeSize, ec2:Region	ec2:CreateTags
@@ -4862,8 +4848,8 @@ EC2	ec2	CreateIpamPool	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIRefer
 EC2	ec2	CreateIpamResourceDiscovery	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamResourceDiscovery.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateTags, iam:CreateServiceLinkedRole
 EC2	ec2	CreateIpamScope	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamScope.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateKeyPair	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:KeyPairType, ec2:Region	ec2:CreateTags
-EC2	ec2	CreateLaunchTemplate	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateTags
-EC2	ec2	CreateLaunchTemplateVersion	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
+EC2	ec2	CreateLaunchTemplate	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html	aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateTags, ssm:GetParameters
+EC2	ec2	CreateLaunchTemplateVersion	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	ssm:GetParameters
 EC2	ec2	CreateLocalGatewayRoute	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRoute.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:NetworkInterfaceID, ec2:ResourceTag/${TagKey}, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	CreateLocalGatewayRouteTable	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRouteTable.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:Region	ec2:CreateTags
 EC2	ec2	CreateLocalGatewayRouteTablePermission [permission only]	Write		https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
@@ -5069,7 +5055,7 @@ EC2	ec2	DescribeIpamScopes	List		https://docs.aws.amazon.com/AWSEC2/latest/APIRe
 EC2	ec2	DescribeIpams	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpams.html	ec2:Region	
 EC2	ec2	DescribeIpv6Pools	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpv6Pools.html	ec2:Region	
 EC2	ec2	DescribeKeyPairs	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeKeyPairs.html	ec2:Region	
-EC2	ec2	DescribeLaunchTemplateVersions	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html	ec2:Region	
+EC2	ec2	DescribeLaunchTemplateVersions	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html	ec2:Region	ssm:GetParameters
 EC2	ec2	DescribeLaunchTemplates	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html	ec2:Region	
 EC2	ec2	DescribeLocalGatewayRouteTablePermissions [permission only]	List		https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html	ec2:Region	
 EC2	ec2	DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations.html	ec2:Region	
@@ -5277,11 +5263,11 @@ EC2	ec2	LockSnapshot	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReferen
 EC2	ec2	ModifyAddressAttribute	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyAddressAttribute.html	aws:ResourceTag/${TagKey}, ec2:AllocationId, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:Domain, ec2:PublicIpAddress, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	ModifyAvailabilityZoneGroup	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyAvailabilityZoneGroup.html	ec2:Region	
 EC2	ec2	ModifyCapacityReservation	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservation.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:CapacityReservationFleet, ec2:ResourceTag/${TagKey}, ec2:Region	
-EC2	ec2	ModifyCapacityReservationFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservationFleet.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:ResourceTag/${TagKey}, ec2:Region	
+EC2	ec2	ModifyCapacityReservationFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservationFleet.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:ResourceTag/${TagKey}, ec2:Region	ec2:ModifyCapacityReservation
 EC2	ec2	ModifyClientVpnEndpoint	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyClientVpnEndpoint.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:ClientRootCertificateChainArn, ec2:CloudwatchLogGroupArn, ec2:CloudwatchLogStreamArn, ec2:DirectoryArn, ec2:ResourceTag/${TagKey}, ec2:SamlProviderArn, ec2:ServerCertificateArn, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Tenancy, ec2:VpcID, ec2:Region	
 EC2	ec2	ModifyDefaultCreditSpecification	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyDefaultCreditSpecification.html	ec2:Region	
 EC2	ec2	ModifyEbsDefaultKmsKeyId	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html	ec2:Region	
-EC2	ec2	ModifyFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:KeyPairName, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:NetworkInterfaceID, ec2:ResourceTag/${TagKey}, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:VolumeSize, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, ec2:Region	
+EC2	ec2	ModifyFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, ec2:Region	
 EC2	ec2	ModifyFpgaImageAttribute	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFpgaImageAttribute.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	ModifyHosts	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyHosts.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	ModifyIdFormat	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdFormat.html	ec2:Region	
@@ -5373,7 +5359,7 @@ EC2	ec2	ReplaceTransitGatewayRoute	Write		https://docs.aws.amazon.com/AWSEC2/lat
 EC2	ec2	ReplaceVpnTunnel	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceVpnTunnel.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	ReportInstanceStatus	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReportInstanceStatus.html	ec2:Region	
 EC2	ec2	RequestSpotFleet	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:KeyPairName, ec2:KeyPairType, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:OutpostArn, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:SourceOutpostArn, ec2:VolumeSize, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, ec2:Region	
-EC2	ec2	RequestSpotInstances	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:KeyPairName, ec2:KeyPairType, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AuthorizedUser, ec2:AvailabilityZone, ec2:NetworkInterfaceID, ec2:Permission, ec2:ResourceTag/${TagKey}, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:OutpostArn, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:SourceOutpostArn, ec2:VolumeSize, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, ec2:Region	ec2:CreateTags
+EC2	ec2	RequestSpotInstances	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:ResourceTag/${TagKey}, ec2:KeyPairName, ec2:KeyPairType, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:AuthorizedUser, ec2:AvailabilityZone, ec2:NetworkInterfaceID, ec2:Permission, ec2:ResourceTag/${TagKey}, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:OutpostArn, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:SourceOutpostArn, ec2:VolumeSize, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, ec2:Region	ec2:CreateTags, iam:PassRole
 EC2	ec2	ResetAddressAttribute	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetAddressAttribute.html	aws:ResourceTag/${TagKey}, ec2:AllocationId, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:Domain, ec2:PublicIpAddress, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	ResetEbsDefaultKmsKeyId	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetEbsDefaultKmsKeyId.html	ec2:Region	
 EC2	ec2	ResetFpgaImageAttribute	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetFpgaImageAttribute.html	aws:ResourceTag/${TagKey}, ec2:Attribute, ec2:Attribute/${AttributeName}, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:Region	
@@ -5389,7 +5375,7 @@ EC2	ec2	RestoreSnapshotTier	Write		https://docs.aws.amazon.com/AWSEC2/latest/API
 EC2	ec2	RevokeClientVpnIngress	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeClientVpnIngress.html	aws:ResourceTag/${TagKey}, ec2:ClientRootCertificateChainArn, ec2:CloudwatchLogGroupArn, ec2:CloudwatchLogStreamArn, ec2:DirectoryArn, ec2:ResourceTag/${TagKey}, ec2:SamlProviderArn, ec2:ServerCertificateArn, ec2:Region	
 EC2	ec2	RevokeSecurityGroupEgress	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupEgress.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, ec2:Region	
 EC2	ec2	RevokeSecurityGroupIngress	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupIngress.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, ec2:Region	
-EC2	ec2	RunInstances			https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html	aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:EbsOptimized, ec2:InstanceAutoRecovery, ec2:InstanceID, ec2:InstanceMarketType, ec2:InstanceMetadataTags, ec2:InstanceProfile, ec2:InstanceType, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:MetadataHttpEndpoint, ec2:MetadataHttpPutResponseHopLimit, ec2:MetadataHttpTokens, ec2:PlacementGroup, ec2:ProductCode, ec2:RootDeviceType, ec2:Tenancy, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AssociatePublicIpAddress, ec2:AuthorizedService, ec2:AvailabilityZone, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:NetworkInterfaceID, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ElasticGpuType, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:KeyPairName, ec2:KeyPairType, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:VolumeSize, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:Encrypted, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ParentSnapshot, ec2:VolumeID, ec2:VolumeIops, ec2:VolumeSize, ec2:VolumeThroughput, ec2:VolumeType, ec2:Region	ec2:CreateTags
+EC2	ec2	RunInstances			https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html	aws:ResourceTag/${TagKey}, ec2:ImageID, ec2:ImageType, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:Owner, ec2:Public, ec2:ResourceTag/${TagKey}, ec2:RootDeviceType, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:EbsOptimized, ec2:InstanceAutoRecovery, ec2:InstanceID, ec2:InstanceMarketType, ec2:InstanceMetadataTags, ec2:InstanceProfile, ec2:InstanceType, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:MetadataHttpEndpoint, ec2:MetadataHttpPutResponseHopLimit, ec2:MetadataHttpTokens, ec2:PlacementGroup, ec2:ProductCode, ec2:RootDeviceType, ec2:Tenancy, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AssociatePublicIpAddress, ec2:AuthorizedService, ec2:AvailabilityZone, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:NetworkInterfaceID, ec2:Subnet, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, ec2:SecurityGroupID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:AvailabilityZone, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, ec2:SubnetID, ec2:Vpc, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:ElasticGpuType, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:KeyPairName, ec2:KeyPairType, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:PlacementGroupName, ec2:PlacementGroupStrategy, ec2:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:Owner, ec2:ParentVolume, ec2:ResourceTag/${TagKey}, ec2:SnapshotID, ec2:SnapshotTime, ec2:VolumeSize, aws:RequestTag/${TagKey}, aws:TagKeys, ec2:AvailabilityZone, ec2:Encrypted, ec2:IsLaunchTemplateResource, ec2:LaunchTemplate, ec2:ParentSnapshot, ec2:VolumeID, ec2:VolumeIops, ec2:VolumeSize, ec2:VolumeThroughput, ec2:VolumeType, ec2:Region	ec2:CreateTags, iam:PassRole, ssm:GetParameters
 EC2	ec2	RunScheduledInstances	Write		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunScheduledInstances.html	ec2:Region	
 EC2	ec2	SearchLocalGatewayRoutes	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchLocalGatewayRoutes.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
 EC2	ec2	SearchTransitGatewayMulticastGroups	List		https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html	aws:ResourceTag/${TagKey}, ec2:ResourceTag/${TagKey}, ec2:Region	
@@ -5823,7 +5809,7 @@ Elastic Container Service	ecs	ListContainerInstances	List		https://docs.aws.amaz
 Elastic Container Service	ecs	ListServices	List		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html	ecs:cluster	
 Elastic Container Service	ecs	ListServicesByNamespace	List		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServicesByNamespace.html	ecs:namespace	
 Elastic Container Service	ecs	ListTagsForResource	Read		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTagsForResource.html	aws:ResourceTag/${TagKey}	
-Elastic Container Service	ecs	ListTaskDefinitionFamilies	List		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html		
+Elastic Container Service	ecs	ListTaskDefinitionFamilies	List		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTaskDefinitionFamilies.html		
 Elastic Container Service	ecs	ListTaskDefinitions	List		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTaskDefinitions.html		
 Elastic Container Service	ecs	ListTasks	List		https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html	aws:ResourceTag/${TagKey}, ecs:cluster	
 Elastic Container Service	ecs	Poll [permission only]	Write		https://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html	ecs:cluster	
@@ -6183,6 +6169,7 @@ Elastic MapReduce	elasticmapreduce	RemoveTags	Tagging		https://docs.aws.amazon.c
 Elastic MapReduce	elasticmapreduce	RunJobFlow	Write		https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html	aws:RequestTag/${TagKey}, aws:TagKeys, elasticmapreduce:RequestTag/${TagKey}	iam:PassRole
 Elastic MapReduce	elasticmapreduce	SetKeepJobFlowAliveWhenNoSteps	Write		https://docs.aws.amazon.com/emr/latest/APIReference/API_SetKeepJobFlowAliveWhenNoSteps.html		
 Elastic MapReduce	elasticmapreduce	SetTerminationProtection	Write		https://docs.aws.amazon.com/emr/latest/APIReference/API_SetTerminationProtection.html		
+Elastic MapReduce	elasticmapreduce	SetUnhealthyNodeReplacement	Write		https://docs.aws.amazon.com/emr/latest/APIReference/API_SetUnhealthyNodeReplacement.html		
 Elastic MapReduce	elasticmapreduce	SetVisibleToAllUsers	Write		https://docs.aws.amazon.com/emr/latest/APIReference/API_SetVisibleToAllUsers.html		
 Elastic MapReduce	elasticmapreduce	StartEditor [permission only]	Write		https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html		
 Elastic MapReduce	elasticmapreduce	StartNotebookExecution	Write		https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html	aws:RequestTag/${TagKey}, aws:TagKeys, elasticmapreduce:RequestTag/${TagKey}	
@@ -6368,6 +6355,7 @@ Elemental MediaLive	medialive	ListTagsForResource	List		https://docs.aws.amazon.
 Elemental MediaLive	medialive	PurchaseOffering	Write		https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	RebootInputDevice	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	RejectInputDeviceTransfer	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
+Elemental MediaLive	medialive	RestartChannelPipelines	Write		https://docs.aws.amazon.com/medialive/latest/ug/maintenance-user-initiated.html		
 Elemental MediaLive	medialive	StartChannel	Write		https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html		
 Elemental MediaLive	medialive	StartInputDevice	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	StartInputDeviceMaintenanceWindow	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
@@ -8038,6 +8026,7 @@ Identity Store	identitystore	UpdateUser	Write		https://docs.aws.amazon.com/singl
 Identity Store Auth	identitystore-auth	BatchDeleteSession [permission only]	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html		
 Identity Store Auth	identitystore-auth	BatchGetSession [permission only]	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html		
 Identity Store Auth	identitystore-auth	ListSessions [permission only]	List		https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html		
+Identity Sync	identity-sync	AllowVendedLogDeliveryForResource [permission only]	Permissions management		https://docs.aws.amazon.com/singlesignon/latest/userguide/logging-ad-sync-errors.html		
 Identity Sync	identity-sync	CreateSyncFilter	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html		
 Identity Sync	identity-sync	CreateSyncProfile	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html		ds:AuthorizeApplication
 Identity Sync	identity-sync	CreateSyncTarget	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html		
@@ -9750,6 +9739,7 @@ Lex V2	lex	CreateBot	Write		https://docs.aws.amazon.com/lexv2/latest/APIReferenc
 Lex V2	lex	CreateBotAlias	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotAlias.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Lex V2	lex	CreateBotChannel [permission only]	Write		https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html		
 Lex V2	lex	CreateBotLocale	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotLocale.html		
+Lex V2	lex	CreateBotReplica	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotReplica.html		
 Lex V2	lex	CreateBotVersion	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotVersion.html		
 Lex V2	lex	CreateCustomVocabulary [permission only]	Write		https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html		
 Lex V2	lex	CreateExport	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateExport.html		
@@ -9764,6 +9754,7 @@ Lex V2	lex	DeleteBot	Write		https://docs.aws.amazon.com/lexv2/latest/APIReferenc
 Lex V2	lex	DeleteBotAlias	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotAlias.html		
 Lex V2	lex	DeleteBotChannel [permission only]	Write		https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html		
 Lex V2	lex	DeleteBotLocale	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotLocale.html		lex:DeleteIntent, lex:DeleteSlot, lex:DeleteSlotType
+Lex V2	lex	DeleteBotReplica	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotReplica.html		
 Lex V2	lex	DeleteBotVersion	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotVersion.html		
 Lex V2	lex	DeleteCustomVocabulary	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteCustomVocabulary.html		
 Lex V2	lex	DeleteExport	Write		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteExport.html		
@@ -9780,6 +9771,7 @@ Lex V2	lex	DescribeBotAlias	Read		https://docs.aws.amazon.com/lexv2/latest/APIRe
 Lex V2	lex	DescribeBotChannel [permission only]	Read		https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html		
 Lex V2	lex	DescribeBotLocale	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotLocale.html		
 Lex V2	lex	DescribeBotRecommendation	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotRecommendation.html		
+Lex V2	lex	DescribeBotReplica	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotReplica.html		
 Lex V2	lex	DescribeBotResourceGeneration	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotResourceGeneration.html		
 Lex V2	lex	DescribeBotVersion	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotVersion.html		
 Lex V2	lex	DescribeCustomVocabulary [permission only]	Read		https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html		
@@ -9798,11 +9790,14 @@ Lex V2	lex	GenerateBotElement	Read		https://docs.aws.amazon.com/lexv2/latest/API
 Lex V2	lex	GetSession	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_GetSession.html		
 Lex V2	lex	GetTestExecutionArtifactsUrl	Read		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GetTestExecutionArtifactsUrl.html		
 Lex V2	lex	ListAggregatedUtterances	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html		
+Lex V2	lex	ListBotAliasReplicas	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliasReplicas.html		
 Lex V2	lex	ListBotAliases	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliases.html		
 Lex V2	lex	ListBotChannels [permission only]	List		https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html		
 Lex V2	lex	ListBotLocales	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotLocales.html		
 Lex V2	lex	ListBotRecommendations	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotRecommendations.html		
+Lex V2	lex	ListBotReplicas	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotReplicas.html		
 Lex V2	lex	ListBotResourceGenerations	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotResourceGenerations.html		
+Lex V2	lex	ListBotVersionReplicas	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersionReplicas.html		
 Lex V2	lex	ListBotVersions	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersions.html		
 Lex V2	lex	ListBots	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html		
 Lex V2	lex	ListBuiltInIntents	List		https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInIntents.html		
@@ -10036,6 +10031,7 @@ Lightsail	lightsail	GetRelationalDatabaseParameters	Read		https://docs.aws.amazo
 Lightsail	lightsail	GetRelationalDatabaseSnapshot	Read		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html		
 Lightsail	lightsail	GetRelationalDatabaseSnapshots	Read		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html		
 Lightsail	lightsail	GetRelationalDatabases	Read		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabases.html		
+Lightsail	lightsail	GetSetupHistory	Read		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetSetupHistory.html		
 Lightsail	lightsail	GetStaticIp	Read		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html		
 Lightsail	lightsail	GetStaticIps	Read		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIps.html		
 Lightsail	lightsail	ImportKeyPair	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html		
@@ -10052,6 +10048,7 @@ Lightsail	lightsail	ResetDistributionCache	Write		https://docs.aws.amazon.com/li
 Lightsail	lightsail	SendContactMethodVerification	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SendContactMethodVerification.html		
 Lightsail	lightsail	SetIpAddressType	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetIpAddressType.html		
 Lightsail	lightsail	SetResourceAccessForBucket	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html		
+Lightsail	lightsail	SetupInstanceHttps	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetupInstanceHttps.html		lightsail:GetInstanceAccessDetails
 Lightsail	lightsail	StartGUISession	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartGUISession.html		
 Lightsail	lightsail	StartInstance	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartInstance.html		
 Lightsail	lightsail	StartRelationalDatabase	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartRelationalDatabase.html		
@@ -10061,7 +10058,7 @@ Lightsail	lightsail	StopRelationalDatabase	Write		https://docs.aws.amazon.com/li
 Lightsail	lightsail	TagResource	Tagging		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Lightsail	lightsail	TestAlarm	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TestAlarm.html		
 Lightsail	lightsail	UnpeerVpc	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UnpeerVpc.html		
-Lightsail	lightsail	UntagResource	Tagging		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Lightsail	lightsail	UntagResource	Tagging		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html	aws:TagKeys	
 Lightsail	lightsail	UpdateBucket	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucket.html		
 Lightsail	lightsail	UpdateBucketBundle	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html		
 Lightsail	lightsail	UpdateContainerService	Write		https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateContainerService.html		
@@ -10558,12 +10555,16 @@ Managed Streaming for Kafka Connect	kafkaconnect	CreateCustomPlugin	Write		https
 Managed Streaming for Kafka Connect	kafkaconnect	CreateWorkerConfiguration	Write		https://docs.aws.amazon.com/MSKC/latest/mskc/API_CreateWorkerConfiguration.html		
 Managed Streaming for Kafka Connect	kafkaconnect	DeleteConnector	Write		https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteConnector.html		logs:DeleteLogDelivery, logs:ListLogDeliveries
 Managed Streaming for Kafka Connect	kafkaconnect	DeleteCustomPlugin	Write		https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteCustomPlugin.html		
+Managed Streaming for Kafka Connect	kafkaconnect	DeleteWorkerConfiguration	Write		https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteWorkerConfiguration.html		
 Managed Streaming for Kafka Connect	kafkaconnect	DescribeConnector	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeConnector.html		
 Managed Streaming for Kafka Connect	kafkaconnect	DescribeCustomPlugin	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeCustomPlugin.html		
 Managed Streaming for Kafka Connect	kafkaconnect	DescribeWorkerConfiguration	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeWorkerConfiguration.html		
 Managed Streaming for Kafka Connect	kafkaconnect	ListConnectors	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListConnectors.html		
 Managed Streaming for Kafka Connect	kafkaconnect	ListCustomPlugins	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListCustomPlugins.html		
+Managed Streaming for Kafka Connect	kafkaconnect	ListTagsForResource	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListTagsForResource.html	aws:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:ResourceTag/${TagKey}	
 Managed Streaming for Kafka Connect	kafkaconnect	ListWorkerConfigurations	Read		https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListWorkerConfigurations.html		
+Managed Streaming for Kafka Connect	kafkaconnect	TagResource	Tagging		https://docs.aws.amazon.com/MSKC/latest/mskc/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys	
+Managed Streaming for Kafka Connect	kafkaconnect	UntagResource	Tagging		https://docs.aws.amazon.com/MSKC/latest/mskc/API_UntagResource.html	aws:TagKeys, aws:TagKeys, aws:TagKeys, aws:TagKeys	
 Managed Streaming for Kafka Connect	kafkaconnect	UpdateConnector	Write		https://docs.aws.amazon.com/MSKC/latest/mskc/API_UpdateConnector.html		
 Managed Workflows for Apache Airflow	airflow	CreateCliToken	Write		https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html		
 Managed Workflows for Apache Airflow	airflow	CreateEnvironment	Write		https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html	aws:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys	
@@ -10756,6 +10757,10 @@ Message Delivery Service	ec2messages	FailMessage	Write		https://docs.aws.amazon.
 Message Delivery Service	ec2messages	GetEndpoint	Read		https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html		
 Message Delivery Service	ec2messages	GetMessages	Read		https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html	ssm:SourceInstanceARN, ec2:SourceInstanceARN	
 Message Delivery Service	ec2messages	SendReply	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html	ssm:SourceInstanceARN, ec2:SourceInstanceARN	
+Message Gateway Service	ssmmessages	CreateControlChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html	ssm:SourceInstanceARN, ec2:SourceInstanceARN	
+Message Gateway Service	ssmmessages	CreateDataChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html		
+Message Gateway Service	ssmmessages	OpenControlChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html		
+Message Gateway Service	ssmmessages	OpenDataChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html		
 Microservice Extractor for .NET	serviceextract	GetConfig [permission only]	Read		https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html		
 Migration Acceleration Program Credits	mapcredits	ListAssociatedPrograms [permission only]	List		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html		
 Migration Acceleration Program Credits	mapcredits	ListQuarterCredits [permission only]	List		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html		
@@ -10855,6 +10860,8 @@ Migration Hub Strategy Recommendations	migrationhub-strategy	ListCollectors	List
 Migration Hub Strategy Recommendations	migrationhub-strategy	ListImportFileTask	List		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListImportFileTask.html		
 Migration Hub Strategy Recommendations	migrationhub-strategy	ListJarArtifacts	List		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListJarArtifacts.html		
 Migration Hub Strategy Recommendations	migrationhub-strategy	ListServers	List		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListServers.html		
+Migration Hub Strategy Recommendations	migrationhub-strategy	PutLogData	List		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutLogData.html		
+Migration Hub Strategy Recommendations	migrationhub-strategy	PutMetricData	List		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutMetricData.html		
 Migration Hub Strategy Recommendations	migrationhub-strategy	PutPortfolioPreferences	Write		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutPortfolioPreferences.html		
 Migration Hub Strategy Recommendations	migrationhub-strategy	RegisterCollector	Write		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_RegisterCollector.html		
 Migration Hub Strategy Recommendations	migrationhub-strategy	SendMessage	Write		https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_SendMessage.html		
@@ -12083,6 +12090,7 @@ Purchase Orders Console	purchase-orders	UpdatePurchaseOrderStatus [permission on
 Purchase Orders Console	purchase-orders	ViewPurchaseOrders [permission only]	Read		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions	aws:ResourceTag/${TagKey}	
 Q	q	GetConversation [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
 Q	q	GetTroubleshootingResults [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
+Q	q	ListConversations [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
 Q	q	SendMessage [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
 Q	q	StartConversation [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
 Q	q	StartTroubleshootingAnalysis [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
@@ -12631,7 +12639,8 @@ Redshift	redshift	CreateEndpointAccess	Write		https://docs.aws.amazon.com/redshi
 Redshift	redshift	CreateEventSubscription	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEventSubscription.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Redshift	redshift	CreateHsmClientCertificate	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmClientCertificate.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Redshift	redshift	CreateHsmConfiguration	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html	aws:RequestTag/${TagKey}, aws:TagKeys	
-Redshift	redshift	CreateRedshiftIdcApplication	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateRedshiftIdcApplication.html		
+Redshift	redshift	CreateQev2IdcApplication [permission only]	Write		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html		sso:CreateApplication, sso:PutApplicationAccessScope, sso:PutApplicationAuthenticationMethod, sso:PutApplicationGrant
+Redshift	redshift	CreateRedshiftIdcApplication	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateRedshiftIdcApplication.html		sso:CreateApplication, sso:PutApplicationAccessScope, sso:PutApplicationAuthenticationMethod, sso:PutApplicationGrant
 Redshift	redshift	CreateSavedQuery [permission only]	Write		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html		
 Redshift	redshift	CreateScheduledAction	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateScheduledAction.html		
 Redshift	redshift	CreateSnapshotCopyGrant	Permissions management		https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotCopyGrant.html	aws:RequestTag/${TagKey}, aws:TagKeys	
@@ -12651,7 +12660,8 @@ Redshift	redshift	DeleteEventSubscription	Write		https://docs.aws.amazon.com/red
 Redshift	redshift	DeleteHsmClientCertificate	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteHsmClientCertificate.html		
 Redshift	redshift	DeleteHsmConfiguration	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteHsmConfiguration.html		
 Redshift	redshift	DeletePartner	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeletePartner.html		
-Redshift	redshift	DeleteRedshiftIdcApplication	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteRedshiftIdcApplication.html		
+Redshift	redshift	DeleteQev2IdcApplication [permission only]	Write		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html		sso:DeleteApplication
+Redshift	redshift	DeleteRedshiftIdcApplication	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteRedshiftIdcApplication.html		sso:DeleteApplication
 Redshift	redshift	DeleteResourcePolicy	Permissions management		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteResourcePolicy.html		
 Redshift	redshift	DeleteSavedQueries [permission only]	Write		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html		
 Redshift	redshift	DeleteScheduledAction	Write		API_DeleteScheduledAction.html		
@@ -12687,8 +12697,9 @@ Redshift	redshift	DescribeLoggingStatus	Read		https://docs.aws.amazon.com/redshi
 Redshift	redshift	DescribeNodeConfigurationOptions	List		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeNodeConfigurationOptions.html		
 Redshift	redshift	DescribeOrderableClusterOptions	Read		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeOrderableClusterOptions.html		
 Redshift	redshift	DescribePartners	Read		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribePartners.html		
+Redshift	redshift	DescribeQev2IdcApplications [permission only]	List		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html		
 Redshift	redshift	DescribeQuery [permission only]	Read		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html		
-Redshift	redshift	DescribeRedshiftIdcApplications	List		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeRedshiftIdcApplications.html		
+Redshift	redshift	DescribeRedshiftIdcApplications	List		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeRedshiftIdcApplications.html		sso:GetApplicationGrant, sso:ListApplicationAccessScopes
 Redshift	redshift	DescribeReservedNodeExchangeStatus	Read		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeExchangeStatus.html		
 Redshift	redshift	DescribeReservedNodeOfferings	Read		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeOfferings.html		
 Redshift	redshift	DescribeReservedNodes	Read		https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodes.html		
@@ -12734,7 +12745,8 @@ Redshift	redshift	ModifyClusterSubnetGroup	Write		https://docs.aws.amazon.com/re
 Redshift	redshift	ModifyCustomDomainAssociation	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCustomDomainAssociation.html		acm:DescribeCertificate
 Redshift	redshift	ModifyEndpointAccess	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEndpointAccess.html		
 Redshift	redshift	ModifyEventSubscription	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEventSubscription.html		
-Redshift	redshift	ModifyRedshiftIdcApplication	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyRedshiftIdcApplication.html		
+Redshift	redshift	ModifyQev2IdcApplication [permission only]	Write		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html		sso:UpdateApplication
+Redshift	redshift	ModifyRedshiftIdcApplication	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyRedshiftIdcApplication.html		sso:DeleteApplicationAccessScope, sso:DeleteApplicationGrant, sso:GetApplicationGrant, sso:ListApplicationAccessScopes, sso:PutApplicationAccessScope, sso:PutApplicationGrant, sso:UpdateApplication
 Redshift	redshift	ModifySavedQuery [permission only]	Write		https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html		
 Redshift	redshift	ModifyScheduledAction	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyScheduledAction.html		
 Redshift	redshift	ModifySnapshotCopyRetentionPeriod	Write		https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifySnapshotCopyRetentionPeriod.html		
@@ -12953,7 +12965,7 @@ Resilience Hub	resiliencehub	UpdateAppVersion	Write		https://docs.aws.amazon.com
 Resilience Hub	resiliencehub	UpdateAppVersionAppComponent	Write		https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionAppComponent.html		
 Resilience Hub	resiliencehub	UpdateAppVersionResource	Write		https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionResource.html		
 Resilience Hub	resiliencehub	UpdateResiliencyPolicy	Write		https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateResiliencyPolicy.html		
-Resource Access Manager (RAM)	ram	AcceptResourceShareInvitation	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html	ram:ShareOwnerAccountId	
+Resource Access Manager (RAM)	ram	AcceptResourceShareInvitation	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html	ram:ShareOwnerAccountId, ram:ResourceShareName	
 Resource Access Manager (RAM)	ram	AssociateResourceShare	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html	aws:ResourceTag/${TagKey}, ram:ResourceTag/${TagKey}, ram:ResourceShareName, ram:AllowsExternalPrincipals, ram:Principal, ram:RequestedResourceType, ram:ResourceArn	
 Resource Access Manager (RAM)	ram	AssociateResourceSharePermission	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html		
 Resource Access Manager (RAM)	ram	CreatePermission	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_CreatePermission.html	ram:PermissionArn, ram:PermissionResourceType, aws:ResourceTag/${TagKey}, aws:RequestTag/${TagKey}, aws:TagKeys	ram:TagResource
@@ -12970,7 +12982,7 @@ Resource Access Manager (RAM)	ram	GetResourcePolicies	Read		https://docs.aws.ama
 Resource Access Manager (RAM)	ram	GetResourceShareAssociations	Read		https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareAssociations.html		
 Resource Access Manager (RAM)	ram	GetResourceShareInvitations	Read		https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html		
 Resource Access Manager (RAM)	ram	GetResourceShares	Read		https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShares.html	aws:RequestTag/${TagKey}, aws:TagKeys	
-Resource Access Manager (RAM)	ram	ListPendingInvitationResources	Read		https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html		
+Resource Access Manager (RAM)	ram	ListPendingInvitationResources	Read		https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html	ram:ResourceShareName	
 Resource Access Manager (RAM)	ram	ListPermissionAssociations	List		https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissionAssociations.html	ram:PermissionArn, ram:PermissionResourceType	
 Resource Access Manager (RAM)	ram	ListPermissionVersions	List		https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissionVersions.html		
 Resource Access Manager (RAM)	ram	ListPermissions	List		https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissions.html		
@@ -12981,11 +12993,11 @@ Resource Access Manager (RAM)	ram	ListResourceTypes	List		https://docs.aws.amazo
 Resource Access Manager (RAM)	ram	ListResources	List		https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html		
 Resource Access Manager (RAM)	ram	PromotePermissionCreatedFromPolicy	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_PromotePermissionCreatedFromPolicy.html	ram:PermissionArn, ram:PermissionResourceType	
 Resource Access Manager (RAM)	ram	PromoteResourceShareCreatedFromPolicy	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html		
-Resource Access Manager (RAM)	ram	RejectResourceShareInvitation	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html	ram:ShareOwnerAccountId	
+Resource Access Manager (RAM)	ram	RejectResourceShareInvitation	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html	ram:ShareOwnerAccountId, ram:ResourceShareName	
 Resource Access Manager (RAM)	ram	ReplacePermissionAssociations	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_ReplacePermissionAssociations.html	ram:PermissionArn, ram:PermissionResourceType	
 Resource Access Manager (RAM)	ram	SetDefaultPermissionVersion	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_SetDefaultPermissionVersion.html	ram:PermissionArn, ram:PermissionResourceType	
 Resource Access Manager (RAM)	ram	TagResource	Tagging		https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
-Resource Access Manager (RAM)	ram	UntagResource	Tagging		https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Resource Access Manager (RAM)	ram	UntagResource	Tagging		https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html	aws:TagKeys	
 Resource Access Manager (RAM)	ram	UpdateResourceShare	Write		https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html	aws:ResourceTag/${TagKey}, ram:ResourceTag/${TagKey}, ram:ResourceShareName, ram:AllowsExternalPrincipals, ram:RequestedAllowsExternalPrincipals	
 Resource Explorer	resource-explorer-2	AssociateDefaultView	Write		https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_AssociateDefaultView.html		
 Resource Explorer	resource-explorer-2	BatchGetView	Read		https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_BatchGetView.html		resource-explorer-2:GetView
@@ -13017,17 +13029,20 @@ Resource Group Tagging API	tag	StartReportCreation	Write		https://docs.aws.amazo
 Resource Group Tagging API	tag	TagResources	Tagging		https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html		
 Resource Group Tagging API	tag	UntagResources	Tagging		https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html		
 Resource Groups	resource-groups	AssociateResource [permission only]	Write		https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html		
-Resource Groups	resource-groups	CreateGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Resource Groups	resource-groups	CreateGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html	aws:RequestTag/${TagKey}, aws:TagKeys	cloudformation:DescribeStacks
 Resource Groups	resource-groups	DeleteGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html		
+Resource Groups	resource-groups	DeleteGroupPolicy [permission only]	Write		https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role		
 Resource Groups	resource-groups	DisassociateResource [permission only]	Write		https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html		
 Resource Groups	resource-groups	GetAccountSettings	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetAccountSettings.html		
 Resource Groups	resource-groups	GetGroup	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html		
 Resource Groups	resource-groups	GetGroupConfiguration	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupConfiguration.html		
+Resource Groups	resource-groups	GetGroupPolicy [permission only]	Read		https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role		
 Resource Groups	resource-groups	GetGroupQuery	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html		
 Resource Groups	resource-groups	GetTags	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html		
 Resource Groups	resource-groups	GroupResources	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html		
 Resource Groups	resource-groups	ListGroupResources	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html		cloudformation:DescribeStacks, cloudformation:ListStackResources, tag:GetResources
 Resource Groups	resource-groups	ListGroups	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html		
+Resource Groups	resource-groups	ListResourceTypes [permission only]	List		https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html		
 Resource Groups	resource-groups	PutGroupConfiguration	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_PutGroupConfiguration.html		
 Resource Groups	resource-groups	PutGroupPolicy [permission only]	Write		https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role		
 Resource Groups	resource-groups	SearchResources	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html		cloudformation:DescribeStacks, cloudformation:ListStackResources, tag:GetResources
@@ -13036,7 +13051,7 @@ Resource Groups	resource-groups	UngroupResources	Write		https://docs.aws.amazon.
 Resource Groups	resource-groups	Untag	Tagging		https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html	aws:TagKeys	
 Resource Groups	resource-groups	UpdateAccountSettings	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateAccountSettings.html		
 Resource Groups	resource-groups	UpdateGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html		
-Resource Groups	resource-groups	UpdateGroupQuery	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html		
+Resource Groups	resource-groups	UpdateGroupQuery	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html		cloudformation:DescribeStacks
 RoboMaker	robomaker	BatchDeleteWorlds	Write		https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDeleteWorlds.html		
 RoboMaker	robomaker	BatchDescribeSimulationJob	Read		https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDescribeSimulationJob.html		
 RoboMaker	robomaker	CancelDeploymentJob	Write		https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelDeploymentJob.html		
@@ -14315,7 +14330,7 @@ Security Hub	securityhub	UpdateSecurityHubConfiguration	Write		https://docs.aws.
 Security Hub	securityhub	UpdateStandardsControl	Write		https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html		
 Security Lake	securitylake	CreateAwsLogSource	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateAwsLogSource.html		glue:CreateDatabase, glue:CreateTable, glue:GetDatabase, glue:GetTable, iam:CreateServiceLinkedRole, kms:CreateGrant, kms:DescribeKey
 Security Lake	securitylake	CreateCustomLogSource	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateCustomLogSource.html		glue:CreateCrawler, glue:CreateDatabase, glue:CreateTable, glue:StartCrawlerSchedule, iam:DeleteRolePolicy, iam:GetRole, iam:PassRole, iam:PutRolePolicy, kms:CreateGrant, kms:DescribeKey, kms:GenerateDataKey, lakeformation:GrantPermissions, lakeformation:RegisterResource, s3:ListBucket, s3:PutObject
-Security Lake	securitylake	CreateDataLake	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html	aws:RequestTag/${TagKey}, aws:TagKeys	events:PutRule, events:PutTargets, iam:CreateServiceLinkedRole, iam:DeleteRolePolicy, iam:GetRole, iam:PassRole, iam:PutRolePolicy, kms:CreateGrant, kms:DescribeKey, lakeformation:GetDataLakeSettings, lakeformation:PutDataLakeSettings, lambda:CreateEventSourceMapping, lambda:CreateFunction, organizations:DescribeOrganization, organizations:ListAccounts, organizations:ListDelegatedServicesForAccount, s3:CreateBucket, s3:ListBucket, s3:PutBucketPolicy, s3:PutBucketPublicAccessBlock, s3:PutBucketVersioning, sqs:CreateQueue, sqs:GetQueueAttributes, sqs:SetQueueAttributes
+Security Lake	securitylake	CreateDataLake	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html	aws:RequestTag/${TagKey}, aws:TagKeys	events:PutRule, events:PutTargets, iam:CreateServiceLinkedRole, iam:DeleteRolePolicy, iam:GetRole, iam:ListAttachedRolePolicies, iam:PassRole, iam:PutRolePolicy, kms:CreateGrant, kms:DescribeKey, lakeformation:GetDataLakeSettings, lakeformation:PutDataLakeSettings, lambda:AddPermission, lambda:CreateEventSourceMapping, lambda:CreateFunction, organizations:DescribeOrganization, organizations:ListAccounts, organizations:ListDelegatedServicesForAccount, s3:CreateBucket, s3:GetObject, s3:GetObjectVersion, s3:ListBucket, s3:PutBucketPolicy, s3:PutBucketPublicAccessBlock, s3:PutBucketVersioning, sqs:CreateQueue, sqs:GetQueueAttributes, sqs:SetQueueAttributes
 Security Lake	securitylake	CreateDataLakeExceptionSubscription	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLakeExceptionSubscription.html		
 Security Lake	securitylake	CreateDataLakeOrganizationConfiguration	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLakeOrganizationConfiguration.html		
 Security Lake	securitylake	CreateSubscriber	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateSubscriber.html	aws:RequestTag/${TagKey}, aws:TagKeys	iam:CreateRole, iam:DeleteRolePolicy, iam:GetRole, iam:PutRolePolicy, lakeformation:GrantPermissions, lakeformation:ListPermissions, lakeformation:RegisterResource, lakeformation:RevokePermissions, ram:GetResourceShareAssociations, ram:GetResourceShares, ram:UpdateResourceShare, s3:PutObject
@@ -14340,7 +14355,7 @@ Security Lake	securitylake	ListTagsForResource	List		https://docs.aws.amazon.com
 Security Lake	securitylake	RegisterDataLakeDelegatedAdministrator	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_RegisterDataLakeDelegatedAdministrator.html		iam:CreateServiceLinkedRole, organizations:DescribeOrganization, organizations:EnableAWSServiceAccess, organizations:ListDelegatedAdministrators, organizations:ListDelegatedServicesForAccount, organizations:RegisterDelegatedAdministrator
 Security Lake	securitylake	TagResource	Tagging		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Security Lake	securitylake	UntagResource	Tagging		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UntagResource.html	aws:TagKeys	
-Security Lake	securitylake	UpdateDataLake	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html		events:PutRule, events:PutTargets, iam:CreateServiceLinkedRole, iam:DeleteRolePolicy, iam:GetRole, iam:PutRolePolicy, kms:CreateGrant, kms:DescribeKey, lakeformation:GetDataLakeSettings, lakeformation:PutDataLakeSettings, lambda:CreateEventSourceMapping, lambda:CreateFunction, organizations:DescribeOrganization, organizations:ListDelegatedServicesForAccount, s3:CreateBucket, s3:ListBucket, s3:PutBucketPolicy, s3:PutBucketPublicAccessBlock, s3:PutBucketVersioning, sqs:CreateQueue, sqs:GetQueueAttributes, sqs:SetQueueAttributes
+Security Lake	securitylake	UpdateDataLake	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html		events:PutRule, events:PutTargets, iam:CreateServiceLinkedRole, iam:DeleteRolePolicy, iam:GetRole, iam:ListAttachedRolePolicies, iam:PutRolePolicy, kms:CreateGrant, kms:DescribeKey, lakeformation:GetDataLakeSettings, lakeformation:PutDataLakeSettings, lambda:AddPermission, lambda:CreateEventSourceMapping, lambda:CreateFunction, organizations:DescribeOrganization, organizations:ListDelegatedServicesForAccount, s3:CreateBucket, s3:GetObject, s3:GetObjectVersion, s3:ListBucket, s3:PutBucketPolicy, s3:PutBucketPublicAccessBlock, s3:PutBucketVersioning, sqs:CreateQueue, sqs:GetQueueAttributes, sqs:SetQueueAttributes
 Security Lake	securitylake	UpdateDataLakeExceptionSubscription	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLakeExceptionSubscription.html		
 Security Lake	securitylake	UpdateSubscriber	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateSubscriber.html		events:CreateApiDestination, events:CreateConnection, events:DescribeRule, events:ListApiDestinations, events:ListConnections, events:PutRule, events:PutTargets, iam:DeleteRolePolicy, iam:GetRole, iam:PutRolePolicy
 Security Lake	securitylake	UpdateSubscriberNotification	Write		https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateSubscriberNotification.html		events:CreateApiDestination, events:CreateConnection, events:DescribeRule, events:ListApiDestinations, events:ListConnections, events:PutRule, events:PutTargets, iam:CreateServiceLinkedRole, iam:DeleteRolePolicy, iam:GetRole, iam:PassRole, iam:PutRolePolicy, s3:CreateBucket, s3:GetBucketNotification, s3:ListBucket, s3:PutBucketNotification, s3:PutBucketPolicy, s3:PutBucketPublicAccessBlock, s3:PutBucketVersioning, s3:PutLifecycleConfiguration, sqs:CreateQueue, sqs:DeleteQueue, sqs:GetQueueAttributes, sqs:GetQueueUrl, sqs:SetQueueAttributes
@@ -14541,10 +14556,6 @@ Service Quotas	servicequotas	PutServiceQuotaIncreaseRequestIntoTemplate	Write		h
 Service Quotas	servicequotas	RequestServiceQuotaIncrease	Write		https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html	servicequotas:service	
 Service Quotas	servicequotas	TagResource	Tagging		https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource	aws:RequestTag/${TagKey}, aws:TagKeys	
 Service Quotas	servicequotas	UntagResource	Tagging		https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource	aws:RequestTag/${TagKey}, aws:TagKeys	
-Session Manager Message Gateway Service	ssmmessages	CreateControlChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html	ssm:SourceInstanceARN, ec2:SourceInstanceARN	
-Session Manager Message Gateway Service	ssmmessages	CreateDataChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html		
-Session Manager Message Gateway Service	ssmmessages	OpenControlChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html		
-Session Manager Message Gateway Service	ssmmessages	OpenDataChannel	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html		
 Shield	shield	AssociateDRTLogBucket	Write		https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html		s3:GetBucketPolicy, s3:PutBucketPolicy
 Shield	shield	AssociateDRTRole	Write		https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTRole.html		iam:GetRole, iam:ListAttachedRolePolicies, iam:PassRole
 Shield	shield	AssociateHealthCheck	Write		https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateHealthCheck.html	aws:ResourceTag/${TagKey}	route53:GetHealthCheck
@@ -14708,10 +14719,10 @@ Simple Email Service v2	ses	UpdateContactList	Write		https://docs.aws.amazon.com
 Simple Email Service v2	ses	UpdateCustomVerificationEmailTemplate	Write		https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateCustomVerificationEmailTemplate.html	ses:ApiVersion	
 Simple Email Service v2	ses	UpdateEmailIdentityPolicy	Permissions management		https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateEmailIdentityPolicy.html	ses:ApiVersion, aws:ResourceTag/${TagKey}	
 Simple Email Service v2	ses	UpdateEmailTemplate	Write		https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateEmailTemplate.html	ses:ApiVersion	
-Simple Workflow Service	swf	CancelTimer	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
-Simple Workflow Service	swf	CancelWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
-Simple Workflow Service	swf	CompleteWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
-Simple Workflow Service	swf	ContinueAsNewWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
+Simple Workflow Service	swf	CancelTimer [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
+Simple Workflow Service	swf	CancelWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
+Simple Workflow Service	swf	CompleteWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
+Simple Workflow Service	swf	ContinueAsNewWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
 Simple Workflow Service	swf	CountClosedWorkflowExecutions	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountClosedWorkflowExecutions.html	swf:tagFilter.tag, swf:typeFilter.name, swf:typeFilter.version	
 Simple Workflow Service	swf	CountOpenWorkflowExecutions	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountOpenWorkflowExecutions.html	swf:tagFilter.tag, swf:typeFilter.name, swf:typeFilter.version	
 Simple Workflow Service	swf	CountPendingActivityTasks	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingActivityTasks.html	swf:taskList.name	
@@ -14723,7 +14734,7 @@ Simple Workflow Service	swf	DescribeActivityType	Read		https://docs.aws.amazon.c
 Simple Workflow Service	swf	DescribeDomain	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeDomain.html		
 Simple Workflow Service	swf	DescribeWorkflowExecution	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowExecution.html		
 Simple Workflow Service	swf	DescribeWorkflowType	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html	swf:workflowType.name, swf:workflowType.version	
-Simple Workflow Service	swf	FailWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
+Simple Workflow Service	swf	FailWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
 Simple Workflow Service	swf	GetWorkflowExecutionHistory	Read		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_GetWorkflowExecutionHistory.html		
 Simple Workflow Service	swf	ListActivityTypes	List		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListActivityTypes.html		
 Simple Workflow Service	swf	ListClosedWorkflowExecutions	List		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListClosedWorkflowExecutions.html	swf:tagFilter.tag, swf:typeFilter.name, swf:typeFilter.version	
@@ -14734,22 +14745,22 @@ Simple Workflow Service	swf	ListWorkflowTypes	List		https://docs.aws.amazon.com/
 Simple Workflow Service	swf	PollForActivityTask	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html	swf:taskList.name	
 Simple Workflow Service	swf	PollForDecisionTask	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html	swf:taskList.name	
 Simple Workflow Service	swf	RecordActivityTaskHeartbeat	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordActivityTaskHeartbeat.html		
-Simple Workflow Service	swf	RecordMarker	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
+Simple Workflow Service	swf	RecordMarker [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
 Simple Workflow Service	swf	RegisterActivityType	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html	swf:defaultTaskList.name, swf:name, swf:version	
 Simple Workflow Service	swf	RegisterDomain	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterDomain.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Simple Workflow Service	swf	RegisterWorkflowType	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterWorkflowType.html	swf:defaultTaskList.name, swf:name, swf:version	
-Simple Workflow Service	swf	RequestCancelActivityTask	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
-Simple Workflow Service	swf	RequestCancelExternalWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
+Simple Workflow Service	swf	RequestCancelActivityTask [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
+Simple Workflow Service	swf	RequestCancelExternalWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
 Simple Workflow Service	swf	RequestCancelWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelWorkflowExecution.html		
 Simple Workflow Service	swf	RespondActivityTaskCanceled	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCanceled.html		
 Simple Workflow Service	swf	RespondActivityTaskCompleted	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCompleted.html	swf:activityType.name, swf:activityType.version, swf:tagList.member.0, swf:tagList.member.1, swf:tagList.member.2, swf:tagList.member.3, swf:tagList.member.4, swf:taskList.name, swf:workflowType.name, swf:workflowType.version	
 Simple Workflow Service	swf	RespondActivityTaskFailed	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskFailed.html		
 Simple Workflow Service	swf	RespondDecisionTaskCompleted	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondDecisionTaskCompleted.html		
-Simple Workflow Service	swf	ScheduleActivityTask	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
-Simple Workflow Service	swf	SignalExternalWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
+Simple Workflow Service	swf	ScheduleActivityTask [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
+Simple Workflow Service	swf	SignalExternalWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
 Simple Workflow Service	swf	SignalWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalWorkflowExecution.html		
-Simple Workflow Service	swf	StartChildWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
-Simple Workflow Service	swf	StartTimer	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html		
+Simple Workflow Service	swf	StartChildWorkflowExecution [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
+Simple Workflow Service	swf	StartTimer [permission only]	Write		${APIReferenceDocPage}API_Decision.html		
 Simple Workflow Service	swf	StartWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html	swf:tagList.member.0, swf:tagList.member.1, swf:tagList.member.2, swf:tagList.member.3, swf:tagList.member.4, swf:taskList.name, swf:workflowType.name, swf:workflowType.version	
 Simple Workflow Service	swf	TagResource	Tagging		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Simple Workflow Service	swf	TerminateWorkflowExecution	Write		https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TerminateWorkflowExecution.html		
@@ -15347,6 +15358,17 @@ Timestream	timestream	UpdateDatabase	Write		https://docs.aws.amazon.com/timestre
 Timestream	timestream	UpdateScheduledQuery	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateScheduledQuery.html		timestream:DescribeEndpoints
 Timestream	timestream	UpdateTable	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateTable.html		timestream:DescribeEndpoints
 Timestream	timestream	WriteRecords	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_WriteRecords.html		timestream:DescribeEndpoints
+Timestream Influxdb	timestream-influxdb	CreateDbInstance	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDbInstance.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Timestream Influxdb	timestream-influxdb	CreateDbParameterGroup	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDbParameterGroup.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Timestream Influxdb	timestream-influxdb	DeleteDbInstance	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteDbInstance.html		
+Timestream Influxdb	timestream-influxdb	GetDbInstance	Read		https://docs.aws.amazon.com/timestream/latest/developerguide/API_GetDbInstance.html		
+Timestream Influxdb	timestream-influxdb	GetDbParameterGroup	Read		https://docs.aws.amazon.com/timestream/latest/developerguide/API_GetDbParameterGroup.html		
+Timestream Influxdb	timestream-influxdb	ListDbInstances	List		https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDbInstances.html		
+Timestream Influxdb	timestream-influxdb	ListDbParameterGroups	List		https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDbParameterGroups.html		
+Timestream Influxdb	timestream-influxdb	ListTagsForResource	Read		https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTagsForResource.html	aws:ResourceTag/${TagKey}	
+Timestream Influxdb	timestream-influxdb	TagResource	Tagging		https://docs.aws.amazon.com/timestream/latest/developerguide/API_TagResource.html	aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:TagKeys	
+Timestream Influxdb	timestream-influxdb	UntagResource	Tagging		https://docs.aws.amazon.com/timestream/latest/developerguide/API_UntagResource.html	aws:ResourceTag/${TagKey}, aws:TagKeys	
+Timestream Influxdb	timestream-influxdb	UpdateDbInstance	Write		https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateDbInstance.html		
 Tiros	tiros	CreateQuery [permission only]	Write		https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html		
 Tiros	tiros	ExtendQuery [permission only]	Write		https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html		
 Tiros	tiros	GetQueryAnswer [permission only]	Read		https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html		
@@ -15802,6 +15824,7 @@ WAF V2	wafv2	CreateIPSet	Write		https://docs.aws.amazon.com/waf/latest/APIRefere
 WAF V2	wafv2	CreateRegexPatternSet	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 WAF V2	wafv2	CreateRuleGroup	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 WAF V2	wafv2	CreateWebACL	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+WAF V2	wafv2	DeleteAPIKey	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteAPIKey.html		
 WAF V2	wafv2	DeleteFirewallManagerRuleGroups	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html		
 WAF V2	wafv2	DeleteIPSet	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html		
 WAF V2	wafv2	DeleteLoggingConfiguration	Write		https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html	wafv2:LogScope	
