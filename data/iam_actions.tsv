@@ -197,7 +197,7 @@ Amplify Admin	amplifybackend	GetToken	Read		https://docs.aws.amazon.com/amplify-
 Amplify Admin	amplifybackend	ImportBackendAuth	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth-backendenvironmentname.html#ImportBackendAuth		
 Amplify Admin	amplifybackend	ImportBackendStorage	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#ImportBackendStorage		
 Amplify Admin	amplifybackend	ListBackendJobs	List		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-job-backendenvironmentname.html#ListBackendJobs		
-Amplify Admin	amplifybackend	ListS3Buckets	List		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#ListS3Buckets		
+Amplify Admin	amplifybackend	ListS3Buckets	List		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#ListS3Buckets		s3:ListAllMyBuckets
 Amplify Admin	amplifybackend	RemoveAllBackends	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-remove.html#RemoveAllBackends		
 Amplify Admin	amplifybackend	RemoveBackendConfig	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-config-remove.html#RemoveBackendConfig		
 Amplify Admin	amplifybackend	UpdateBackendAPI	Write		https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname.html#UpdateBackendAPI		
@@ -994,6 +994,7 @@ Auto Scaling	autoscaling-plans	UpdateScalingPlan	Write		https://docs.aws.amazon.
 B2B Data Interchange	b2bi	CreateCapability	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateCapability.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 B2B Data Interchange	b2bi	CreatePartnership	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreatePartnership.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 B2B Data Interchange	b2bi	CreateProfile	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateProfile.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+B2B Data Interchange	b2bi	CreateStarterMappingTemplate	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateStarterMappingTemplate.html		
 B2B Data Interchange	b2bi	CreateTransformer	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateTransformer.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 B2B Data Interchange	b2bi	DeleteCapability	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_DeleteCapability.html		
 B2B Data Interchange	b2bi	DeletePartnership	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_DeletePartnership.html		
@@ -1011,6 +1012,7 @@ B2B Data Interchange	b2bi	ListTagsForResource	Read		https://docs.aws.amazon.com/
 B2B Data Interchange	b2bi	ListTransformers	List		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_ListTransformers.html		
 B2B Data Interchange	b2bi	StartTransformerJob	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_StartTransformerJob.html		
 B2B Data Interchange	b2bi	TagResource	Tagging		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+B2B Data Interchange	b2bi	TestConversion	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestConversion.html		
 B2B Data Interchange	b2bi	TestMapping	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestMapping.html		
 B2B Data Interchange	b2bi	TestParsing	Write		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestParsing.html		
 B2B Data Interchange	b2bi	UntagResource	Tagging		https://docs.aws.amazon.com/b2bi/latest/APIReference/API_UntagResource.html	aws:TagKeys	
@@ -1174,7 +1176,7 @@ Batch	batch	ListJobs	List		https://docs.aws.amazon.com/batch/latest/APIReference
 Batch	batch	ListSchedulingPolicies	Read		https://docs.aws.amazon.com/batch/latest/APIReference/API_ListSchedulingPolicies.html		
 Batch	batch	ListTagsForResource	Read		https://docs.aws.amazon.com/batch/latest/APIReference/API_ListTagsForResource.html		
 Batch	batch	RegisterJobDefinition	Write		https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html	batch:User, batch:Privileged, batch:Image, batch:LogDriver, batch:AWSLogsGroup, batch:AWSLogsRegion, batch:AWSLogsStreamPrefix, batch:AWSLogsCreateGroup, batch:EKSServiceAccountName, batch:EKSImage, batch:EKSRunAsUser, batch:EKSRunAsGroup, batch:EKSPrivileged, aws:RequestTag/${TagKey}, aws:TagKeys	
-Batch	batch	SubmitJob	Write		https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html	aws:RequestTag/${TagKey}, aws:TagKeys, batch:ShareIdentifier, batch:EKSImage	
+Batch	batch	SubmitJob	Write		https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html	batch:ShareIdentifier, batch:EKSImage, aws:RequestTag/${TagKey}, aws:TagKeys	
 Batch	batch	TagResource	Tagging		https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Batch	batch	TerminateJob	Write		https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html		
 Batch	batch	UntagResource	Tagging		https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html	aws:TagKeys	
@@ -1256,6 +1258,7 @@ Bedrock	bedrock	GetProvisionedModelThroughput	Read		https://docs.aws.amazon.com/
 Bedrock	bedrock	GetResourcePolicy [permission only]	Read		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetResourePolicy.html		
 Bedrock	bedrock	GetUseCaseForModelAccess	Read		https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html		
 Bedrock	bedrock	InvokeAgent	Read		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html		
+Bedrock	bedrock	InvokeBuilder [permission only]	Write		https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create-cb.html		
 Bedrock	bedrock	InvokeFlow	Read		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html		
 Bedrock	bedrock	InvokeModel	Read		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html	bedrock:InferenceProfileArn	
 Bedrock	bedrock	InvokeModelWithResponseStream	Read		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html	bedrock:InferenceProfileArn	
@@ -1295,6 +1298,7 @@ Bedrock	bedrock	Retrieve	Read		https://docs.aws.amazon.com/bedrock/latest/APIRef
 Bedrock	bedrock	RetrieveAndGenerate	Write		https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html		
 Bedrock	bedrock	StartIngestionJob	Write		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html		
 Bedrock	bedrock	StopEvaluationJob	Write		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html		
+Bedrock	bedrock	StopIngestionJob	Write		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StopIngestionJob.html		
 Bedrock	bedrock	StopModelCustomizationJob	Write		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopModelCustomizationJob.html		
 Bedrock	bedrock	StopModelInvocationJob	Write		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopModelInvocationJob.html		
 Bedrock	bedrock	TagResource	Tagging		https://docs.aws.amazon.com/bedrock/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
@@ -3562,6 +3566,7 @@ Connect	connect	CreateContactFlow	Write		https://docs.aws.amazon.com/connect/lat
 Connect	connect	CreateContactFlowModule	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModule.html	aws:RequestTag/${TagKey}, aws:TagKeys, connect:InstanceId	
 Connect	connect	CreateEvaluationForm	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEvaluationForm.html	connect:InstanceId	
 Connect	connect	CreateHoursOfOperation	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateHoursOfOperation.html	aws:RequestTag/${TagKey}, aws:TagKeys, connect:InstanceId	
+Connect	connect	CreateHoursOfOperationOverride	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateHoursOfOperationOverride.html	connect:InstanceId	
 Connect	connect	CreateInstance	Write		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	aws:RequestTag/${TagKey}, aws:TagKeys	ds:AuthorizeApplication, ds:CheckAlias, ds:CreateAlias, ds:CreateDirectory, ds:CreateIdentityPoolDirectory, ds:DeleteDirectory, ds:DescribeDirectories, ds:UnauthorizeApplication, iam:AttachRolePolicy, iam:CreateServiceLinkedRole, iam:PutRolePolicy
 Connect	connect	CreateIntegrationAssociation	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html	connect:InstanceId, aws:RequestTag/${TagKey}, aws:TagKeys	app-integrations:CreateApplicationAssociation, app-integrations:CreateEventIntegrationAssociation, app-integrations:GetApplication, cases:GetDomain, connect:DescribeInstance, ds:DescribeDirectories, events:PutRule, events:PutTargets, iam:AttachRolePolicy, iam:CreateServiceLinkedRole, iam:PutRolePolicy, mobiletargeting:GetApp, voiceid:DescribeDomain, wisdom:GetAssistant, wisdom:GetKnowledgeBase, wisdom:TagResource
 Connect	connect	CreateParticipant	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateParticipant.html	connect:InstanceId	
@@ -3588,6 +3593,7 @@ Connect	connect	DeleteContactFlow	Write		https://docs.aws.amazon.com/connect/lat
 Connect	connect	DeleteContactFlowModule	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModule.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
 Connect	connect	DeleteEvaluationForm	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEvaluationForm.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
 Connect	connect	DeleteHoursOfOperation	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteHoursOfOperation.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
+Connect	connect	DeleteHoursOfOperationOverride	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteHoursOfOperationOverride.html	connect:InstanceId	
 Connect	connect	DeleteInstance	Write		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:InstanceId, aws:ResourceTag/${TagKey}	ds:DeleteDirectory, ds:DescribeDirectories, ds:UnauthorizeApplication
 Connect	connect	DeleteIntegrationAssociation	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html	connect:InstanceId	app-integrations:DeleteApplicationAssociation, app-integrations:DeleteEventIntegrationAssociation, connect:DescribeInstance, ds:DescribeDirectories, events:DeleteRule, events:ListTargetsByRule, events:RemoveTargets
 Connect	connect	DeletePredefinedAttribute	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePredefinedAttribute.html	connect:InstanceId	
@@ -3614,6 +3620,7 @@ Connect	connect	DescribeContactFlowModule	Read		https://docs.aws.amazon.com/conn
 Connect	connect	DescribeEvaluationForm	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEvaluationForm.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
 Connect	connect	DescribeForecastingPlanningSchedulingIntegration [permission only]	Read		https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html	connect:InstanceId	
 Connect	connect	DescribeHoursOfOperation	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperation.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
+Connect	connect	DescribeHoursOfOperationOverride	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperationOverride.html	connect:InstanceId	
 Connect	connect	DescribeInstance	Read		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:InstanceId, aws:ResourceTag/${TagKey}	ds:DescribeDirectories
 Connect	connect	DescribeInstanceAttribute	Read		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:AttributeType, connect:InstanceId	
 Connect	connect	DescribeInstanceStorageConfig	Read		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:StorageResourceType, connect:InstanceId	
@@ -3649,6 +3656,7 @@ Connect	connect	GetAttachedFile	Read		https://docs.aws.amazon.com/connect/latest
 Connect	connect	GetContactAttributes	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html	connect:InstanceId	
 Connect	connect	GetCurrentMetricData	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
 Connect	connect	GetCurrentUserData	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentUserData.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
+Connect	connect	GetEffectiveHoursOfOperations	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEffectiveHoursOfOperations.html	connect:InstanceId	
 Connect	connect	GetFederationToken	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html	connect:InstanceId	
 Connect	connect	GetFlowAssociation	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFlowAssociation.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
 Connect	connect	GetMetricData	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
@@ -3669,6 +3677,7 @@ Connect	connect	ListDefaultVocabularies	List		https://docs.aws.amazon.com/connec
 Connect	connect	ListEvaluationFormVersions	List		https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationFormVersions.html	connect:InstanceId	
 Connect	connect	ListEvaluationForms	List		https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationForms.html	connect:InstanceId	
 Connect	connect	ListFlowAssociations	List		https://docs.aws.amazon.com/connect/latest/APIReference/API_ListFlowAssociations.html	connect:InstanceId	
+Connect	connect	ListHoursOfOperationOverrides	List		https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperationOverrides.html	connect:InstanceId	
 Connect	connect	ListHoursOfOperations	List		https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperations.html	connect:InstanceId	
 Connect	connect	ListInstanceAttributes	List		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:InstanceId	
 Connect	connect	ListInstanceStorageConfigs	List		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:InstanceId	
@@ -3714,6 +3723,7 @@ Connect	connect	SearchAvailablePhoneNumbers	List		https://docs.aws.amazon.com/co
 Connect	connect	SearchContactFlowModules	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactFlowModules.html	connect:InstanceId, connect:SearchTag/${TagKey}	connect:DescribeContactFlowModule
 Connect	connect	SearchContactFlows	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactFlows.html	connect:InstanceId, connect:SearchTag/${TagKey}	connect:DescribeContactFlow
 Connect	connect	SearchContacts	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContacts.html	connect:InstanceId, connect:SearchContactsByContactAnalysis	connect:DescribeContact
+Connect	connect	SearchHoursOfOperationOverrides	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchHoursOfOperationOverrides.html	connect:InstanceId, connect:SearchTag/${TagKey}	connect:DescribeHoursOfOperation, connect:ListHoursOfOperationOverrides
 Connect	connect	SearchHoursOfOperations	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchHoursOfOperations.html	connect:InstanceId, connect:SearchTag/${TagKey}	connect:DescribeHoursOfOperation
 Connect	connect	SearchPredefinedAttributes	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchPredefinedAttributes.html	connect:InstanceId	connect:DescribePredefinedAttribute
 Connect	connect	SearchPrompts	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchPrompts.html	connect:InstanceId, connect:SearchTag/${TagKey}	connect:DescribePrompt
@@ -3726,6 +3736,7 @@ Connect	connect	SearchUserHierarchyGroups	Read		https://docs.aws.amazon.com/conn
 Connect	connect	SearchUsers	Read		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchUsers.html	connect:InstanceId, connect:SearchTag/${TagKey}	connect:DescribeUser, connect:ListUserProficiencies
 Connect	connect	SearchVocabularies	List		https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchVocabularies.html	connect:InstanceId	
 Connect	connect	SendChatIntegrationEvent	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_SendChatIntegrationEvent.html		
+Connect	connect	SendOutboundEmail	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundEmail.html	connect:InstanceId	
 Connect	connect	StartAttachedFileUpload	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_StartAttachedFileUpload.html	aws:RequestTag/${TagKey}, aws:TagKeys, connect:InstanceId, connect:UserArn	cases:CreateRelatedItem
 Connect	connect	StartChatContact	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html	connect:InstanceId	
 Connect	connect	StartContactEvaluation	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactEvaluation.html	connect:InstanceId	
@@ -3760,6 +3771,7 @@ Connect	connect	UpdateContactRoutingData	Write		https://docs.aws.amazon.com/conn
 Connect	connect	UpdateContactSchedule	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactSchedule.html	connect:InstanceId	
 Connect	connect	UpdateEvaluationForm	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEvaluationForm.html	connect:InstanceId	
 Connect	connect	UpdateHoursOfOperation	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateHoursOfOperation.html	aws:ResourceTag/${TagKey}, connect:InstanceId	
+Connect	connect	UpdateHoursOfOperationOverride	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateHoursOfOperationOverride.html	connect:InstanceId	
 Connect	connect	UpdateInstanceAttribute	Write		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:AttributeType, connect:InstanceId	ds:DescribeDirectories, iam:AttachRolePolicy, iam:CreateServiceLinkedRole, iam:PutRolePolicy, logs:CreateLogGroup
 Connect	connect	UpdateInstanceStorageConfig	Write		https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions	connect:StorageResourceType, connect:InstanceId	ds:DescribeDirectories, firehose:DescribeDeliveryStream, iam:AttachRolePolicy, iam:CreateServiceLinkedRole, iam:PutRolePolicy, kinesis:DescribeStream, kms:CreateGrant, kms:DescribeKey, s3:GetBucketAcl, s3:GetBucketLocation
 Connect	connect	UpdateParticipantRoleConfig	Write		https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateParticipantRoleConfig.html	connect:InstanceId	
@@ -4552,6 +4564,7 @@ Deadline Cloud	deadline	GetBudget	Read		https://docs.aws.amazon.com/deadline-clo
 Deadline Cloud	deadline	GetFarm	Read		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetFarm.html		identitystore:ListGroupMembershipsForMember
 Deadline Cloud	deadline	GetFleet	Read		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetFleet.html		identitystore:ListGroupMembershipsForMember
 Deadline Cloud	deadline	GetJob	Read		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetJob.html		identitystore:ListGroupMembershipsForMember
+Deadline Cloud	deadline	GetJobTemplate [permission only]	Write				
 Deadline Cloud	deadline	GetLicenseEndpoint	Read		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetLicenseEndpoint.html		
 Deadline Cloud	deadline	GetMonitor	Read		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetMonitor.html		
 Deadline Cloud	deadline	GetQueue	Read		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetQueue.html		identitystore:ListGroupMembershipsForMember
@@ -4572,6 +4585,7 @@ Deadline Cloud	deadline	ListFarms	List		https://docs.aws.amazon.com/deadline-clo
 Deadline Cloud	deadline	ListFleetMembers	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListFleetMembers.html		identitystore:ListGroupMembershipsForMember
 Deadline Cloud	deadline	ListFleets	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListFleets.html	deadline:PrincipalId, deadline:RequesterPrincipalId	identitystore:DescribeGroup, identitystore:DescribeUser, identitystore:ListGroupMembershipsForMember
 Deadline Cloud	deadline	ListJobMembers	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobMembers.html		identitystore:ListGroupMembershipsForMember
+Deadline Cloud	deadline	ListJobParameterDefinitions	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobParameterDefinitions.html		identitystore:ListGroupMembershipsForMember
 Deadline Cloud	deadline	ListJobs	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobs.html	deadline:PrincipalId, deadline:RequesterPrincipalId	identitystore:DescribeGroup, identitystore:DescribeUser, identitystore:ListGroupMembershipsForMember
 Deadline Cloud	deadline	ListLicenseEndpoints	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListLicenseEndpoints.html		
 Deadline Cloud	deadline	ListMeteredProducts	List		https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListMeteredProducts.html		
@@ -4951,6 +4965,7 @@ Directory Service	ds	DescribeCertificate	Read		https://docs.aws.amazon.com/direc
 Directory Service	ds	DescribeClientAuthenticationSettings	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeClientAuthenticationSettings.html		
 Directory Service	ds	DescribeConditionalForwarders	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html		
 Directory Service	ds	DescribeDirectories	List		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html		
+Directory Service	ds	DescribeDirectoryDataAccess	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectoryDataAccess.html		
 Directory Service	ds	DescribeDomainControllers	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDomainControllers.html		
 Directory Service	ds	DescribeEventTopics	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html		
 Directory Service	ds	DescribeLDAPSSettings	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeLDAPSSettings.html		
@@ -4961,11 +4976,13 @@ Directory Service	ds	DescribeSnapshots	Read		https://docs.aws.amazon.com/directo
 Directory Service	ds	DescribeTrusts	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html		
 Directory Service	ds	DescribeUpdateDirectory	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeUpdateDirectory.html		
 Directory Service	ds	DisableClientAuthentication	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableClientAuthentication.html		
+Directory Service	ds	DisableDirectoryDataAccess	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableDirectoryDataAccess.html		
 Directory Service	ds	DisableLDAPS	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableLDAPS.html		
 Directory Service	ds	DisableRadius	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html		
 Directory Service	ds	DisableRoleAccess [permission only]	Write		https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html		
 Directory Service	ds	DisableSso	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html		
 Directory Service	ds	EnableClientAuthentication	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableClientAuthentication.html		
+Directory Service	ds	EnableDirectoryDataAccess	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableDirectoryDataAccess.html		
 Directory Service	ds	EnableLDAPS	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableLDAPS.html		
 Directory Service	ds	EnableRadius	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html		
 Directory Service	ds	EnableRoleAccess [permission only]	Write		https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html		iam:PassRole
@@ -5000,6 +5017,23 @@ Directory Service	ds	UpdateRadius	Write		https://docs.aws.amazon.com/directoryse
 Directory Service	ds	UpdateSettings	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateSettings.html		
 Directory Service	ds	UpdateTrust	Write		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateTrust.html		
 Directory Service	ds	VerifyTrust	Read		https://docs.aws.amazon.com/directoryservice/latest/devguide/API_VerifyTrust.html		
+Directory Service Data	ds-data	AddGroupMember	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_AddGroupMember.html	ds-data:SAMAccountName, ds-data:MemberName, ds-data:Realm, ds-data:MemberRealm, ds-data:Identifier	ds:AccessDSData
+Directory Service Data	ds-data	CreateGroup	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_CreateGroup.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	CreateUser	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_CreateUser.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	DeleteGroup	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DeleteGroup.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	DeleteUser	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DeleteUser.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	DescribeGroup	Read		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DescribeGroup.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	DescribeUser	Read		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DescribeUser.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	DisableUser	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DisableUser.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	ListGroupMembers	List		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListGroupMembers.html	ds-data:SAMAccountName, ds-data:Realm, ds-data:MemberRealm, ds-data:Identifier	ds:AccessDSData
+Directory Service Data	ds-data	ListGroups	List		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListGroups.html	ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	ListGroupsForMember	List		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListGroupsForMember.html	ds-data:SAMAccountName, ds-data:Realm, ds-data:MemberRealm, ds-data:Identifier	ds:AccessDSData
+Directory Service Data	ds-data	ListUsers	List		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListUsers.html	ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	RemoveGroupMember	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_RemoveGroupMember.html	ds-data:SAMAccountName, ds-data:MemberName, ds-data:Realm, ds-data:MemberRealm, ds-data:Identifier	ds:AccessDSData
+Directory Service Data	ds-data	SearchGroups	Read		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_SearchGroups.html	ds-data:Realm	ds-data:DescribeGroup, ds:AccessDSData
+Directory Service Data	ds-data	SearchUsers	Read		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_SearchUsers.html	ds-data:Realm	ds-data:DescribeUser, ds:AccessDSData
+Directory Service Data	ds-data	UpdateGroup	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_UpdateGroup.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
+Directory Service Data	ds-data	UpdateUser	Write		https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_UpdateUser.html	ds-data:SAMAccountName, ds-data:Identifier, ds-data:Realm	ds:AccessDSData
 DocumentDB Elastic Clusters	docdb-elastic	CopyClusterSnapshot	Write		https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CopyClusterSnapshot.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}	docdb-elastic:CreateClusterSnapshot, kms:CreateGrant, kms:Decrypt, kms:DescribeKey, kms:GenerateDataKey
 DocumentDB Elastic Clusters	docdb-elastic	CreateCluster	Write		https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CreateCluster.html	aws:RequestTag/${TagKey}, aws:TagKeys	ec2:CreateVpcEndpoint, ec2:DeleteVpcEndpoints, ec2:DescribeAvailabilityZones, ec2:DescribeSecurityGroups, ec2:DescribeSubnets, ec2:DescribeVpcAttribute, ec2:DescribeVpcEndpoints, ec2:DescribeVpcs, ec2:ModifyVpcEndpoint, iam:CreateServiceLinkedRole, kms:CreateGrant, kms:Decrypt, kms:DescribeKey, kms:GenerateDataKey, secretsmanager:DescribeSecret, secretsmanager:GetResourcePolicy, secretsmanager:GetSecretValue, secretsmanager:ListSecretVersionIds, secretsmanager:ListSecrets
 DocumentDB Elastic Clusters	docdb-elastic	CreateClusterSnapshot	Write		https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CreateClusterSnapshot.html	aws:RequestTag/${TagKey}, aws:TagKeys, aws:ResourceTag/${TagKey}	ec2:CreateVpcEndpoint, ec2:DeleteVpcEndpoints, ec2:DescribeAvailabilityZones, ec2:DescribeSecurityGroups, ec2:DescribeSubnets, ec2:DescribeVpcAttribute, ec2:DescribeVpcEndpoints, ec2:DescribeVpcs, ec2:ModifyVpcEndpoint, iam:CreateServiceLinkedRole, kms:CreateGrant, kms:Decrypt, kms:DescribeKey, kms:GenerateDataKey, secretsmanager:DescribeSecret, secretsmanager:GetResourcePolicy, secretsmanager:GetSecretValue, secretsmanager:ListSecretVersionIds, secretsmanager:ListSecrets
@@ -6615,6 +6649,7 @@ Elemental MediaConnect	mediaconnect	DeregisterGatewayInstance	Write		https://doc
 Elemental MediaConnect	mediaconnect	DescribeBridge	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html		
 Elemental MediaConnect	mediaconnect	DescribeFlow	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html		
 Elemental MediaConnect	mediaconnect	DescribeFlowSourceMetadata	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-metadata.html		
+Elemental MediaConnect	mediaconnect	DescribeFlowSourceThumbnail	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-thumbnail.html		
 Elemental MediaConnect	mediaconnect	DescribeGateway	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html		
 Elemental MediaConnect	mediaconnect	DescribeGatewayInstance	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html		
 Elemental MediaConnect	mediaconnect	DescribeOffering	Read		https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html		
@@ -6675,6 +6710,7 @@ Elemental MediaConvert	mediaconvert	ListJobs	List		https://docs.aws.amazon.com/m
 Elemental MediaConvert	mediaconvert	ListPresets	List		https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html		
 Elemental MediaConvert	mediaconvert	ListQueues	List		https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html		
 Elemental MediaConvert	mediaconvert	ListTagsForResource	Read		https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html		
+Elemental MediaConvert	mediaconvert	ListVersions	List		https://docs.aws.amazon.com/mediaconvert/latest/apireference/versions.html		
 Elemental MediaConvert	mediaconvert	PutPolicy	Write		https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html		
 Elemental MediaConvert	mediaconvert	SearchJobs	List		https://docs.aws.amazon.com/mediaconvert/latest/apireference/search.html		
 Elemental MediaConvert	mediaconvert	TagResource	Tagging		https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html	aws:RequestTag/${TagKey}, aws:TagKeys	
@@ -6690,38 +6726,51 @@ Elemental MediaLive	medialive	BatchUpdateSchedule	Write		https://docs.aws.amazon
 Elemental MediaLive	medialive	CancelInputDeviceTransfer	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	ClaimDevice	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	CreateChannel	Write		https://docs.aws.amazon.com/medialive/latest/ug/creating-channel-scratch.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Elemental MediaLive	medialive	CreateChannelPlacementGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateCloudWatchAlarmTemplate	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateCloudWatchAlarmTemplateGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Elemental MediaLive	medialive	CreateCluster	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateEventBridgeRuleTemplate	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateEventBridgeRuleTemplateGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateInput	Write		https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateInputSecurityGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateMultiplex	Write		https://docs.aws.amazon.com/medialive/latest/ug/multiplex-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateMultiplexProgram	Write		https://docs.aws.amazon.com/medialive/latest/ug/multiplex-create.html		
+Elemental MediaLive	medialive	CreateNetwork	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Elemental MediaLive	medialive	CreateNode	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Elemental MediaLive	medialive	CreateNodeRegistrationScript	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	CreatePartnerInput	Write		https://docs.aws.amazon.com/medialive/latest/ug/input-create-cdi-partners.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateSignalMap	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	CreateTags	Tagging		https://docs.aws.amazon.com/medialive/latest/ug/tagging.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Elemental MediaLive	medialive	DeleteChannel	Write		https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html		
+Elemental MediaLive	medialive	DeleteChannelPlacementGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	DeleteCloudWatchAlarmTemplate	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html		
 Elemental MediaLive	medialive	DeleteCloudWatchAlarmTemplateGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html		
+Elemental MediaLive	medialive	DeleteCluster	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	DeleteEventBridgeRuleTemplate	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html		
 Elemental MediaLive	medialive	DeleteEventBridgeRuleTemplateGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html		
 Elemental MediaLive	medialive	DeleteInput	Write		https://docs.aws.amazon.com/medialive/latest/ug/delete-input.html		
 Elemental MediaLive	medialive	DeleteInputSecurityGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/delete-input-security-group.html		
 Elemental MediaLive	medialive	DeleteMultiplex	Write		https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex-program.html		
 Elemental MediaLive	medialive	DeleteMultiplexProgram	Write		https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex-program.html		
+Elemental MediaLive	medialive	DeleteNetwork	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
+Elemental MediaLive	medialive	DeleteNode	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	DeleteReservation	Write		https://docs.aws.amazon.com/medialive/latest/ug/deleting-reservations.html		
 Elemental MediaLive	medialive	DeleteSchedule	Write		https://docs.aws.amazon.com/medialive/latest/ug/schedule-using-console-delete.html		
 Elemental MediaLive	medialive	DeleteSignalMap	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-delete.html		
 Elemental MediaLive	medialive	DeleteTags	Tagging		https://docs.aws.amazon.com/medialive/latest/ug/tagging.html	aws:TagKeys	
 Elemental MediaLive	medialive	DescribeAccountConfiguration	Read		https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html		
 Elemental MediaLive	medialive	DescribeChannel	Read		https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html		
+Elemental MediaLive	medialive	DescribeChannelPlacementGroup	Read		https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html		
+Elemental MediaLive	medialive	DescribeCluster	Read		https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html		
 Elemental MediaLive	medialive	DescribeInput	Read		https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html		
 Elemental MediaLive	medialive	DescribeInputDevice	Read		https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html		
 Elemental MediaLive	medialive	DescribeInputDeviceThumbnail	Read		https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html		
 Elemental MediaLive	medialive	DescribeInputSecurityGroup	Read		https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html		
 Elemental MediaLive	medialive	DescribeMultiplex	Read		https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html		
 Elemental MediaLive	medialive	DescribeMultiplexProgram	Read		https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html		
+Elemental MediaLive	medialive	DescribeNetwork	Read		https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-networks.html		
+Elemental MediaLive	medialive	DescribeNode	Read		https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-nodes-create.html		
 Elemental MediaLive	medialive	DescribeOffering	Read		https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html		
 Elemental MediaLive	medialive	DescribeReservation	Read		https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html		
 Elemental MediaLive	medialive	DescribeSchedule	Read		https://docs.aws.amazon.com/medialive/latest/ug/schedule-using-console-view.html		
@@ -6731,9 +6780,11 @@ Elemental MediaLive	medialive	GetCloudWatchAlarmTemplateGroup	Read		https://docs
 Elemental MediaLive	medialive	GetEventBridgeRuleTemplate	Read		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html		
 Elemental MediaLive	medialive	GetEventBridgeRuleTemplateGroup	Read		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html		
 Elemental MediaLive	medialive	GetSignalMap	Read		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html		
+Elemental MediaLive	medialive	ListChannelPlacementGroups	List		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	ListChannels	List		https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html		
 Elemental MediaLive	medialive	ListCloudWatchAlarmTemplateGroups	List		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html		
 Elemental MediaLive	medialive	ListCloudWatchAlarmTemplates	List		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html		
+Elemental MediaLive	medialive	ListClusters	List		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	ListEventBridgeRuleTemplateGroups	List		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html		
 Elemental MediaLive	medialive	ListEventBridgeRuleTemplates	List		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html		
 Elemental MediaLive	medialive	ListInputDeviceTransfers	List		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
@@ -6742,10 +6793,13 @@ Elemental MediaLive	medialive	ListInputSecurityGroups	List		https://docs.aws.ama
 Elemental MediaLive	medialive	ListInputs	List		https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html		
 Elemental MediaLive	medialive	ListMultiplexPrograms	List		https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html		
 Elemental MediaLive	medialive	ListMultiplexes	List		https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html		
+Elemental MediaLive	medialive	ListNetworks	List		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
+Elemental MediaLive	medialive	ListNodes	List		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html		
 Elemental MediaLive	medialive	ListOfferings	List		https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html		
 Elemental MediaLive	medialive	ListReservations	List		https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html		
 Elemental MediaLive	medialive	ListSignalMaps	List		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html		
 Elemental MediaLive	medialive	ListTagsForResource	List		https://docs.aws.amazon.com/medialive/latest/ug/tagging.html		
+Elemental MediaLive	medialive	PollAnywhere	Write		https://docs.aws.amazon.com/medialive/latest/ug/about-emla.html		
 Elemental MediaLive	medialive	PurchaseOffering	Write		https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	RebootInputDevice	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	RejectInputDeviceTransfer	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
@@ -6760,12 +6814,15 @@ Elemental MediaLive	medialive	StartUpdateSignalMap	Write		https://docs.aws.amazo
 Elemental MediaLive	medialive	StopChannel	Write		https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html		
 Elemental MediaLive	medialive	StopInputDevice	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	StopMultiplex	Write		https://docs.aws.amazon.com/medialive/latest/ug/stop-multiplex.title.html		
+Elemental MediaLive	medialive	SubmitAnywhereStateChange	Write		https://docs.aws.amazon.com/medialive/latest/ug/about-emla.html		
 Elemental MediaLive	medialive	TransferInputDevice	Write		https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html		
 Elemental MediaLive	medialive	UpdateAccountConfiguration	Write		https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html		
 Elemental MediaLive	medialive	UpdateChannel	Write		https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html		
 Elemental MediaLive	medialive	UpdateChannelClass	Write		https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html		
+Elemental MediaLive	medialive	UpdateChannelPlacementGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	UpdateCloudWatchAlarmTemplate	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html		
 Elemental MediaLive	medialive	UpdateCloudWatchAlarmTemplateGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html		
+Elemental MediaLive	medialive	UpdateCluster	Write		https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	UpdateEventBridgeRuleTemplate	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html		
 Elemental MediaLive	medialive	UpdateEventBridgeRuleTemplateGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html		
 Elemental MediaLive	medialive	UpdateInput	Write		https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html		
@@ -6773,6 +6830,9 @@ Elemental MediaLive	medialive	UpdateInputDevice	Write		https://docs.aws.amazon.c
 Elemental MediaLive	medialive	UpdateInputSecurityGroup	Write		https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	UpdateMultiplex	Write		https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html		
 Elemental MediaLive	medialive	UpdateMultiplexProgram	Write		https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html		
+Elemental MediaLive	medialive	UpdateNetwork	Write		https://docs.aws.amazon.com/medialive/latest/ug/emla-deploy-identify-network-requirements.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Elemental MediaLive	medialive	UpdateNode	Write		https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-nodes-create.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Elemental MediaLive	medialive	UpdateNodeState	Write		https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Elemental MediaLive	medialive	UpdateReservation	Write		https://docs.aws.amazon.com/medialive/latest/ug/reservations.html		
 Elemental MediaPackage	mediapackage	ConfigureLogs	Write		https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-configure_logs.html#channels-id-configure_logsput		iam:CreateServiceLinkedRole
 Elemental MediaPackage	mediapackage	CreateChannel	Write		https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost	aws:RequestTag/${TagKey}, aws:TagKeys	
@@ -6913,6 +6973,19 @@ Elemental Support Cases	elemental-support-cases	GetCase [permission only]	Read		
 Elemental Support Cases	elemental-support-cases	GetCases [permission only]	Read		https://docs.aws.amazon.com/elemental-appliances-software		
 Elemental Support Cases	elemental-support-cases	UpdateCase [permission only]	Write		https://docs.aws.amazon.com/elemental-appliances-software		
 Elemental Support Content	elemental-support-content	Query [permission only]	Read		https://docs.aws.amazon.com/elemental-appliances-software		
+End User Messaging Social	social-messaging	AssociateWhatsAppBusinessAccount	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_AssociateWhatsAppBusinessAccount.html	aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:TagKeys	
+End User Messaging Social	social-messaging	DeleteWhatsAppMessageMedia	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppMessageMedia.html		
+End User Messaging Social	social-messaging	DisassociateWhatsAppBusinessAccount	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DisassociateWhatsAppBusinessAccount.html		
+End User Messaging Social	social-messaging	GetLinkedWhatsAppBusinessAccount	Read		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccount.html		
+End User Messaging Social	social-messaging	GetLinkedWhatsAppBusinessAccountPhoneNumber	Read		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html		
+End User Messaging Social	social-messaging	GetWhatsAppMessageMedia	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppMessageMedia.html		
+End User Messaging Social	social-messaging	ListLinkedWhatsAppBusinessAccounts	List		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListLinkedWhatsAppBusinessAccounts.html		
+End User Messaging Social	social-messaging	ListTagsForResource	Read		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListTagsForResource.html		
+End User Messaging Social	social-messaging	PostWhatsAppMessageMedia	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PostWhatsAppMessageMedia.html		
+End User Messaging Social	social-messaging	PutWhatsAppBusinessAccountEventDestinations	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PutWhatsAppBusinessAccountEventDestinations.html		
+End User Messaging Social	social-messaging	SendWhatsAppMessage	Write		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_SendWhatsAppMessage.html		
+End User Messaging Social	social-messaging	TagResource	Tagging		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_TagResource.html	aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}, aws:TagKeys	
+End User Messaging Social	social-messaging	UntagResource	Tagging		https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UntagResource.html	aws:ResourceTag/${TagKey}, aws:TagKeys	
 Entity Resolution	entityresolution	AddPolicyStatement	Permissions management		https://docs.aws.amazon.com/entityresolution/latest/apireference/API_AddPolicyStatement.html		
 Entity Resolution	entityresolution	BatchDeleteUniqueId	Write		https://docs.aws.amazon.com/entityresolution/latest/apireference/API_BatchDeleteUniqueId.html		
 Entity Resolution	entityresolution	CreateIdMappingWorkflow	Write		https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateIdMappingWorkflow.html	aws:RequestTag/${TagKey}, aws:TagKeys	
@@ -8358,56 +8431,60 @@ IAM Identity Center (successor to AWS Single Sign-On)	sso	UpdateProfile	Write		h
 IAM Identity Center (successor to AWS Single Sign-On)	sso	UpdateSSOConfiguration	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On)	sso	UpdateTrust	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On)	sso	UpdateTrustedTokenIssuer	Write		https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateTrustedTokenIssuer.html		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	AddMemberToGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	AddMemberToGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CompleteVirtualMfaDeviceRegistration	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CompleteWebAuthnDeviceRegistration	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateAlias	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateBearerToken	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateExternalIdPConfigurationForDirectory	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateProvisioningTenant	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	CreateUser	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteBearerToken	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteExternalIdPCertificate	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteExternalIdPConfigurationForDirectory	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteMfaDeviceForUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteProvisioningTenant	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DeleteUser	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeDirectory	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeGroup	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeGroups	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeGroup	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeGroups	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeProvisioningTenant	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeUser	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeUser	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeUserByUniqueAttribute	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeUsers	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DescribeUsers	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DisableExternalIdPConfigurationForDirectory	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	DisableUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	EnableExternalIdPConfigurationForDirectory	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	EnableUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	GetAWSSPConfigurationForDirectory	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	GetGroupId	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	GetUserId	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	GetUserPoolInfo	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ImportExternalIdPCertificate	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	IsMemberInGroup	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	IsMemberInGroup	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListBearerTokens	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListExternalIdPCertificates	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListExternalIdPConfigurationsForDirectory	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListGroupsForMember	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListGroupsForUser	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListMembersInGroup	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListGroups	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListGroupsForMember	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListGroupsForUser	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListMembersInGroup	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListMfaDevicesForUser	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListProvisioningTenants	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	RemoveMemberFromGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	ListUsers	Read		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	RemoveMemberFromGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	SearchGroups	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	SearchUsers	Read		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	StartVirtualMfaDeviceRegistration	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	StartWebAuthnDeviceRegistration	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateExternalIdPConfigurationForDirectory	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateGroup	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateGroupDisplayName	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateMfaDeviceForUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdatePassword	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
-IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateUser	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
+IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateUser	Write		https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	UpdateUserName	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center (successor to AWS Single Sign-On) directory	sso-directory	VerifyEmail	Write		https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample		
 IAM Identity Center OIDC service	sso-oauth	CreateTokenWithIAM	Write		https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html		
@@ -8914,6 +8991,7 @@ Invoicing Service	invoicing	PutInvoiceEmailDeliveryPreferences [permission only]
 IoT	iot	AcceptCertificateTransfer	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html		
 IoT	iot	AddThingToBillingGroup	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_AddThingToBillingGroup.html		
 IoT	iot	AddThingToThingGroup	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_AddThingToThingGroup.html		
+IoT	iot	AssociateSbomWithPackageVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateSbomWithPackageVersion.html		iot:GetIndexingConfiguration
 IoT	iot	AssociateTargetsWithJob	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateTargetsWithJob.html		
 IoT	iot	AttachPolicy	Permissions management		https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPolicy.html		
 IoT	iot	AttachPrincipalPolicy	Permissions management		https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPrincipalPolicy.html		
@@ -8945,7 +9023,7 @@ IoT	iot	CreateKeysAndCertificate	Write		https://docs.aws.amazon.com/iot/latest/a
 IoT	iot	CreateMitigationAction	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreateMitigationAction.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 IoT	iot	CreateOTAUpdate	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdate.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 IoT	iot	CreatePackage	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackage.html	aws:RequestTag/${TagKey}, aws:TagKeys	iot:GetIndexingConfiguration
-IoT	iot	CreatePackageVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackageVersion.html	aws:RequestTag/${TagKey}, aws:TagKeys	iot:GetIndexingConfiguration
+IoT	iot	CreatePackageVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackageVersion.html	aws:RequestTag/${TagKey}, aws:TagKeys	iot:GetIndexingConfiguration, s3:GetObjectVersion
 IoT	iot	CreatePolicy	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 IoT	iot	CreatePolicyVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html		
 IoT	iot	CreateProvisioningClaim	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningClaim.html		
@@ -9036,6 +9114,7 @@ IoT	iot	DetachPrincipalPolicy	Permissions management		https://docs.aws.amazon.co
 IoT	iot	DetachSecurityProfile	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_DetachSecurityProfile.html		
 IoT	iot	DetachThingPrincipal	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_DetachThingPrincipal.html		
 IoT	iot	DisableTopicRule	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_DisableTopicRule.html		
+IoT	iot	DisassociateSbomFromPackageVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_DisassociateSbomFromPackageVersion.html		
 IoT	iot	EnableTopicRule	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_EnableTopicRule.html		
 IoT	iot	GetBehaviorModelTrainingSummaries	List		https://docs.aws.amazon.com/iot/latest/apireference/API_GetBehaviorModelTrainingSummaries.html		
 IoT	iot	GetBucketsAggregation	Read		https://docs.aws.amazon.com/iot/latest/apireference/API_GetBucketsAggregation.html		
@@ -9100,6 +9179,7 @@ IoT	iot	ListProvisioningTemplates	List		https://docs.aws.amazon.com/iot/latest/a
 IoT	iot	ListRelatedResourcesForAuditFinding	List		https://docs.aws.amazon.com/iot/latest/apireference/API_ListRelatedResourcesForAuditFinding.html		
 IoT	iot	ListRetainedMessages	List		https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html		
 IoT	iot	ListRoleAliases	List		https://docs.aws.amazon.com/iot/latest/apireference/API_ListRoleAliases.html		
+IoT	iot	ListSbomValidationResults	List		https://docs.aws.amazon.com/iot/latest/apireference/API_ListSbomValidationResults.html		
 IoT	iot	ListScheduledAudits	List		https://docs.aws.amazon.com/iot/latest/apireference/API_ListScheduledAudits.html		
 IoT	iot	ListSecurityProfiles	List		https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html		
 IoT	iot	ListSecurityProfilesForTarget	List		https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfilesForTarget.html		
@@ -9170,7 +9250,7 @@ IoT	iot	UpdateJob	Write		https://docs.aws.amazon.com/iot/latest/apireference/API
 IoT	iot	UpdateMitigationAction	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateMitigationAction.html		
 IoT	iot	UpdatePackage	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackage.html		iot:GetIndexingConfiguration
 IoT	iot	UpdatePackageConfiguration	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageConfiguration.html		iam:PassRole
-IoT	iot	UpdatePackageVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageVersion.html		iot:GetIndexingConfiguration
+IoT	iot	UpdatePackageVersion	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageVersion.html		iot:GetIndexingConfiguration, s3:GetObjectVersion
 IoT	iot	UpdateProvisioningTemplate	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateProvisioningTemplate.html		iam:PassRole
 IoT	iot	UpdateRoleAlias	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html		iam:PassRole
 IoT	iot	UpdateScheduledAudit	Write		https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateScheduledAudit.html		
@@ -9863,14 +9943,14 @@ Keyspaces (for Apache Cassandra)	cassandra	Drop	Write		https://docs.aws.amazon.c
 Keyspaces (for Apache Cassandra)	cassandra	DropMultiRegionResource	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
 Keyspaces (for Apache Cassandra)	cassandra	Modify	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
 Keyspaces (for Apache Cassandra)	cassandra	ModifyMultiRegionResource	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
-Keyspaces (for Apache Cassandra)	cassandra	Restore	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:RequestTag/${TagKey}, aws:TagKeys	
-Keyspaces (for Apache Cassandra)	cassandra	RestoreMultiRegionTable	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:RequestTag/${TagKey}, aws:TagKeys	
+Keyspaces (for Apache Cassandra)	cassandra	Restore	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
+Keyspaces (for Apache Cassandra)	cassandra	RestoreMultiRegionTable	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
 Keyspaces (for Apache Cassandra)	cassandra	Select	Read		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
 Keyspaces (for Apache Cassandra)	cassandra	SelectMultiRegionResource	Read		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
 Keyspaces (for Apache Cassandra)	cassandra	TagMultiRegionResource	Tagging		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:RequestTag/${TagKey}, aws:TagKeys	
 Keyspaces (for Apache Cassandra)	cassandra	TagResource	Tagging		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:RequestTag/${TagKey}, aws:TagKeys	
-Keyspaces (for Apache Cassandra)	cassandra	UnTagMultiRegionResource	Tagging		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:RequestTag/${TagKey}, aws:TagKeys	
-Keyspaces (for Apache Cassandra)	cassandra	UntagResource	Tagging		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:RequestTag/${TagKey}, aws:TagKeys	
+Keyspaces (for Apache Cassandra)	cassandra	UnTagMultiRegionResource	Tagging		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:TagKeys	
+Keyspaces (for Apache Cassandra)	cassandra	UntagResource	Tagging		https://docs.aws.amazon.com/keyspaces/latest/devguide/	aws:TagKeys	
 Keyspaces (for Apache Cassandra)	cassandra	UpdatePartitioner	Write		https://docs.aws.amazon.com/keyspaces/latest/devguide/		
 Kinesis Analytics	kinesisanalytics	AddApplicationInput	Write		https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html		
 Kinesis Analytics	kinesisanalytics	AddApplicationOutput	Write		https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html		
@@ -9922,35 +10002,35 @@ Kinesis Analytics V2	kinesisanalytics	TagResource	Tagging		https://docs.aws.amaz
 Kinesis Analytics V2	kinesisanalytics	UntagResource	Tagging		https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UntagResource.html	aws:TagKeys	
 Kinesis Analytics V2	kinesisanalytics	UpdateApplication	Write		https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UpdateApplication.html		
 Kinesis Analytics V2	kinesisanalytics	UpdateApplicationMaintenanceConfiguration	Write		https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UpdateApplicationMaintenanceConfiguration.html		
-Kinesis Data Streams	kinesis	AddTagsToStream	Tagging		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html		
-Kinesis Data Streams	kinesis	CreateStream	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html		
-Kinesis Data Streams	kinesis	DecreaseStreamRetentionPeriod	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html		
-Kinesis Data Streams	kinesis	DeleteResourcePolicy	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteResourcePolicy.html		
-Kinesis Data Streams	kinesis	DeleteStream	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html		
+Kinesis Data Streams	kinesis	AddTagsToStream	Tagging		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html	aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	CreateStream	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html	aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	DecreaseStreamRetentionPeriod	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	DeleteResourcePolicy	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteResourcePolicy.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	DeleteStream	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html	aws:ResourceTag/${TagKey}	
 Kinesis Data Streams	kinesis	DeregisterStreamConsumer	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeregisterStreamConsumer.html		
 Kinesis Data Streams	kinesis	DescribeLimits	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html		
-Kinesis Data Streams	kinesis	DescribeStream	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html		
+Kinesis Data Streams	kinesis	DescribeStream	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html	aws:ResourceTag/${TagKey}	
 Kinesis Data Streams	kinesis	DescribeStreamConsumer	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamConsumer.html		
-Kinesis Data Streams	kinesis	DescribeStreamSummary	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamSummary.html		
+Kinesis Data Streams	kinesis	DescribeStreamSummary	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamSummary.html	aws:ResourceTag/${TagKey}	
 Kinesis Data Streams	kinesis	DisableEnhancedMonitoring	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html		
 Kinesis Data Streams	kinesis	EnableEnhancedMonitoring	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html		
-Kinesis Data Streams	kinesis	GetRecords	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html		
-Kinesis Data Streams	kinesis	GetResourcePolicy	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetResourcePolicy.html		
-Kinesis Data Streams	kinesis	GetShardIterator	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html		
-Kinesis Data Streams	kinesis	IncreaseStreamRetentionPeriod	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html		
-Kinesis Data Streams	kinesis	ListShards	List		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListShards.html		
-Kinesis Data Streams	kinesis	ListStreamConsumers	List		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreamConsumers.html		
+Kinesis Data Streams	kinesis	GetRecords	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	GetResourcePolicy	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetResourcePolicy.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	GetShardIterator	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	IncreaseStreamRetentionPeriod	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	ListShards	List		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListShards.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	ListStreamConsumers	List		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreamConsumers.html	aws:ResourceTag/${TagKey}	
 Kinesis Data Streams	kinesis	ListStreams	List		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html		
-Kinesis Data Streams	kinesis	ListTagsForStream	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html		
-Kinesis Data Streams	kinesis	MergeShards	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html		
-Kinesis Data Streams	kinesis	PutRecord	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html		
-Kinesis Data Streams	kinesis	PutRecords	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html		
-Kinesis Data Streams	kinesis	PutResourcePolicy	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutResourcePolicy.html		
-Kinesis Data Streams	kinesis	RegisterStreamConsumer	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RegisterStreamConsumer.html		
-Kinesis Data Streams	kinesis	RemoveTagsFromStream	Tagging		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html		
-Kinesis Data Streams	kinesis	SplitShard	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html		
-Kinesis Data Streams	kinesis	StartStreamEncryption	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html		
-Kinesis Data Streams	kinesis	StopStreamEncryption	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html		
+Kinesis Data Streams	kinesis	ListTagsForStream	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	MergeShards	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	PutRecord	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	PutRecords	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	PutResourcePolicy	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutResourcePolicy.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	RegisterStreamConsumer	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RegisterStreamConsumer.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	RemoveTagsFromStream	Tagging		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html	aws:TagKeys, aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	SplitShard	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	StartStreamEncryption	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html	aws:ResourceTag/${TagKey}	
+Kinesis Data Streams	kinesis	StopStreamEncryption	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html	aws:ResourceTag/${TagKey}	
 Kinesis Data Streams	kinesis	SubscribeToShard	Read		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SubscribeToShard.html		
 Kinesis Data Streams	kinesis	UpdateShardCount	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html		
 Kinesis Data Streams	kinesis	UpdateStreamMode	Write		https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamMode.html		
@@ -10066,8 +10146,8 @@ Lake Formation	lakeformation	UpdateTableStorageOptimizer	Write		https://docs.aws
 Lambda	lambda	AddLayerVersionPermission	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html		
 Lambda	lambda	AddPermission	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html	lambda:Principal, lambda:FunctionUrlAuthType	
 Lambda	lambda	CreateAlias	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html		
-Lambda	lambda	CreateCodeSigningConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCodeSigningConfig.html		
-Lambda	lambda	CreateEventSourceMapping	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html	lambda:FunctionArn	
+Lambda	lambda	CreateCodeSigningConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCodeSigningConfig.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Lambda	lambda	CreateEventSourceMapping	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html	lambda:FunctionArn, aws:RequestTag/${TagKey}, aws:TagKeys	
 Lambda	lambda	CreateFunction	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html	lambda:Layer, lambda:VpcIds, lambda:SubnetIds, lambda:SecurityGroupIds, lambda:CodeSigningConfigArn, aws:RequestTag/${TagKey}, aws:TagKeys	iam:PassRole
 Lambda	lambda	CreateFunctionUrlConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunctionUrlConfig.html	lambda:FunctionUrlAuthType, lambda:FunctionArn	
 Lambda	lambda	DeleteAlias	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html		
@@ -10080,7 +10160,6 @@ Lambda	lambda	DeleteFunctionEventInvokeConfig	Write		https://docs.aws.amazon.com
 Lambda	lambda	DeleteFunctionUrlConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionUrlConfig.html	lambda:FunctionUrlAuthType, lambda:FunctionArn	
 Lambda	lambda	DeleteLayerVersion	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html		
 Lambda	lambda	DeleteProvisionedConcurrencyConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteProvisionedConcurrencyConfig.html		
-Lambda	lambda	DeleteResourcePolicy	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteResourcePolicy.html		lambda:RemovePermission
 Lambda	lambda	DisableReplication [permission only]	Permissions management		https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html		
 Lambda	lambda	EnableReplication [permission only]	Permissions management		https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html		
 Lambda	lambda	GetAccountSettings	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html		
@@ -10098,8 +10177,6 @@ Lambda	lambda	GetLayerVersion	Read		https://docs.aws.amazon.com/lambda/latest/dg
 Lambda	lambda	GetLayerVersionPolicy	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionPolicy.html		
 Lambda	lambda	GetPolicy	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetPolicy.html		
 Lambda	lambda	GetProvisionedConcurrencyConfig	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetProvisionedConcurrencyConfig.html		
-Lambda	lambda	GetPublicAccessBlockConfig	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetPublicAccessBlockConfig.html		
-Lambda	lambda	GetResourcePolicy	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetResourcePolicy.html		lambda:GetPolicy
 Lambda	lambda	GetRuntimeManagementConfig	Read		https://docs.aws.amazon.com/lambda/latest/dg/API_GetRuntimeManagementConfig.html		
 Lambda	lambda	InvokeAsync	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html		
 Lambda	lambda	InvokeFunction	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html	lambda:EventSourceToken	
@@ -10123,8 +10200,6 @@ Lambda	lambda	PutFunctionConcurrency	Write		https://docs.aws.amazon.com/lambda/l
 Lambda	lambda	PutFunctionEventInvokeConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionEventInvokeConfig.html		
 Lambda	lambda	PutFunctionRecursionConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionRecursionConfig.html		
 Lambda	lambda	PutProvisionedConcurrencyConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html		
-Lambda	lambda	PutPublicAccessBlockConfig	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_PutPublicAccessBlockConfig.html		
-Lambda	lambda	PutResourcePolicy	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_PutResourcePolicy.html		lambda:AddPermission, lambda:RemovePermission
 Lambda	lambda	PutRuntimeManagementConfig	Write		https://docs.aws.amazon.com/lambda/latest/dg/API_PutRuntimeManagementConfig.html		
 Lambda	lambda	RemoveLayerVersionPermission	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html		
 Lambda	lambda	RemovePermission	Permissions management		https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html	lambda:Principal, lambda:FunctionUrlAuthType	
@@ -11184,6 +11259,7 @@ Marketplace Private Marketplace	aws-marketplace	DisassociateProductsFromPrivateM
 Marketplace Private Marketplace	aws-marketplace	ListPrivateMarketplaceRequests [permission only]	List		https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html		
 Marketplace Procurement Systems Integration	aws-marketplace	DescribeProcurementSystemConfiguration [permission only]	Read		https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html		
 Marketplace Procurement Systems Integration	aws-marketplace	PutProcurementSystemConfiguration [permission only]	Write		https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html		
+Marketplace Reporting	aws-marketplace	GetBuyerDashboard	Read		https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-reporting_GetBuyerDashboard.html		
 Marketplace Seller Reporting	aws-marketplace	GetSellerDashboard	Read		https://docs.aws.amazon.com/marketplace/latest/userguide/dashboards.html#reports-accessing		
 Marketplace Vendor Insights	vendor-insights	ActivateSecurityProfile	Write		https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html	aws:ResourceTag/${TagKey}	
 Marketplace Vendor Insights	vendor-insights	AssociateDataSource	Write		https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html	aws:ResourceTag/${TagKey}	vendor-insights:GetDataSource
@@ -12423,6 +12499,7 @@ Pinpoint SMS Voice V2	sms-voice	DeleteProtectConfiguration	Write		https://docs.a
 Pinpoint SMS Voice V2	sms-voice	DeleteRegistration	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistration.html		
 Pinpoint SMS Voice V2	sms-voice	DeleteRegistrationAttachment	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistrationAttachment.html		
 Pinpoint SMS Voice V2	sms-voice	DeleteRegistrationFieldValue	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistrationFieldValue.html		
+Pinpoint SMS Voice V2	sms-voice	DeleteResourcePolicy	Permissions management		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteResourcePolicy.html		
 Pinpoint SMS Voice V2	sms-voice	DeleteTextMessageSpendLimitOverride	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteTextMessageSpendLimitOverride.html		
 Pinpoint SMS Voice V2	sms-voice	DeleteVerifiedDestinationNumber	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteVerifiedDestinationNumber.html		
 Pinpoint SMS Voice V2	sms-voice	DeleteVoiceMessageSpendLimitOverride	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteVoiceMessageSpendLimitOverride.html		
@@ -12449,12 +12526,14 @@ Pinpoint SMS Voice V2	sms-voice	DisassociateOriginationIdentity	Write		https://d
 Pinpoint SMS Voice V2	sms-voice	DisassociateProtectConfiguration	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DisassociateProtectConfiguration.html		
 Pinpoint SMS Voice V2	sms-voice	DiscardRegistrationVersion	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DiscardRegistrationVersion.html		
 Pinpoint SMS Voice V2	sms-voice	GetProtectConfigurationCountryRuleSet	Read		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_GetProtectConfigurationCountryRuleSet.html		
+Pinpoint SMS Voice V2	sms-voice	GetResourcePolicy	Read		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_GetResourcePolicy.html		
 Pinpoint SMS Voice V2	sms-voice	ListPoolOriginationIdentities	Read		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListPoolOriginationIdentities.html		
 Pinpoint SMS Voice V2	sms-voice	ListRegistrationAssociations	Read		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListRegistrationAssociations.html		
 Pinpoint SMS Voice V2	sms-voice	ListTagsForResource	Read		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListTagsForResource.html		
 Pinpoint SMS Voice V2	sms-voice	PutKeyword	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutKeyword.html		
 Pinpoint SMS Voice V2	sms-voice	PutOptedOutNumber	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutOptedOutNumber.html		
 Pinpoint SMS Voice V2	sms-voice	PutRegistrationFieldValue	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutRegistrationFieldValue.html		
+Pinpoint SMS Voice V2	sms-voice	PutResourcePolicy	Permissions management		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutResourcePolicy.html		
 Pinpoint SMS Voice V2	sms-voice	ReleasePhoneNumber	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ReleasePhoneNumber.html		
 Pinpoint SMS Voice V2	sms-voice	ReleaseSenderId	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ReleaseSenderId.html		
 Pinpoint SMS Voice V2	sms-voice	RequestPhoneNumber	Write		https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestPhoneNumber.html	aws:RequestTag/${TagKey}, aws:TagKeys	sms-voice:AssociateOriginationIdentity, sms-voice:TagResource
@@ -12686,8 +12765,8 @@ Purchase Orders Console	purchase-orders	UpdateConsoleActionSetEnforced [permissi
 Purchase Orders Console	purchase-orders	UpdatePurchaseOrder [permission only]	Write		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions	aws:ResourceTag/${TagKey}	
 Purchase Orders Console	purchase-orders	UpdatePurchaseOrderStatus [permission only]	Write		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions	aws:ResourceTag/${TagKey}	
 Purchase Orders Console	purchase-orders	ViewPurchaseOrders [permission only]	Read		https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions	aws:ResourceTag/${TagKey}	
-Q	q	CreateAssignment [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
-Q	q	DeleteAssignment [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
+Q	q	CreateAssignment [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html	identitystore:UserId, identitystore:GroupId	
+Q	q	DeleteAssignment [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html	identitystore:UserId, identitystore:GroupId	
 Q	q	GetConversation [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
 Q	q	GetIdentityMetadata [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
 Q	q	GetTroubleshootingResults [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html		
@@ -12723,6 +12802,7 @@ Q Business	qbusiness	DeletePlugin	Write		${APIReferenceDocPage}API_DeletePlugin.
 Q Business	qbusiness	DeleteRetriever	Write		${APIReferenceDocPage}API_DeleteRetriever.html		
 Q Business	qbusiness	DeleteUser	Write		${APIReferenceDocPage}API_DeleteUser.html		
 Q Business	qbusiness	DeleteWebExperience	Write		${APIReferenceDocPage}API_DeleteWebExperience.html		
+Q Business	qbusiness	DisableAclOnDataSource [permission only]	Write		${UserGuideDocPage}setting-up.html#DisableAclOnDataSource		
 Q Business	qbusiness	GetApplication	Read		${APIReferenceDocPage}API_GetApplication.html		
 Q Business	qbusiness	GetChatControlsConfiguration	List		${APIReferenceDocPage}API_GetChatControlsConfiguration.html		
 Q Business	qbusiness	GetDataSource	Read		${APIReferenceDocPage}API_GetDataSource.html		
@@ -12774,6 +12854,7 @@ Q Business Q Apps	qapps	DeleteLibraryItem	Write		https://docs.aws.amazon.com/ama
 Q Business Q Apps	qapps	DeleteQApp	Write		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteQApp.html	qapps:UserIsAppOwner, qapps:AppIsPublished	
 Q Business Q Apps	qapps	DisassociateLibraryItemReview	Write		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociateLibraryItemReview.html	qapps:UserIsAppOwner, qapps:AppIsPublished	
 Q Business Q Apps	qapps	DisassociateQAppFromUser	Write		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociateQAppFromUser.html	qapps:UserIsAppOwner, qapps:AppIsPublished	
+Q Business Q Apps	qapps	ExportQAppSessionData [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html		
 Q Business Q Apps	qapps	GetLibraryItem	Read		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetLibraryItem.html	qapps:UserIsAppOwner, qapps:AppIsPublished	
 Q Business Q Apps	qapps	GetQApp	Read		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetQApp.html	qapps:UserIsAppOwner, qapps:AppIsPublished	
 Q Business Q Apps	qapps	GetQAppSession	Read		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetQAppSession.html	qapps:UserIsAppOwner, qapps:AppIsPublished, qapps:UserIsSessionModerator, qapps:SessionIsShared	
@@ -12782,6 +12863,7 @@ Q Business Q Apps	qapps	ImportDocument	Write		https://docs.aws.amazon.com/amazon
 Q Business Q Apps	qapps	ImportDocumentToQApp [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html	qapps:UserIsAppOwner, qapps:AppIsPublished	
 Q Business Q Apps	qapps	ImportDocumentToQAppSession [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html	qapps:UserIsAppOwner, qapps:AppIsPublished, qapps:UserIsSessionModerator, qapps:SessionIsShared	
 Q Business Q Apps	qapps	ListLibraryItems	List		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListLibraryItems.html		
+Q Business Q Apps	qapps	ListQAppSessionData [permission only]	Read		https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html		
 Q Business Q Apps	qapps	ListQApps	List		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListQApps.html		
 Q Business Q Apps	qapps	ListTagsForResource	Read		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListTagsForResource.html		
 Q Business Q Apps	qapps	PredictProblemStatementFromConversation [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html		
@@ -12797,6 +12879,10 @@ Q Business Q Apps	qapps	UpdateQApp	Write		https://docs.aws.amazon.com/amazonq/la
 Q Business Q Apps	qapps	UpdateQAppSession	Write		https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateQAppSession.html	qapps:UserIsAppOwner, qapps:AppIsPublished, qapps:UserIsSessionModerator, qapps:SessionIsShared	
 Q Business Q Apps	qapps	UpdateQAppSessionMetadata [permission only]	Write		https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html		
 Q in Connect	wisdom	ActivateMessageTemplate	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ActivateMessageTemplate.html		
+Q in Connect	wisdom	CreateAIAgent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIAgent.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Q in Connect	wisdom	CreateAIAgentVersion	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIAgentVersion.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Q in Connect	wisdom	CreateAIPrompt	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIPrompt.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Q in Connect	wisdom	CreateAIPromptVersion	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIPromptVersion.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Q in Connect	wisdom	CreateAssistant	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAssistant.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Q in Connect	wisdom	CreateAssistantAssociation	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAssistantAssociation.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Q in Connect	wisdom	CreateContent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html	aws:TagKeys, aws:RequestTag/${TagKey}	
@@ -12808,6 +12894,10 @@ Q in Connect	wisdom	CreateMessageTemplateVersion	Write		https://docs.aws.amazon.
 Q in Connect	wisdom	CreateQuickResponse	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateQuickResponse.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Q in Connect	wisdom	CreateSession	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateSession.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Q in Connect	wisdom	DeactivateMessageTemplate	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeactivateMessageTemplate.html		
+Q in Connect	wisdom	DeleteAIAgent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIAgent.html		
+Q in Connect	wisdom	DeleteAIAgentVersion	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIAgentVersion.html		
+Q in Connect	wisdom	DeleteAIPrompt	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIPrompt.html		
+Q in Connect	wisdom	DeleteAIPromptVersion	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIPromptVersion.html		
 Q in Connect	wisdom	DeleteAssistant	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAssistant.html		
 Q in Connect	wisdom	DeleteAssistantAssociation	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAssistantAssociation.html		
 Q in Connect	wisdom	DeleteContent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteContent.html		
@@ -12817,6 +12907,8 @@ Q in Connect	wisdom	DeleteKnowledgeBase	Write		https://docs.aws.amazon.com/wisdo
 Q in Connect	wisdom	DeleteMessageTemplate	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteMessageTemplate.html		
 Q in Connect	wisdom	DeleteMessageTemplateAttachment	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteMessageTemplateAttachment.html		
 Q in Connect	wisdom	DeleteQuickResponse	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteQuickResponse.html		
+Q in Connect	wisdom	GetAIAgent	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAIAgent.html		
+Q in Connect	wisdom	GetAIPrompt	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAIPrompt.html		
 Q in Connect	wisdom	GetAssistant	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAssistant.html		
 Q in Connect	wisdom	GetAssistantAssociation	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAssistantAssociation.html		
 Q in Connect	wisdom	GetContent	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html		
@@ -12828,6 +12920,10 @@ Q in Connect	wisdom	GetMessageTemplate	Read		https://docs.aws.amazon.com/wisdom/
 Q in Connect	wisdom	GetQuickResponse	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetQuickResponse.html		
 Q in Connect	wisdom	GetRecommendations	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html		
 Q in Connect	wisdom	GetSession	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetSession.html		
+Q in Connect	wisdom	ListAIAgentVersions	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIAgentVersions.html		
+Q in Connect	wisdom	ListAIAgents	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIAgents.html		
+Q in Connect	wisdom	ListAIPromptVersions	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIPromptVersions.html		
+Q in Connect	wisdom	ListAIPrompts	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIPrompts.html		
 Q in Connect	wisdom	ListAssistantAssociations	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAssistantAssociations.html		
 Q in Connect	wisdom	ListAssistants	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAssistants.html		
 Q in Connect	wisdom	ListContentAssociations	List		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListContentAssociations.html		
@@ -12841,6 +12937,7 @@ Q in Connect	wisdom	ListTagsForResource	Read		https://docs.aws.amazon.com/wisdom
 Q in Connect	wisdom	NotifyRecommendationsReceived	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html		
 Q in Connect	wisdom	PutFeedback	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_PutFeedback.html		
 Q in Connect	wisdom	QueryAssistant	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html		
+Q in Connect	wisdom	RemoveAssistantAIAgent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RemoveAssistantAIAgent.html		
 Q in Connect	wisdom	RemoveKnowledgeBaseTemplateUri	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RemoveKnowledgeBaseTemplateUri.html		
 Q in Connect	wisdom	RenderMessageTemplate	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RenderMessageTemplate.html	wisdom:MessageTemplate/RoutingProfileArn	wisdom:GetMessageTemplate
 Q in Connect	wisdom	SearchContent	Read		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html		
@@ -12851,12 +12948,16 @@ Q in Connect	wisdom	StartContentUpload	Write		https://docs.aws.amazon.com/wisdom
 Q in Connect	wisdom	StartImportJob	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartImportJob.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Q in Connect	wisdom	TagResource	Tagging		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}, aws:ResourceTag/${TagKey}	
 Q in Connect	wisdom	UntagResource	Tagging		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UntagResource.html	aws:TagKeys, aws:ResourceTag/${TagKey}	
+Q in Connect	wisdom	UpdateAIAgent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAIAgent.html		
+Q in Connect	wisdom	UpdateAIPrompt	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAIPrompt.html		
+Q in Connect	wisdom	UpdateAssistantAIAgent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAssistantAIAgent.html		
 Q in Connect	wisdom	UpdateContent	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html		
 Q in Connect	wisdom	UpdateKnowledgeBaseTemplateUri	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateKnowledgeBaseTemplateUri.html		
 Q in Connect	wisdom	UpdateMessageTemplate	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateMessageTemplate.html		
 Q in Connect	wisdom	UpdateMessageTemplateMetadata	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateMessageTemplateMetadata.html		
 Q in Connect	wisdom	UpdateQuickResponse	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateQuickResponse.html		
 Q in Connect	wisdom	UpdateSession	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateSession.html		
+Q in Connect	wisdom	UpdateSessionData	Write		https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateSessionData.html		
 QLDB	qldb	CancelJournalKinesisStream	Write		https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html		
 QLDB	qldb	CreateLedger	Write		https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 QLDB	qldb	DeleteLedger	Write		https://docs.aws.amazon.com/qldb/latest/developerguide/API_DeleteLedger.html		
@@ -12979,6 +13080,7 @@ QuickSight	quicksight	DescribeIngestion	Read		https://docs.aws.amazon.com/quicks
 QuickSight	quicksight	DescribeIpRestriction	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIpRestriction.html		
 QuickSight	quicksight	DescribeKeyRegistration	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKeyRegistration.html		
 QuickSight	quicksight	DescribeNamespace	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeNamespace.html		
+QuickSight	quicksight	DescribeQPersonalizationConfiguration	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeQPersonalizationConfiguration.html		
 QuickSight	quicksight	DescribeRefreshSchedule	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRefreshSchedule.html		
 QuickSight	quicksight	DescribeRoleCustomPermission	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRoleCustomPermission.html		
 QuickSight	quicksight	DescribeTemplate	Read		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html		
@@ -13055,6 +13157,7 @@ QuickSight	quicksight	SetGroupMapping [permission only]	Write		https://docs.aws.
 QuickSight	quicksight	StartAssetBundleExportJob	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleExportJob.html		
 QuickSight	quicksight	StartAssetBundleImportJob	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleImportJob.html		
 QuickSight	quicksight	StartDashboardSnapshotJob	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartDashboardSnapshotJob.html		
+QuickSight	quicksight	StartDashboardSnapshotJobSchedule	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartDashboardSnapshotJobSchedule.html		
 QuickSight	quicksight	Subscribe [permission only]	Write		https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html	quicksight:Edition, quicksight:DirectoryType	
 QuickSight	quicksight	TagResource	Tagging		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 QuickSight	quicksight	Unsubscribe [permission only]	Write		https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html		
@@ -13081,6 +13184,7 @@ QuickSight	quicksight	UpdateIdentityPropagationConfig	Write		https://docs.aws.am
 QuickSight	quicksight	UpdateIpRestriction	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateIpRestriction.html		
 QuickSight	quicksight	UpdateKeyRegistration	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKeyRegistration.html		
 QuickSight	quicksight	UpdatePublicSharingSettings	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html		
+QuickSight	quicksight	UpdateQPersonalizationConfiguration	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateQPersonalizationConfiguration.html		
 QuickSight	quicksight	UpdateRefreshSchedule	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateRefreshSchedule.html		
 QuickSight	quicksight	UpdateResourcePermissions [permission only]	Write		https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html		
 QuickSight	quicksight	UpdateRoleCustomPermission	Write		https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateRoleCustomPermission.html		
@@ -13706,8 +13810,9 @@ Resource Group Tagging API	tag	StartReportCreation	Write		https://docs.aws.amazo
 Resource Group Tagging API	tag	TagResources	Tagging		https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html		
 Resource Group Tagging API	tag	UntagResources	Tagging		https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html		
 Resource Groups	resource-groups	AssociateResource [permission only]	Write		https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html		
+Resource Groups	resource-groups	CancelTagSyncTask	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_CancelTagSyncTask.html		resource-groups:DeleteGroup
 Resource Groups	resource-groups	CreateGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html	aws:RequestTag/${TagKey}, aws:TagKeys	cloudformation:DescribeStacks
-Resource Groups	resource-groups	DeleteGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html		
+Resource Groups	resource-groups	DeleteGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html		tag:GetResources
 Resource Groups	resource-groups	DeleteGroupPolicy [permission only]	Write		https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role		
 Resource Groups	resource-groups	DisassociateResource [permission only]	Write		https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html		
 Resource Groups	resource-groups	GetAccountSettings	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetAccountSettings.html		
@@ -13715,16 +13820,20 @@ Resource Groups	resource-groups	GetGroup	Read		https://docs.aws.amazon.com/ARG/l
 Resource Groups	resource-groups	GetGroupConfiguration	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupConfiguration.html		
 Resource Groups	resource-groups	GetGroupPolicy [permission only]	Read		https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role		
 Resource Groups	resource-groups	GetGroupQuery	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html		
+Resource Groups	resource-groups	GetTagSyncTask	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTagSyncTask.html		
 Resource Groups	resource-groups	GetTags	Read		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html		
-Resource Groups	resource-groups	GroupResources	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html		
+Resource Groups	resource-groups	GroupResources	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html		resource-groups:Tag, tag:TagResources
 Resource Groups	resource-groups	ListGroupResources	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html		cloudformation:DescribeStacks, cloudformation:ListStackResources, tag:GetResources
+Resource Groups	resource-groups	ListGroupingStatuses	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupingStatuses.html		
 Resource Groups	resource-groups	ListGroups	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html		
 Resource Groups	resource-groups	ListResourceTypes [permission only]	List		https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html		
+Resource Groups	resource-groups	ListTagSyncTasks	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListTagSyncTasks.html		
 Resource Groups	resource-groups	PutGroupConfiguration	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_PutGroupConfiguration.html		
 Resource Groups	resource-groups	PutGroupPolicy [permission only]	Write		https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role		
 Resource Groups	resource-groups	SearchResources	List		https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html		cloudformation:DescribeStacks, cloudformation:ListStackResources, tag:GetResources
+Resource Groups	resource-groups	StartTagSyncTask	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_StartTagSyncTask.html		iam:PassRole, resource-groups:CreateGroup
 Resource Groups	resource-groups	Tag	Tagging		https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html	aws:RequestTag/${TagKey}, aws:TagKeys	
-Resource Groups	resource-groups	UngroupResources	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UngroupResources.html		
+Resource Groups	resource-groups	UngroupResources	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UngroupResources.html		resource-groups:Untag, tag:UntagResources
 Resource Groups	resource-groups	Untag	Tagging		https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html	aws:TagKeys	
 Resource Groups	resource-groups	UpdateAccountSettings	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateAccountSettings.html		
 Resource Groups	resource-groups	UpdateGroup	Write		https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html		
@@ -13905,24 +14014,24 @@ Route 53 Domains	route53domains	UpdateDomainContactPrivacy	Write		https://docs.a
 Route 53 Domains	route53domains	UpdateDomainNameservers	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html		
 Route 53 Domains	route53domains	UpdateTagsForDomain	Tagging		https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateTagsForDomain.html		
 Route 53 Domains	route53domains	ViewBilling	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ViewBilling.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	AssociateProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateProfile.html	aws:RequestTag/${TagKey}, aws:TagKeys	ec2:DescribeVpcs
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	AssociateResourceToProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateResourceToProfile.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	CreateProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_CreateProfile.html	aws:RequestTag/${TagKey}, aws:TagKeys	
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	DeleteProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DeleteProfile.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	DisassociateProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateProfile.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	DisassociateResourceFromProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateResourceFromProfile.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	GetProfile	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfile.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	GetProfileAssociation	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfileAssociation.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	GetProfilePolicy [permission only]	Read		https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	GetProfileResourceAssociation	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfileResourceAssociation.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	ListProfileAssociations	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileAssociations.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	ListProfileResourceAssociations	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileResourceAssociations.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	ListProfiles	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfiles.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	ListTagsForResource	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListTagsForResource.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	PutProfilePolicy [permission only]	Write		https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html		
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	TagResource	Tagging		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	UntagResource	Tagging		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UntagResource.html	aws:TagKeys	
-Route 53 Profiles enables sharing DNS settings with VPCs	route53profiles	UpdateProfileResourceAssociation	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileResourceAssociation.html		
+Route 53 Profiles	route53profiles	AssociateProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateProfile.html	aws:RequestTag/${TagKey}, aws:TagKeys	ec2:DescribeVpcs
+Route 53 Profiles	route53profiles	AssociateResourceToProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateResourceToProfile.html		
+Route 53 Profiles	route53profiles	CreateProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_CreateProfile.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Route 53 Profiles	route53profiles	DeleteProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DeleteProfile.html		
+Route 53 Profiles	route53profiles	DisassociateProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateProfile.html		
+Route 53 Profiles	route53profiles	DisassociateResourceFromProfile	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateResourceFromProfile.html		
+Route 53 Profiles	route53profiles	GetProfile	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfile.html		
+Route 53 Profiles	route53profiles	GetProfileAssociation	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfileAssociation.html		
+Route 53 Profiles	route53profiles	GetProfilePolicy [permission only]	Read		https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html		
+Route 53 Profiles	route53profiles	GetProfileResourceAssociation	Read		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfileResourceAssociation.html		
+Route 53 Profiles	route53profiles	ListProfileAssociations	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileAssociations.html		
+Route 53 Profiles	route53profiles	ListProfileResourceAssociations	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileResourceAssociations.html		
+Route 53 Profiles	route53profiles	ListProfiles	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfiles.html		
+Route 53 Profiles	route53profiles	ListTagsForResource	List		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListTagsForResource.html		
+Route 53 Profiles	route53profiles	PutProfilePolicy [permission only]	Write		https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html		
+Route 53 Profiles	route53profiles	TagResource	Tagging		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_TagResource.html	aws:RequestTag/${TagKey}, aws:TagKeys	
+Route 53 Profiles	route53profiles	UntagResource	Tagging		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UntagResource.html	aws:TagKeys	
+Route 53 Profiles	route53profiles	UpdateProfileResourceAssociation	Write		https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileResourceAssociation.html		
 Route 53 Recovery Cluster	route53-recovery-cluster	GetRoutingControlState	Read		https://docs.aws.amazon.com/routing-control/latest/APIReference/API_GetRoutingControlState.html		
 Route 53 Recovery Cluster	route53-recovery-cluster	ListRoutingControls	Read		https://docs.aws.amazon.com/routing-control/latest/APIReference/API_ListRoutingControls.html		
 Route 53 Recovery Cluster	route53-recovery-cluster	UpdateRoutingControlState	Write		https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlState.html	route53-recovery-cluster:AllowSafetyRulesOverrides	
@@ -14212,13 +14321,15 @@ S3	s3	UpdateAccessGrantsLocation	Write		https://docs.aws.amazon.com/AmazonS3/lat
 S3	s3	UpdateJobPriority	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html	s3:authType, s3:ResourceAccount, s3:signatureAge, s3:signatureversion, s3:TlsVersion, s3:x-amz-content-sha256, s3:RequestJobPriority, s3:ExistingJobPriority, s3:ExistingJobOperation	
 S3	s3	UpdateJobStatus	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html	s3:authType, s3:ResourceAccount, s3:signatureAge, s3:signatureversion, s3:TlsVersion, s3:x-amz-content-sha256, s3:ExistingJobPriority, s3:ExistingJobOperation, s3:JobSuspendedCause	
 S3	s3	UpdateStorageLensGroup	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateStorageLensGroup.html	s3:authType, s3:ResourceAccount, s3:signatureAge, s3:signatureversion, s3:TlsVersion, s3:x-amz-content-sha256	
-S3 Express	s3express	CreateBucket	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html	s3express:authType, s3express:LocationName, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
+S3 Express	s3express	CreateBucket	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html	s3express:authType, s3express:LocationName, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256, s3express:x-amz-server-side-encryption, s3express:x-amz-server-side-encryption-aws-kms-key-id	
 S3 Express	s3express	CreateSession	Read		https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html	s3express:authType, s3express:ResourceAccount, s3express:SessionMode, s3express:signatureAge, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
 S3 Express	s3express	DeleteBucket	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
 S3 Express	s3express	DeleteBucketPolicy	Permissions management		https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
 S3 Express	s3express	GetBucketPolicy	Read		https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
+S3 Express	s3express	GetEncryptionConfiguration	Read		https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
 S3 Express	s3express	ListAllMyDirectoryBuckets	List		https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListDirectoryBuckets.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
 S3 Express	s3express	PutBucketPolicy	Permissions management		https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
+S3 Express	s3express	PutEncryptionConfiguration	Write		https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html	s3express:authType, s3express:ResourceAccount, s3express:signatureversion, s3express:TlsVersion, s3express:x-amz-content-sha256	
 S3 Glacier	glacier	AbortMultipartUpload	Write		https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html		
 S3 Glacier	glacier	AbortVaultLock	Permissions management		https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AbortVaultLock.html		
 S3 Glacier	glacier	AddTagsToVault	Tagging		https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html	aws:TagKeys, aws:RequestTag/${TagKey}	
@@ -15220,6 +15331,7 @@ Service Catalog	servicecatalog	DeletePortfolioShare	Permissions management		http
 Service Catalog	servicecatalog	DeleteProduct	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProduct.html		
 Service Catalog	servicecatalog	DeleteProvisionedProductPlan	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisionedProductPlan.html	servicecatalog:accountLevel, servicecatalog:roleLevel, servicecatalog:userLevel	
 Service Catalog	servicecatalog	DeleteProvisioningArtifact	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisioningArtifact.html		
+Service Catalog	servicecatalog	DeleteResourcePolicy [permission only]	Write		https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html		
 Service Catalog	servicecatalog	DeleteServiceAction	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteServiceAction.html		
 Service Catalog	servicecatalog	DeleteTagOption	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteTagOption.html		
 Service Catalog	servicecatalog	DescribeConstraint	Read		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeConstraint.html		
@@ -15255,6 +15367,7 @@ Service Catalog	servicecatalog	GetAssociatedResource	Read		https://docs.aws.amaz
 Service Catalog	servicecatalog	GetAttributeGroup	Read		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetAttributeGroup.html		
 Service Catalog	servicecatalog	GetConfiguration	Read		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetConfiguration.html		
 Service Catalog	servicecatalog	GetProvisionedProductOutputs	Read		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetProvisionedProductOutputs.html		
+Service Catalog	servicecatalog	GetResourcePolicy [permission only]	Read		https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html		
 Service Catalog	servicecatalog	ImportAsProvisionedProduct	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ImportAsProvisionedProduct.html		
 Service Catalog	servicecatalog	ListAcceptedPortfolioShares	List		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAcceptedPortfolioShares.html		
 Service Catalog	servicecatalog	ListApplications	List		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListApplications.html		
@@ -15285,6 +15398,7 @@ Service Catalog	servicecatalog	NotifyTerminateProvisionedProductEngineWorkflowRe
 Service Catalog	servicecatalog	NotifyUpdateProvisionedProductEngineWorkflowResult	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_NotifyUpdateProvisionedProductEngineWorkflowResult.html		
 Service Catalog	servicecatalog	ProvisionProduct	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html		
 Service Catalog	servicecatalog	PutConfiguration	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_PutConfiguration.html		
+Service Catalog	servicecatalog	PutResourcePolicy [permission only]	Write		https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html		
 Service Catalog	servicecatalog	RejectPortfolioShare	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_RejectPortfolioShare.html		
 Service Catalog	servicecatalog	ScanProvisionedProducts	List		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ScanProvisionedProducts.html	servicecatalog:accountLevel, servicecatalog:roleLevel, servicecatalog:userLevel	
 Service Catalog	servicecatalog	SearchProducts	List		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProducts.html		
@@ -15293,7 +15407,7 @@ Service Catalog	servicecatalog	SearchProvisionedProducts	List		https://docs.aws.
 Service Catalog	servicecatalog	SyncResource	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_SyncResource.html		cloudformation:UpdateStack
 Service Catalog	servicecatalog	TagResource	Tagging		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_TagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
 Service Catalog	servicecatalog	TerminateProvisionedProduct	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html	servicecatalog:accountLevel, servicecatalog:roleLevel, servicecatalog:userLevel	
-Service Catalog	servicecatalog	UntagResource	Tagging		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UntagResource.html	aws:TagKeys, aws:RequestTag/${TagKey}	
+Service Catalog	servicecatalog	UntagResource	Tagging		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UntagResource.html	aws:TagKeys	
 Service Catalog	servicecatalog	UpdateApplication	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UpdateApplication.html		iam:CreateServiceLinkedRole
 Service Catalog	servicecatalog	UpdateAttributeGroup	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UpdateAttributeGroup.html		
 Service Catalog	servicecatalog	UpdateConstraint	Write		https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateConstraint.html		
@@ -15769,19 +15883,30 @@ Storage Gateway	storagegateway	UpdateSnapshotSchedule	Write		https://docs.aws.am
 Storage Gateway	storagegateway	UpdateVTLDeviceType	Write		https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateVTLDeviceType.html		
 Supply Chain	scn	AssignAdminPermissionsToUser	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	CreateBillOfMaterialsImportJob	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	CreateDataIntegrationFlow	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	CreateDataLakeDataset	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	CreateInstance	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	CreateSSOApplication	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	DeleteDataIntegrationFlow	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	DeleteDataLakeDataset	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	DeleteInstance	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	DeleteSSOApplication	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	DescribeInstance	Read		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	GetBillOfMaterialsImportJob	Read		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	GetDataIntegrationFlow	Read		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	GetDataLakeDataset	Read		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	GetInstance	Read		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	ListAdminUsers	List		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	ListDataIntegrationFlows	List		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	ListDataLakeDatasets	List		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	ListInstances	List		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	ListTagsForResource	List		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	RemoveAdminPermissionsForUser	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	SendDataIntegrationEvent	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	TagResource	Tagging		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html	aws:RequestTag/${TagKey}, aws:TagKeys	
 Supply Chain	scn	UntagResource	Tagging		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html	aws:TagKeys	
+Supply Chain	scn	UpdateDataIntegrationFlow	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
+Supply Chain	scn	UpdateDataLakeDataset	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Supply Chain	scn	UpdateInstance	Write		https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html		
 Support	support	AddAttachmentsToSet	Write		https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddAttachmentsToSet.html		
 Support	support	AddCommunicationToCase	Write		https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html		
@@ -15978,9 +16103,10 @@ Systems Manager	ssm	UpdateOpsMetadata	Write		https://docs.aws.amazon.com/systems
 Systems Manager	ssm	UpdatePatchBaseline	Write		https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdatePatchBaseline.html		
 Systems Manager	ssm	UpdateResourceDataSync	Write		https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html	ssm:SyncType	
 Systems Manager	ssm	UpdateServiceSetting	Write		https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html		
-Systems Manager GUI Connect	ssm-guiconnect	CancelConnection [permission only]	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rdp.html		
-Systems Manager GUI Connect	ssm-guiconnect	GetConnection [permission only]	Read		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rdp.html		
-Systems Manager GUI Connect	ssm-guiconnect	StartConnection [permission only]	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rdp.html		
+Systems Manager GUI Connect	ssm-guiconnect	CancelConnection [permission only]	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html		
+Systems Manager GUI Connect	ssm-guiconnect	GetConnection [permission only]	Read		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html		
+Systems Manager GUI Connect	ssm-guiconnect	ListConnections [permission only]	List		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html		
+Systems Manager GUI Connect	ssm-guiconnect	StartConnection [permission only]	Write		https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html		
 Systems Manager Incident Manager	ssm-incidents	BatchGetIncidentFindings	Read		https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_BatchGetIncidentFindings.html		
 Systems Manager Incident Manager	ssm-incidents	CreateReplicationSet	Write		https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateReplicationSet.html	aws:TagKeys, aws:RequestTag/${TagKey}	iam:CreateServiceLinkedRole, ssm-incidents:TagResource
 Systems Manager Incident Manager	ssm-incidents	CreateResponsePlan	Write		https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateResponsePlan.html	aws:TagKeys, aws:RequestTag/${TagKey}	iam:PassRole, ssm-incidents:TagResource
